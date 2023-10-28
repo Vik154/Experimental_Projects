@@ -1,19 +1,20 @@
 ## Основные источники информации:
 
-1. WEB:
-    + 123
-    + 123
-    + 
+1. :earth_asia: <b>WEB:<b>
+   + :speech_balloon: _ASP.NET Core_ - https://metanit.com/sharp/aspnet6/
+   + :speech_balloon: __ASP.NET Core MVC__ - https://metanit.com/sharp/aspnetmvc/
+   + :speech_balloon: ___ASP.NET Core Razor Pages___ - https://metanit.com/sharp/razorpages/
+   + 
 
-2. YouTube:
+3. :movie_camera: YouTube:
     + 111
     + 111
    
-3. Книги:
+4. Книги:
     + 123
     + 123
     
-4. Документация:
+5. Документация:
     + msdn
 
 ## Структура репозитория:
