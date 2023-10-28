@@ -7,10 +7,10 @@
       <li>
          <details> <summary><b><i> :recycle: ASP.NET Core:</i></b></summary>
             <ul>
-               <li> :speech_balloon: _ASP.NET Core_ - https://metanit.com/sharp/aspnet6/</li>
-               <li> :speech_balloon: _ASP.NET Core MVC_ - https://metanit.com/sharp/aspnetmvc/</li>
-               <li> :speech_balloon: _ASP.NET Core Razor Pages_ - https://metanit.com/sharp/razorpages/ </li>
-               <li> :speech_balloon: _ASP.NET Core Blazor_ - https://metanit.com/sharp/blazor/ </li>
+               <li> :speech_balloon: <i> ASP.NET Core </i> - https://metanit.com/sharp/aspnet6/</li>
+               <li> :speech_balloon: <i> ASP.NET Core MVC </i> - https://metanit.com/sharp/aspnetmvc/</li>
+               <li> :speech_balloon: <i> ASP.NET Core Razor Pages </i> - https://metanit.com/sharp/razorpages/ </li>
+               <li> :speech_balloon: <i> ASP.NET Core Blazor </i> - https://metanit.com/sharp/blazor/ </li>
             </ul>
          </details>
       </li>
