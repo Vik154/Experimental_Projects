@@ -17,13 +17,13 @@
 <details>
    <summary><b><i>3. :books: Книги:</i></b></summary>
    
-   + 
+   + :book: Эндрю Лок - "ASP.NET Core в действии"
 </details>
 
 <details>
    <summary><b><i>4. :bookmark_tabs: Документация:</i></b></summary>
    
-   + 
+   + :mag_right: MSDN: https://learn.microsoft.com/ru-ru/aspnet/core/?view=aspnetcore-7.0
 </details>
 
 
