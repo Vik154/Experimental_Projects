@@ -5,7 +5,7 @@
 
    <ul>
       <li>
-         <details> <summary><b><i> :heavy_plus_sign: ASP.NET Core:</i></b></summary>
+         <details> <summary><b><i> :recycle: ASP.NET Core:</i></b></summary>
             <ul>
                <li> :speech_balloon: _ASP.NET Core_ - https://metanit.com/sharp/aspnet6/</li>
                <li> :speech_balloon: _ASP.NET Core MVC_ - https://metanit.com/sharp/aspnetmvc/</li>
