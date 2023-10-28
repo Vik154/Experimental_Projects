@@ -1,12 +1,19 @@
 ## Основные источники информации:
 
 <details>
-   <summary><b><i>1. :earth_asia: ASP.NET_Core</i></b></summary>
+   <summary><b><i>1. :earth_asia: WEB</i></b></summary>
    
    + :speech_balloon: _ASP.NET Core_ - https://metanit.com/sharp/aspnet6/
-   + :speech_balloon: __ASP.NET Core MVC__ - https://metanit.com/sharp/aspnetmvc/
-   + :speech_balloon: ___ASP.NET Core Razor Pages___ - https://metanit.com/sharp/razorpages/
+   + :speech_balloon: _ASP.NET Core MVC_ - https://metanit.com/sharp/aspnetmvc/
+   + :speech_balloon: _ASP.NET Core Razor Pages_ - https://metanit.com/sharp/razorpages/
 </details>
+<details>
+   <summary><b><i>2. :movie_camera: YouTube:</i></b></summary>
+   
+   + 
+</details>
+
+
 
 1. :earth_asia: <b>WEB:<b>
    + :speech_balloon: _ASP.NET Core_ - https://metanit.com/sharp/aspnet6/
