@@ -3,11 +3,18 @@
 <details>
    <summary><b><i>1. :earth_asia: WEB</i></b></summary>
 
-   <details>
+   <ul>
+      <li>
+                  <details>
    <summary><b><i>2. :movie_camera: YouTube:</i></b></summary>
    
    + 
    </details>
+      </li>
+
+   </ul>
+
+
    
    + :speech_balloon: _ASP.NET Core_ - https://metanit.com/sharp/aspnet6/
    + :speech_balloon: _ASP.NET Core MVC_ - https://metanit.com/sharp/aspnetmvc/
