@@ -5,21 +5,20 @@
 
    <ul>
       <li>
-                  <details>
-   <summary><b><i>2. :movie_camera: YouTube:</i></b></summary>
-   
-   + 
-   </details>
+         <details>
+            <summary><b><i> ASP.NET Core:</i></b></summary>
+            + :speech_balloon: _ASP.NET Core_ - https://metanit.com/sharp/aspnet6/
+            + :speech_balloon: _ASP.NET Core MVC_ - https://metanit.com/sharp/aspnetmvc/
+            + :speech_balloon: _ASP.NET Core Razor Pages_ - https://metanit.com/sharp/razorpages/
+            + :speech_balloon: _ASP.NET Core Blazor_ - https://metanit.com/sharp/blazor/
+         </details>
       </li>
 
    </ul>
 
 
    
-   + :speech_balloon: _ASP.NET Core_ - https://metanit.com/sharp/aspnet6/
-   + :speech_balloon: _ASP.NET Core MVC_ - https://metanit.com/sharp/aspnetmvc/
-   + :speech_balloon: _ASP.NET Core Razor Pages_ - https://metanit.com/sharp/razorpages/
-   + :speech_balloon: _ASP.NET Core Blazor_ - https://metanit.com/sharp/blazor/
+
 </details>
 
 <details>
