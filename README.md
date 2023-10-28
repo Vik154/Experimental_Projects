@@ -5,8 +5,13 @@
 
    <ul>
       <li>
-         <details>
-            <summary><b><i> ASP.NET Core:</i></b></summary>
+         <details> <summary><b><i> ASP.NET Core:</i></b></summary>
+            <ul>
+               <li> _ASP.NET Core_ - https://metanit.com/sharp/aspnet6/</li>
+               <li> :speech_balloon: _ASP.NET Core MVC_ - https://metanit.com/sharp/aspnetmvc/</li>
+               <li></li>
+            </ul>
+            
             
    + :speech_balloon: _ASP.NET Core_ - https://metanit.com/sharp/aspnet6/
    + :speech_balloon: _ASP.NET Core MVC_ - https://metanit.com/sharp/aspnetmvc/
@@ -14,11 +19,7 @@
    + :speech_balloon: _ASP.NET Core Blazor_ - https://metanit.com/sharp/blazor/
          </details>
       </li>
-
-   </ul>
-
-
-   
+   </ul>  
 
 </details>
 
