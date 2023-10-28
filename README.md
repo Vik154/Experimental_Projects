@@ -6,6 +6,7 @@
    + :speech_balloon: _ASP.NET Core_ - https://metanit.com/sharp/aspnet6/
    + :speech_balloon: _ASP.NET Core MVC_ - https://metanit.com/sharp/aspnetmvc/
    + :speech_balloon: _ASP.NET Core Razor Pages_ - https://metanit.com/sharp/razorpages/
+   + :speech_balloon: _ASP.NET Core Blazor_ - https://metanit.com/sharp/blazor/
 </details>
 
 <details>
@@ -31,5 +32,5 @@
 <details>
    <summary><b><i>ASP.NET_Core</i></b></summary>
    
-   * *[01_wewkewe](01_Элементы_компоновки/01_Canvas/Description.md)*
+   * *[01_projName](01_Элементы/01_Canvas/Description.md)*
 </details>
