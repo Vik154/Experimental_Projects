@@ -1,8 +1,6 @@
 ## Основные источники информации:
 
-<details>
-   <summary><b><i>1. :earth_asia: WEB</i></b></summary>
-
+<details> <summary><b><i>1. :earth_asia: WEB</i></b></summary>
    <ul>
       <li>
          <details> <summary><b><i> :recycle: ASP.NET Core:</i></b></summary>
@@ -18,22 +16,42 @@
 
 </details>
 
-<details>
-   <summary><b><i>2. :movie_camera: YouTube:</i></b></summary>
-   
-   + 
+<details> <summary><b><i>2. :movie_camera: YouTube:</i></b></summary>
+   <ul>
+      <li>
+         <details> <summary><b><i> :recycle: ASP.NET Core:</i></b></summary>
+            <ul>
+               <li></li>
+            </ul>
+         </details>
+      </li>
+   </ul>  
 </details>
 
-<details>
-   <summary><b><i>3. :books: Книги:</i></b></summary>
+<details> <summary><b><i>3. :books: Книги:</i></b></summary>
+   <ul>
+      <li>
+         <details> <summary><b><i> :recycle: ASP.NET Core:</i></b></summary>
+            <ul>
+               <li>:book: Эндрю Лок - "ASP.NET Core в действии"</li>
+            </ul>
+         </details>
+      </li>
+   </ul>  
    
-   + :book: Эндрю Лок - "ASP.NET Core в действии"
 </details>
 
-<details>
-   <summary><b><i>4. :bookmark_tabs: Документация:</i></b></summary>
+<details> <summary><b><i>4. :bookmark_tabs: Документация:</i></b></summary>
+   <ul>
+      <li>
+         <details> <summary><b><i> :recycle: ASP.NET Core:</i></b></summary>
+            <ul>
+               <li>:mag_right: MSDN: https://learn.microsoft.com/ru-ru/aspnet/core/?view=aspnetcore-7.0</li>
+            </ul>
+         </details>
+      </li>
+   </ul> 
    
-   + :mag_right: MSDN: https://learn.microsoft.com/ru-ru/aspnet/core/?view=aspnetcore-7.0
 </details>
 
 
