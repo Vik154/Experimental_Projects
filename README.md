@@ -21,7 +21,7 @@
       <li>
          <details> <summary><b><i> :recycle: ASP.NET Core:</i></b></summary>
             <ul>
-               <li>https://www.youtube.com/@ITHomester/playlists</li>
+               <li>АйтишныйДомосед - https://www.youtube.com/@ITHomester/playlists</li>
             </ul>
          </details>
       </li>
