@@ -21,6 +21,7 @@
       <li>
          <details> <summary><b><i> :recycle: ASP.NET Core:</i></b></summary>
             <ul>
+               <li> :link: Програмысли - https://www.youtube.com/@Dev-lessons</li>
                <li> :link: АйтишныйДомосед - https://www.youtube.com/@ITHomester/playlists</li>
             </ul>
          </details>
