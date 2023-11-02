@@ -44,9 +44,23 @@ public class Program {
         // app.Run(GetQueryString);
         #endregion
 
+        #region ПОЛУЧЕНИЕ И ОТПРАВКА ФАЙЛОВ  СТРАНИЦ
+
+        /// <summary> Отправка HTML - страниц </summary>
+        // app.Run(SendHTMLFiles);
+
+        /// <summary> Получение данных из формы HTML </summary>
+        // app.Run(GetUserForm);
+
+        /// <summary> Получение массива данных из формы HTML </summary>
+        app.Run(GetArrayUserForm);
+
+        #endregion
+
         app.Run();
     }
 
+    #region ТЕСТИРОВАНИЕ Response и Request
     // Тест метода Run() и конвейера middleware
     // В качестве параметра метод Run принимает делегат RequestDelegate. Этот делегат имеет следующее определение:
     // public delegate Task RequestDelegate(HttpContext context);
@@ -89,4 +103,57 @@ public class Program {
         await context.Response.WriteAsync($"<p>Path: {context.Request.Path}</p>" +
             $"<p>QueryString: {context.Request.QueryString}</p>");
     }
+    #endregion
+
+    #region ОТПРАВКА ФАЙЛОВ
+    /// <summary> Отправка HTML - страниц </summary>
+    static async Task SendHTMLFiles(HttpContext context) {
+        context.Response.ContentType = "text/html; charset=utf-8";
+        await context.Response.SendFileAsync("html/Index.html");
+    }
+
+    /// <summary> Получение данных из формы HTML </summary>
+    static async Task GetUserForm(HttpContext context) {
+        context.Response.ContentType = "text/html; charset=utf-8";
+
+        // если обращение идет по адресу "/postuser", получаем данные формы
+        if (context.Request.Path == "/postuser") {
+            var form = context.Request.Form;
+            string? name = form["name"];
+            string? age = form["age"];
+            await context.Response.WriteAsync($"<div><p>Name: {name}</p><p>Age: {age}</p></div>");
+        }
+        else {
+            await context.Response.SendFileAsync("html/UserForm.html");
+        }
+    }
+
+    /// <summary> Получение массива данных из формы HTML </summary>
+    static async Task GetArrayUserForm(HttpContext context) {
+        context.Response.ContentType = "text/html; charset=utf-8";
+
+        // если обращение идет по адресу "/postuser", получаем данные формы
+        if (context.Request.Path == "/postuser") {
+            var form = context.Request.Form;
+            string? name = form["name"];
+            string? age = form["age"];
+            string[]? languages = form["languages"];
+            
+            // создаем из массива languages одну строку
+            string langList = "";
+            
+            if (languages != null)
+                foreach (var lang in languages)
+                    langList += $" {lang}";
+
+            await context.Response.WriteAsync($"<div><p>Name: {name}</p>" +
+                $"<p>Age: {age}</p>" +
+                $"<div>Languages:{langList}</div></div>");
+        }
+        else {
+            await context.Response.SendFileAsync("html/UserFormArray.html");
+        }
+    }
+
+    #endregion
 }
