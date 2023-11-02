@@ -4,7 +4,7 @@
     <TargetFramework>net8.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
-    <RootNamespace>_01_FIRST_TEST</RootNamespace>
+    <RootNamespace>_01_Base</RootNamespace>
   </PropertyGroup>
 
 </Project>
