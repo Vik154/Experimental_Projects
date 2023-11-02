@@ -1,5 +1,8 @@
 ﻿namespace _01_Base;
 
+/// <summary> Для тестов </summary>
+public record Person(string Name, int Age);
+
 public class Program {
     public static void Main(string[] args) {
 
@@ -53,7 +56,16 @@ public class Program {
         // app.Run(GetUserForm);
 
         /// <summary> Получение массива данных из формы HTML </summary>
-        app.Run(GetArrayUserForm);
+        // app.Run(GetArrayUserForm);
+
+        /// <summary> Отправка JSON файлов </summary>
+        // app.Run(SendJSONFile);
+
+        /// <summary> Отправка JSON формата </summary>
+        // app.Run(SendJSONFormat);
+
+        /// <summary> Получение JSON. Метод ReadFromJsonAsync </summary>
+        app.Run(GetJSONFormat);
 
         #endregion
 
@@ -152,6 +164,41 @@ public class Program {
         }
         else {
             await context.Response.SendFileAsync("html/UserFormArray.html");
+        }
+    }
+
+    /// <summary> Отправка JSON файлов </summary>
+    static async Task SendJSONFile(HttpContext context) {
+        await context.Response.SendFileAsync("json/Users.json");
+    }
+
+    /// <summary> Отправка JSON формата </summary>
+    static async Task SendJSONFormat(HttpContext context) {
+        var user = new { Age = 15, Name = "Tommy", ID = 12 };
+        await context.Response.WriteAsJsonAsync(user);
+    }
+
+    /// <summary> Получение JSON. Метод ReadFromJsonAsync </summary>
+    static async Task GetJSONFormat(HttpContext context) {
+
+        var response = context.Response;
+        var request = context.Request;
+        
+        if (request.Path == "/api/user") {
+            var message = "Некорректные данные";   // содержание сообщения по умолчанию
+            try {
+                // пытаемся получить данные json
+                var person = await request.ReadFromJsonAsync<Person>();
+                if (person != null) // если данные сконвертированы в Person
+                    message = $"Name: {person.Name}  Age: {person.Age}";
+            }
+            catch { }
+            // отправляем пользователю данные
+            await response.WriteAsJsonAsync(new { text = message });
+        }
+        else {
+            response.ContentType = "text/html; charset=utf-8";
+            await response.SendFileAsync("html/Users.html");
         }
     }
 
