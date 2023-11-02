@@ -61,5 +61,5 @@
 <details>
    <summary><b><i>ASP.NET_Core</i></b></summary>
    
-   * *[01_projName](01_Элементы/01_Canvas/Description.md)*
+   * *[MVC/METANIT_Tutorial](ASP.NET_Core/MVC/METANIT_Tutorial/) - Проекты по туториалу METANIT.COM/ASP.NET_Core*
 </details>
