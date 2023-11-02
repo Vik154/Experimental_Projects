@@ -61,5 +61,5 @@
 <details>
    <summary><b><i>ASP.NET_Core</i></b></summary>
    
-   * *[MVC/METANIT_Tutorial](ASP.NET_Core/MVC/METANIT_Tutorial/) - Проекты по туториалу METANIT.COM/ASP.NET_Core*
+   * *[MVC/METANIT_Tutorial](ASP.NET_Core/MVC/METANIT_Tutorial/) - Учебные проекты по туториалу METANIT.COM/ASP.NET Core*
 </details>
