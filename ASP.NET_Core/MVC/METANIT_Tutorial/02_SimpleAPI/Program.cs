@@ -1,4 +1,4 @@
-using System.Text.RegularExpressions;
+п»їusing System.Text.RegularExpressions;
 
 namespace _02_SimpleAPI;
 
@@ -10,11 +10,11 @@ public class Person {
 
 public class Program {
 
-    // начальные данные
+    // РЅР°С‡Р°Р»СЊРЅС‹Рµ РґР°РЅРЅС‹Рµ
     public static List<Person> users = new List<Person> {
-        new() { Id = Guid.NewGuid().ToString(), Name = "Tom", Age = 37 },
-        new() { Id = Guid.NewGuid().ToString(), Name = "Bob", Age = 41 },
-        new() { Id = Guid.NewGuid().ToString(), Name = "Sam", Age = 24 }
+            new() { Id = Guid.NewGuid().ToString(), Name = "Tom", Age = 37 },
+            new() { Id = Guid.NewGuid().ToString(), Name = "Bob", Age = 41 },
+            new() { Id = Guid.NewGuid().ToString(), Name = "Sam", Age = 24 }
     };
 
     public static void Main(string[] args) {
@@ -28,7 +28,7 @@ public class Program {
         var response = context.Response;
         var request = context.Request;
         var path = request.Path;
-        //string expressionForNumber = "^/api/users/([0-9]+)$";   // если id представляет число
+        //string expressionForNumber = "^/api/users/([0-9]+)$";   // РµСЃР»Рё id РїСЂРµРґСЃС‚Р°РІР»СЏРµС‚ С‡РёСЃР»Рѕ
 
         // 2e752824-1657-4c7f-844b-6ec2e168e99c
         string expressionForGuid = @"^/api/users/\w{8}-\w{4}-\w{4}-\w{4}-\w{12}$";
@@ -36,7 +36,7 @@ public class Program {
             await GetAllPeople(response);
         }
         else if (Regex.IsMatch(path, expressionForGuid) && request.Method == "GET") {
-            // получаем id из адреса url
+            // РїРѕР»СѓС‡Р°РµРј id РёР· Р°РґСЂРµСЃР° url
             string? id = path.Value?.Split("/")[3];
             await GetPerson(id, response);
         }
@@ -56,72 +56,72 @@ public class Program {
         }
     }
 
-    /// <summary> получение всех пользователей </summary>
+    /// <summary> РїРѕР»СѓС‡РµРЅРёРµ РІСЃРµС… РїРѕР»СЊР·РѕРІР°С‚РµР»РµР№ </summary>
     static async Task GetAllPeople(HttpResponse response) {
         await response.WriteAsJsonAsync(users);
     }
 
-    /// <summary> получение одного пользователя по id </summary>
+    /// <summary> РїРѕР»СѓС‡РµРЅРёРµ РѕРґРЅРѕРіРѕ РїРѕР»СЊР·РѕРІР°С‚РµР»СЏ РїРѕ id </summary>
     static async Task GetPerson(string? id, HttpResponse response) {
-        // получаем пользователя по id
+        // РїРѕР»СѓС‡Р°РµРј РїРѕР»СЊР·РѕРІР°С‚РµР»СЏ РїРѕ id
         Person? user = users.FirstOrDefault((u) => u.Id == id);
-        // если пользователь найден, отправляем его
+        // РµСЃР»Рё РїРѕР»СЊР·РѕРІР°С‚РµР»СЊ РЅР°Р№РґРµРЅ, РѕС‚РїСЂР°РІР»СЏРµРј РµРіРѕ
         if (user != null)
             await response.WriteAsJsonAsync(user);
-        // если не найден, отправляем статусный код и сообщение об ошибке
+        // РµСЃР»Рё РЅРµ РЅР°Р№РґРµРЅ, РѕС‚РїСЂР°РІР»СЏРµРј СЃС‚Р°С‚СѓСЃРЅС‹Р№ РєРѕРґ Рё СЃРѕРѕР±С‰РµРЅРёРµ РѕР± РѕС€РёР±РєРµ
         else {
             response.StatusCode = 404;
-            await response.WriteAsJsonAsync(new { message = "Пользователь не найден" });
+            await response.WriteAsJsonAsync(new { message = "РџРѕР»СЊР·РѕРІР°С‚РµР»СЊ РЅРµ РЅР°Р№РґРµРЅ" });
         }
     }
 
-    /// <summary> удаление пользователя по id </summary>
+    /// <summary> СѓРґР°Р»РµРЅРёРµ РїРѕР»СЊР·РѕРІР°С‚РµР»СЏ РїРѕ id </summary>
     static async Task DeletePerson(string? id, HttpResponse response) {
-        // получаем пользователя по id
+        // РїРѕР»СѓС‡Р°РµРј РїРѕР»СЊР·РѕРІР°С‚РµР»СЏ РїРѕ id
         Person? user = users.FirstOrDefault((u) => u.Id == id);
-        // если пользователь найден, удаляем его
+        // РµСЃР»Рё РїРѕР»СЊР·РѕРІР°С‚РµР»СЊ РЅР°Р№РґРµРЅ, СѓРґР°Р»СЏРµРј РµРіРѕ
         if (user != null) {
             users.Remove(user);
             await response.WriteAsJsonAsync(user);
         }
-        // если не найден, отправляем статусный код и сообщение об ошибке
+        // РµСЃР»Рё РЅРµ РЅР°Р№РґРµРЅ, РѕС‚РїСЂР°РІР»СЏРµРј СЃС‚Р°С‚СѓСЃРЅС‹Р№ РєРѕРґ Рё СЃРѕРѕР±С‰РµРЅРёРµ РѕР± РѕС€РёР±РєРµ
         else {
             response.StatusCode = 404;
-            await response.WriteAsJsonAsync(new { message = "Пользователь не найден" });
+            await response.WriteAsJsonAsync(new { message = "РџРѕР»СЊР·РѕРІР°С‚РµР»СЊ РЅРµ РЅР°Р№РґРµРЅ" });
         }
     }
 
-    /// <summary> создание пользователя </summary>
+    /// <summary> СЃРѕР·РґР°РЅРёРµ РїРѕР»СЊР·РѕРІР°С‚РµР»СЏ </summary>
     static async Task CreatePerson(HttpResponse response, HttpRequest request) {
         try {
-            // получаем данные пользователя
+            // РїРѕР»СѓС‡Р°РµРј РґР°РЅРЅС‹Рµ РїРѕР»СЊР·РѕРІР°С‚РµР»СЏ
             var user = await request.ReadFromJsonAsync<Person>();
             if (user != null) {
-                // устанавливаем id для нового пользователя
+                // СѓСЃС‚Р°РЅР°РІР»РёРІР°РµРј id РґР»СЏ РЅРѕРІРѕРіРѕ РїРѕР»СЊР·РѕРІР°С‚РµР»СЏ
                 user.Id = Guid.NewGuid().ToString();
-                // добавляем пользователя в список
+                // РґРѕР±Р°РІР»СЏРµРј РїРѕР»СЊР·РѕРІР°С‚РµР»СЏ РІ СЃРїРёСЃРѕРє
                 users.Add(user);
                 await response.WriteAsJsonAsync(user);
             }
             else {
-                throw new Exception("Некорректные данные");
+                throw new Exception("РќРµРєРѕСЂСЂРµРєС‚РЅС‹Рµ РґР°РЅРЅС‹Рµ");
             }
         }
         catch (Exception) {
             response.StatusCode = 400;
-            await response.WriteAsJsonAsync(new { message = "Некорректные данные" });
+            await response.WriteAsJsonAsync(new { message = "РќРµРєРѕСЂСЂРµРєС‚РЅС‹Рµ РґР°РЅРЅС‹Рµ" });
         }
     }
 
-    /// <summary> обновление данных пользователя </summary>
+    /// <summary> РѕР±РЅРѕРІР»РµРЅРёРµ РґР°РЅРЅС‹С… РїРѕР»СЊР·РѕРІР°С‚РµР»СЏ </summary>
     static async Task UpdatePerson(HttpResponse response, HttpRequest request) {
         try {
-            // получаем данные пользователя
+            // РїРѕР»СѓС‡Р°РµРј РґР°РЅРЅС‹Рµ РїРѕР»СЊР·РѕРІР°С‚РµР»СЏ
             Person? userData = await request.ReadFromJsonAsync<Person>();
             if (userData != null) {
-                // получаем пользователя по id
+                // РїРѕР»СѓС‡Р°РµРј РїРѕР»СЊР·РѕРІР°С‚РµР»СЏ РїРѕ id
                 var user = users.FirstOrDefault(u => u.Id == userData.Id);
-                // если пользователь найден, изменяем его данные и отправляем обратно клиенту
+                // РµСЃР»Рё РїРѕР»СЊР·РѕРІР°С‚РµР»СЊ РЅР°Р№РґРµРЅ, РёР·РјРµРЅСЏРµРј РµРіРѕ РґР°РЅРЅС‹Рµ Рё РѕС‚РїСЂР°РІР»СЏРµРј РѕР±СЂР°С‚РЅРѕ РєР»РёРµРЅС‚Сѓ
                 if (user != null) {
                     user.Age = userData.Age;
                     user.Name = userData.Name;
@@ -129,16 +129,16 @@ public class Program {
                 }
                 else {
                     response.StatusCode = 404;
-                    await response.WriteAsJsonAsync(new { message = "Пользователь не найден" });
+                    await response.WriteAsJsonAsync(new { message = "РџРѕР»СЊР·РѕРІР°С‚РµР»СЊ РЅРµ РЅР°Р№РґРµРЅ" });
                 }
             }
             else {
-                throw new Exception("Некорректные данные");
+                throw new Exception("РќРµРєРѕСЂСЂРµРєС‚РЅС‹Рµ РґР°РЅРЅС‹Рµ");
             }
         }
         catch (Exception) {
             response.StatusCode = 400;
-            await response.WriteAsJsonAsync(new { message = "Некорректные данные" });
+            await response.WriteAsJsonAsync(new { message = "РќРµРєРѕСЂСЂРµРєС‚РЅС‹Рµ РґР°РЅРЅС‹Рµ" });
         }
     }
 }
