@@ -1,4 +1,4 @@
-namespace _03_UseMapWhenMiddleware;
+п»їnamespace _03_UseMapWhenMiddleware;
 
 
 public class Program {
@@ -9,38 +9,38 @@ public class Program {
         var builder = WebApplication.CreateBuilder(args);
         var app = builder.Build();
 
-        /// <summary> Передача действий по конвейеру пример 1 </summary>
+        /// <summary> РџРµСЂРµРґР°С‡Р° РґРµР№СЃС‚РІРёР№ РїРѕ РєРѕРЅРІРµР№РµСЂСѓ РїСЂРёРјРµСЂ 1 </summary>
         // app.Use(UseTest1);
         // app.Run(RunTest1);
 
-        /// <summary> Ветвление логики в конвейере с помощью UseWhen </summary>
+        /// <summary> Р’РµС‚РІР»РµРЅРёРµ Р»РѕРіРёРєРё РІ РєРѕРЅРІРµР№РµСЂРµ СЃ РїРѕРјРѕС‰СЊСЋ UseWhen </summary>
         // app.UseWhen(UseWhenTestPredicate, UseWhenTestConfiguration);
         // app.Run(UseWhenRun);
 
-        /// <summary> Ветвление логики в конвейере с помощью MapWhen </summary>
+        /// <summary> Р’РµС‚РІР»РµРЅРёРµ Р»РѕРіРёРєРё РІ РєРѕРЅРІРµР№РµСЂРµ СЃ РїРѕРјРѕС‰СЊСЋ MapWhen </summary>
         // app.MapWhen(UseMapWhenTestPredicate, UseMapWhenTestConfiguration);
         // app.Run(UseMapWhenRun);
 
-        /// <summary> Ветвление логики с помощью Map; обработка запросов по пути "/time" </summary>
+        /// <summary> Р’РµС‚РІР»РµРЅРёРµ Р»РѕРіРёРєРё СЃ РїРѕРјРѕС‰СЊСЋ Map; РѕР±СЂР°Р±РѕС‚РєР° Р·Р°РїСЂРѕСЃРѕРІ РїРѕ РїСѓС‚Рё "/time" </summary>
         // app.Map("/time", MapTest);
         // app.Run(RunHelloWorld);
 
-        /// <summary> Вложенные маршруты </summary>
+        /// <summary> Р’Р»РѕР¶РµРЅРЅС‹Рµ РјР°СЂС€СЂСѓС‚С‹ </summary>
         //app.Map("/home", appBuilder => {
-        //    appBuilder.Map("/index", MapIndex);             // middleware для "/home/index"
-        //    appBuilder.Map("/about", MapAbout);             // middleware для "/home/about"
-        //    appBuilder.Run(async (context) => await         // middleware для "/home"
+        //    appBuilder.Map("/index", MapIndex);             // middleware РґР»СЏ "/home/index"
+        //    appBuilder.Map("/about", MapAbout);             // middleware РґР»СЏ "/home/about"
+        //    appBuilder.Run(async (context) => await         // middleware РґР»СЏ "/home"
         //        context.Response.WriteAsync("Home Page"));
         //});
         //app.Run(async (context) => await context.Response.WriteAsync($"Hello MAP"));
 
-        // Для добавления компонента middleware, который представляет класс,
-        // в конвейер обработки запроса применяется метод UseMiddleware():
-        /// <summary> Компонент middleware представленный классом MyMiddleware </summary>
+        // Р”Р»СЏ РґРѕР±Р°РІР»РµРЅРёСЏ РєРѕРјРїРѕРЅРµРЅС‚Р° middleware, РєРѕС‚РѕСЂС‹Р№ РїСЂРµРґСЃС‚Р°РІР»СЏРµС‚ РєР»Р°СЃСЃ,
+        // РІ РєРѕРЅРІРµР№РµСЂ РѕР±СЂР°Р±РѕС‚РєРё Р·Р°РїСЂРѕСЃР° РїСЂРёРјРµРЅСЏРµС‚СЃСЏ РјРµС‚РѕРґ UseMiddleware():
+        /// <summary> РљРѕРјРїРѕРЅРµРЅС‚ middleware РїСЂРµРґСЃС‚Р°РІР»РµРЅРЅС‹Р№ РєР»Р°СЃСЃРѕРј MyMiddleware </summary>
         // app.UseMiddleware<MyMiddleware>();
         // app.Run(async c => await c.Response.WriteAsync("Hello middleware"));
 
-        /// <summary> Метод расширения для встраивания middleware </summary>
+        /// <summary> РњРµС‚РѕРґ СЂР°СЃС€РёСЂРµРЅРёСЏ РґР»СЏ РІСЃС‚СЂР°РёРІР°РЅРёСЏ middleware </summary>
         app.UseMyMiddleware();
         app.Run(async c => await c.Response.WriteAsync("Hello extension middleware"));
 
@@ -49,39 +49,39 @@ public class Program {
     }
 
 
-    #region МЕТОД IApplicationBuilder.Use()
-    // Метод расширения Use() добавляет компонент middleware, который позволяет передать обработку
-    // запроса далее следующим в конвейере компонентам. Он имеет следующие версии
+    #region РњР•РўРћР” IApplicationBuilder.Use()
+    // РњРµС‚РѕРґ СЂР°СЃС€РёСЂРµРЅРёСЏ Use() РґРѕР±Р°РІР»СЏРµС‚ РєРѕРјРїРѕРЅРµРЅС‚ middleware, РєРѕС‚РѕСЂС‹Р№ РїРѕР·РІРѕР»СЏРµС‚ РїРµСЂРµРґР°С‚СЊ РѕР±СЂР°Р±РѕС‚РєСѓ
+    // Р·Р°РїСЂРѕСЃР° РґР°Р»РµРµ СЃР»РµРґСѓСЋС‰РёРј РІ РєРѕРЅРІРµР№РµСЂРµ РєРѕРјРїРѕРЅРµРЅС‚Р°Рј. РћРЅ РёРјРµРµС‚ СЃР»РµРґСѓСЋС‰РёРµ РІРµСЂСЃРёРё
     // public static IApplicationBuilder Use(this IApplicationBuilder app, Func<HttpContext, Func<Task>, Task> middleware);
     // public static IApplicationBuilder Use(this IApplicationBuilder app, Func<HttpContext, RequestDelegate, Task> middleware)
 
     /*
-     В общем случае применение метода Use() выглядит следующим образом:
+     Р’ РѕР±С‰РµРј СЃР»СѓС‡Р°Рµ РїСЂРёРјРµРЅРµРЅРёРµ РјРµС‚РѕРґР° Use() РІС‹РіР»СЏРґРёС‚ СЃР»РµРґСѓСЋС‰РёРј РѕР±СЂР°Р·РѕРј:
 
         app.Use(async (context, next) => {
-            // действия перед передачей запроса в следующий middleware
+            // РґРµР№СЃС‚РІРёСЏ РїРµСЂРµРґ РїРµСЂРµРґР°С‡РµР№ Р·Р°РїСЂРѕСЃР° РІ СЃР»РµРґСѓСЋС‰РёР№ middleware
             await next.Invoke();
-            // действия после обработки запроса следующим middleware
+            // РґРµР№СЃС‚РІРёСЏ РїРѕСЃР»Рµ РѕР±СЂР°Р±РѕС‚РєРё Р·Р°РїСЂРѕСЃР° СЃР»РµРґСѓСЋС‰РёРј middleware
         });
      */
 
-    /// <summary> Передача действий по конвейеру пример 1 </summary>
+    /// <summary> РџРµСЂРµРґР°С‡Р° РґРµР№СЃС‚РІРёР№ РїРѕ РєРѕРЅРІРµР№РµСЂСѓ РїСЂРёРјРµСЂ 1 </summary>
     static async Task UseTest1(HttpContext context, Func<Task> next) {
-        date = DateTime.Now.ToShortDateString();    // действия перед передачей запроса в следующий middleware
-        await next.Invoke();                        // передает обработку запроса следующему компоненту в конвейере
-        Console.WriteLine($"Current date: {date}"); // действия после обработки запроса следующим middleware
+        date = DateTime.Now.ToShortDateString();    // РґРµР№СЃС‚РІРёСЏ РїРµСЂРµРґ РїРµСЂРµРґР°С‡РµР№ Р·Р°РїСЂРѕСЃР° РІ СЃР»РµРґСѓСЋС‰РёР№ middleware
+        await next.Invoke();                        // РїРµСЂРµРґР°РµС‚ РѕР±СЂР°Р±РѕС‚РєСѓ Р·Р°РїСЂРѕСЃР° СЃР»РµРґСѓСЋС‰РµРјСѓ РєРѕРјРїРѕРЅРµРЅС‚Сѓ РІ РєРѕРЅРІРµР№РµСЂРµ
+        Console.WriteLine($"Current date: {date}"); // РґРµР№СЃС‚РІРёСЏ РїРѕСЃР»Рµ РѕР±СЂР°Р±РѕС‚РєРё Р·Р°РїСЂРѕСЃР° СЃР»РµРґСѓСЋС‰РёРј middleware
     }
 
-    /// <summary> Передача действий по конвейеру пример 1 </summary>
+    /// <summary> РџРµСЂРµРґР°С‡Р° РґРµР№СЃС‚РІРёР№ РїРѕ РєРѕРЅРІРµР№РµСЂСѓ РїСЂРёРјРµСЂ 1 </summary>
     static async Task RunTest1(HttpContext context) {
         await context.Response.WriteAsync($"Date: {date}");
     }
 
     #endregion
 
-    #region Создание ветки конвейера UseWhen
-    // Метод UseWhen() на основании некоторого условия позволяет
-    // создать ответвление конвейера при обработке запроса:
+    #region РЎРѕР·РґР°РЅРёРµ РІРµС‚РєРё РєРѕРЅРІРµР№РµСЂР° UseWhen
+    // РњРµС‚РѕРґ UseWhen() РЅР° РѕСЃРЅРѕРІР°РЅРёРё РЅРµРєРѕС‚РѕСЂРѕРіРѕ СѓСЃР»РѕРІРёСЏ РїРѕР·РІРѕР»СЏРµС‚
+    // СЃРѕР·РґР°С‚СЊ РѕС‚РІРµС‚РІР»РµРЅРёРµ РєРѕРЅРІРµР№РµСЂР° РїСЂРё РѕР±СЂР°Р±РѕС‚РєРµ Р·Р°РїСЂРѕСЃР°:
     // public static IApplicationBuilder UseWhen (this IApplicationBuilder app,
     //               Func<HttpContext,bool> predicate, Action<IApplicationBuilder> configuration);
 
@@ -89,14 +89,14 @@ public class Program {
     static bool UseWhenTestPredicate(HttpContext context) => context.Request.Path == "/time";
 
     static void UseWhenTestConfiguration(IApplicationBuilder builder) {
-        // логируем данные - выводим на консоль приложения
+        // Р»РѕРіРёСЂСѓРµРј РґР°РЅРЅС‹Рµ - РІС‹РІРѕРґРёРј РЅР° РєРѕРЅСЃРѕР»СЊ РїСЂРёР»РѕР¶РµРЅРёСЏ
         builder.Use(async (context, next) => {
             var time = DateTime.Now.ToShortTimeString();
             Console.WriteLine($"Time: {time}");
-            await next();   // вызываем следующий middleware
+            await next();   // РІС‹Р·С‹РІР°РµРј СЃР»РµРґСѓСЋС‰РёР№ middleware
         });
 
-        // отправляем ответ
+        // РѕС‚РїСЂР°РІР»СЏРµРј РѕС‚РІРµС‚
         builder.Run(async context => {
             var time = DateTime.Now.ToShortTimeString();
             await context.Response.WriteAsync($"Time: {time}");
@@ -109,9 +109,9 @@ public class Program {
 
     #endregion
 
-    #region Создание ветки конвейера MapWhen
-    // Метод MapWhen(), как и метод UseWhen(), на основании некоторого условия
-    // позволяет создать ответвление конвейера:
+    #region РЎРѕР·РґР°РЅРёРµ РІРµС‚РєРё РєРѕРЅРІРµР№РµСЂР° MapWhen
+    // РњРµС‚РѕРґ MapWhen(), РєР°Рє Рё РјРµС‚РѕРґ UseWhen(), РЅР° РѕСЃРЅРѕРІР°РЅРёРё РЅРµРєРѕС‚РѕСЂРѕРіРѕ СѓСЃР»РѕРІРёСЏ
+    // РїРѕР·РІРѕР»СЏРµС‚ СЃРѕР·РґР°С‚СЊ РѕС‚РІРµС‚РІР»РµРЅРёРµ РєРѕРЅРІРµР№РµСЂР°:
     // public static IApplicationBuilder MapWhen (this IApplicationBuilder app,
     //               Func<HttpContext,bool> predicate, Action<IApplicationBuilder> configuration);
 
@@ -132,24 +132,24 @@ public class Program {
 
     #endregion
 
-    #region Метод Map
-    // Метод Map() применяется для создания ветки конвейера, которая будет
-    // обрабатывать запрос по определенному пути.
+    #region РњРµС‚РѕРґ Map
+    // РњРµС‚РѕРґ Map() РїСЂРёРјРµРЅСЏРµС‚СЃСЏ РґР»СЏ СЃРѕР·РґР°РЅРёСЏ РІРµС‚РєРё РєРѕРЅРІРµР№РµСЂР°, РєРѕС‚РѕСЂР°СЏ Р±СѓРґРµС‚
+    // РѕР±СЂР°Р±Р°С‚С‹РІР°С‚СЊ Р·Р°РїСЂРѕСЃ РїРѕ РѕРїСЂРµРґРµР»РµРЅРЅРѕРјСѓ РїСѓС‚Рё.
     // public static IApplicationBuilder Map (this IApplicationBuilder app,
     //               string pathMatch, Action<IApplicationBuilder> configuration);
 
-    // В качестве параметра pathMatch метод принимает путь запроса, с которым будет сопоставляться ветка.
-    // А параметр configuration представляет делегат, в который передается объект IApplicationBuilder
-    // и в котором будет создаваться ветка конвейера.
+    // Р’ РєР°С‡РµСЃС‚РІРµ РїР°СЂР°РјРµС‚СЂР° pathMatch РјРµС‚РѕРґ РїСЂРёРЅРёРјР°РµС‚ РїСѓС‚СЊ Р·Р°РїСЂРѕСЃР°, СЃ РєРѕС‚РѕСЂС‹Рј Р±СѓРґРµС‚ СЃРѕРїРѕСЃС‚Р°РІР»СЏС‚СЊСЃСЏ РІРµС‚РєР°.
+    // Рђ РїР°СЂР°РјРµС‚СЂ configuration РїСЂРµРґСЃС‚Р°РІР»СЏРµС‚ РґРµР»РµРіР°С‚, РІ РєРѕС‚РѕСЂС‹Р№ РїРµСЂРµРґР°РµС‚СЃСЏ РѕР±СЉРµРєС‚ IApplicationBuilder
+    // Рё РІ РєРѕС‚РѕСЂРѕРј Р±СѓРґРµС‚ СЃРѕР·РґР°РІР°С‚СЊСЃСЏ РІРµС‚РєР° РєРѕРЅРІРµР№РµСЂР°.
 
-    /// <summary> Создает ответвление конвейера, которое будет обрабатывать запросы по пути "/time" </summary>
+    /// <summary> РЎРѕР·РґР°РµС‚ РѕС‚РІРµС‚РІР»РµРЅРёРµ РєРѕРЅРІРµР№РµСЂР°, РєРѕС‚РѕСЂРѕРµ Р±СѓРґРµС‚ РѕР±СЂР°Р±Р°С‚С‹РІР°С‚СЊ Р·Р°РїСЂРѕСЃС‹ РїРѕ РїСѓС‚Рё "/time" </summary>
     static void MapTest(IApplicationBuilder builder) {
         var time = DateTime.Now.ToShortTimeString();
 
-        // логгируем данные - выводим на консоль приложения
+        // Р»РѕРіРіРёСЂСѓРµРј РґР°РЅРЅС‹Рµ - РІС‹РІРѕРґРёРј РЅР° РєРѕРЅСЃРѕР»СЊ РїСЂРёР»РѕР¶РµРЅРёСЏ
         builder.Use(async (context, next) => {
             Console.WriteLine($"Time: {time}");
-            await next();   // вызываем следующий middleware
+            await next();   // РІС‹Р·С‹РІР°РµРј СЃР»РµРґСѓСЋС‰РёР№ middleware
         });
 
         builder.Run(async context => await context.Response.WriteAsync($"Time: {time}"));
@@ -157,12 +157,12 @@ public class Program {
 
     static async Task RunHelloWorld(HttpContext context) => await context.Response.WriteAsync("Hello world");
 
-    /// <summary> Вложенные маршруты </summary>
+    /// <summary> Р’Р»РѕР¶РµРЅРЅС‹Рµ РјР°СЂС€СЂСѓС‚С‹ </summary>
     static void MapIndex(IApplicationBuilder appBuilder) {
         appBuilder.Run(async context => await context.Response.WriteAsync("Index"));
     }
 
-    /// <summary> Вложенные маршруты </summary>
+    /// <summary> Р’Р»РѕР¶РµРЅРЅС‹Рµ РјР°СЂС€СЂСѓС‚С‹ </summary>
     static void MapAbout(IApplicationBuilder appBuilder) {
         appBuilder.Run(async context => await context.Response.WriteAsync("About"));
     }
