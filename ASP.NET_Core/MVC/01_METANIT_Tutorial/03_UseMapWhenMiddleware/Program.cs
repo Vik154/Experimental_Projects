@@ -26,13 +26,24 @@ public class Program {
         // app.Run(RunHelloWorld);
 
         /// <summary> Вложенные маршруты </summary>
-        app.Map("/home", appBuilder => {
-            appBuilder.Map("/index", MapIndex);             // middleware для "/home/index"
-            appBuilder.Map("/about", MapAbout);             // middleware для "/home/about"
-            appBuilder.Run(async (context) => await         // middleware для "/home"
-                context.Response.WriteAsync("Home Page"));
-        });
-        app.Run(async (context) => await context.Response.WriteAsync($"Hello MAP"));
+        //app.Map("/home", appBuilder => {
+        //    appBuilder.Map("/index", MapIndex);             // middleware для "/home/index"
+        //    appBuilder.Map("/about", MapAbout);             // middleware для "/home/about"
+        //    appBuilder.Run(async (context) => await         // middleware для "/home"
+        //        context.Response.WriteAsync("Home Page"));
+        //});
+        //app.Run(async (context) => await context.Response.WriteAsync($"Hello MAP"));
+
+        // Для добавления компонента middleware, который представляет класс,
+        // в конвейер обработки запроса применяется метод UseMiddleware():
+        /// <summary> Компонент middleware представленный классом MyMiddleware </summary>
+        // app.UseMiddleware<MyMiddleware>();
+        // app.Run(async c => await c.Response.WriteAsync("Hello middleware"));
+
+        /// <summary> Метод расширения для встраивания middleware </summary>
+        app.UseMyMiddleware();
+        app.Run(async c => await c.Response.WriteAsync("Hello extension middleware"));
+
 
         app.Run();
     }
