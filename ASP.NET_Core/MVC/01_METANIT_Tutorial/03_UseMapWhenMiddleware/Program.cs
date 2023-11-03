@@ -1,5 +1,3 @@
-using System.Reflection.PortableExecutable;
-
 namespace _03_UseMapWhenMiddleware;
 
 
@@ -20,8 +18,21 @@ public class Program {
         // app.Run(UseWhenRun);
 
         /// <summary> Ветвление логики в конвейере с помощью MapWhen </summary>
-        app.MapWhen(UseMapWhenTestPredicate, UseMapWhenTestConfiguration);
-        app.Run(UseMapWhenRun);
+        // app.MapWhen(UseMapWhenTestPredicate, UseMapWhenTestConfiguration);
+        // app.Run(UseMapWhenRun);
+
+        /// <summary> Ветвление логики с помощью Map; обработка запросов по пути "/time" </summary>
+        // app.Map("/time", MapTest);
+        // app.Run(RunHelloWorld);
+
+        /// <summary> Вложенные маршруты </summary>
+        app.Map("/home", appBuilder => {
+            appBuilder.Map("/index", MapIndex);             // middleware для "/home/index"
+            appBuilder.Map("/about", MapAbout);             // middleware для "/home/about"
+            appBuilder.Run(async (context) => await         // middleware для "/home"
+                context.Response.WriteAsync("Home Page"));
+        });
+        app.Run(async (context) => await context.Response.WriteAsync($"Hello MAP"));
 
         app.Run();
     }
@@ -106,6 +117,43 @@ public class Program {
 
     static async Task UseMapWhenRun(HttpContext context) {
         await context.Response.WriteAsync($"Hello World");
+    }
+
+    #endregion
+
+    #region Метод Map
+    // Метод Map() применяется для создания ветки конвейера, которая будет
+    // обрабатывать запрос по определенному пути.
+    // public static IApplicationBuilder Map (this IApplicationBuilder app,
+    //               string pathMatch, Action<IApplicationBuilder> configuration);
+
+    // В качестве параметра pathMatch метод принимает путь запроса, с которым будет сопоставляться ветка.
+    // А параметр configuration представляет делегат, в который передается объект IApplicationBuilder
+    // и в котором будет создаваться ветка конвейера.
+
+    /// <summary> Создает ответвление конвейера, которое будет обрабатывать запросы по пути "/time" </summary>
+    static void MapTest(IApplicationBuilder builder) {
+        var time = DateTime.Now.ToShortTimeString();
+
+        // логгируем данные - выводим на консоль приложения
+        builder.Use(async (context, next) => {
+            Console.WriteLine($"Time: {time}");
+            await next();   // вызываем следующий middleware
+        });
+
+        builder.Run(async context => await context.Response.WriteAsync($"Time: {time}"));
+    }
+
+    static async Task RunHelloWorld(HttpContext context) => await context.Response.WriteAsync("Hello world");
+
+    /// <summary> Вложенные маршруты </summary>
+    static void MapIndex(IApplicationBuilder appBuilder) {
+        appBuilder.Run(async context => await context.Response.WriteAsync("Index"));
+    }
+
+    /// <summary> Вложенные маршруты </summary>
+    static void MapAbout(IApplicationBuilder appBuilder) {
+        appBuilder.Run(async context => await context.Response.WriteAsync("About"));
     }
 
     #endregion
