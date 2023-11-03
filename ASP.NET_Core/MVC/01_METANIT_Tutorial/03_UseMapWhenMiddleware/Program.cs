@@ -1,4 +1,6 @@
-﻿namespace _03_UseMapWhenMiddleware;
+﻿using Microsoft.AspNetCore.Authentication;
+
+namespace _03_UseMapWhenMiddleware;
 
 
 public class Program {
@@ -41,9 +43,19 @@ public class Program {
         // app.Run(async c => await c.Response.WriteAsync("Hello middleware"));
 
         /// <summary> Метод расширения для встраивания middleware </summary>
-        app.UseMyMiddleware();
-        app.Run(async c => await c.Response.WriteAsync("Hello extension middleware"));
+        // app.UseMyMiddleware();
+        // app.Run(async c => await c.Response.WriteAsync("Hello extension middleware"));
 
+        /// <summary> Конвейер в действии
+        /// Схематично конвейер обработки запроса будет выглядеть следующим образом:
+        /// Запрос               --> ExampleErrorHandlingMiddleware (next.Invoke(next)) --> 
+        /// Обработка запроса    --> ExampleAuthenticationMiddleware (next.Invoke(next)) -->
+        /// Обработка запроса    --> ExampleRoutingMiddleware -->
+        /// Корректировка ответа --> ExampleErrorHandlingMiddleware
+        /// </summary>
+        app.UseMiddleware<ExampleErrorHandlingMiddleware>();
+        app.UseMiddleware<ExampleAuthenticationMiddleware>();
+        app.UseMiddleware<ExampleRoutingMiddleware>();
 
         app.Run();
     }
