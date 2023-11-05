@@ -82,8 +82,37 @@ public class Program {
         app.Map("/abouttwo", () => Results.Ok("Laudate omnes gentes laudate"));
         app.Map("/contactstwo", () => Results.Ok(new { message = "Success!" }));
 
-
+        /// <summary> Определение своего типа IResult </ summary>
+        // отправляем html-код при обращении по пути "/"
+        app.Map("/GetHtml", ()
+            => Results.Extensions.Html(@"<!DOCTYPE html>
+                    <html>
+                      <head>
+                        <title>HELLO WORLD</title>
+                        <meta charset='utf-8' />
+                      </head>
+                      <body>
+                        <h1>Hello World</h1>
+                      </body>
+                    </html>
+                    "
+            ));
 
         app.Run();
     }
+}
+
+
+class HtmlResult : IResult {
+    string htmlCode = "";
+    public HtmlResult(string htmlCode) => this.htmlCode = htmlCode;
+
+    public async Task ExecuteAsync(HttpContext context) {
+        context.Response.ContentType = "text/html; charset=utf-8";
+        await context.Response.WriteAsync(htmlCode);
+    }
+}
+
+static class ResultsHtmlExtension {
+    public static IResult Html(this IResultExtensions ext, string htmlCode) => new HtmlResult(htmlCode);
 }
