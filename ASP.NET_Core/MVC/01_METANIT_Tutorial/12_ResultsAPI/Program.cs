@@ -19,6 +19,29 @@ public class Program {
             await Results.Text("Hello ASP.NET Core").ExecuteAsync(context);
         });
 
+        /// <summary>
+        /// Метод Content() отправляет текстовое содержимое и позволяет при этом 
+        /// задать тип содержимого и кодировку. Одна из версий метода:
+        /// public static IResult Content (string content, string? contentType = default, System.Text.Encoding? contentEncoding = default);
+        /// </summary>
+        app.Map("/China", () => Results.Content("你好", "text/plain", System.Text.Encoding.Unicode));
+        app.Map("/DefaultUTF", () => Results.Content("Hello ASP.NET Core"));
+
+        /// <summary> 
+        /// Метод Text() работает аналогичным образом, он также отравляет текст и принимает те же параметры:
+        /// public static IResult Text (string content, string? contentType = default, System.Text.Encoding? contentEncoding = default);
+        /// </summary>
+        app.Map("/Chinese", () => Results.Text("你好", "text/plain", System.Text.Encoding.Unicode));
+        app.Map("/DefaultText", () => Results.Text("Hello World"));
+
+        /// <summary> 
+        /// Для отправки данных в формате json применяется метод Results.Json():
+        /// public static IResult Json (object? data, JsonSerializerOptions? options = default, string? contentType = default, int? statusCode = default);
+        /// </summary>
+        app.Map("/person", () => Results.Json(new { name = "Tom", age = 37 })); // отправка анонимного объекта
+        app.Map("/error", () => Results.Json(new { message = "Unexpected error" }, statusCode: 500));   // отправка ошибок.
+
+
         app.Run();
     }
 }
