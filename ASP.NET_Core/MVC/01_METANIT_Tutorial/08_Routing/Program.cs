@@ -1,7 +1,4 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using System;
-
-namespace _08_Routing;
+﻿namespace _08_Routing;
 
 
 public class Program {
@@ -46,6 +43,14 @@ public class Program {
          * привязанным к числу сегментов с помощью параметра со знаком * ("звездочка") 
          * или ** (две звездочки) (это так называемый catchall-параметр): */
         app.Map("all/{**info}", (string info) => $"info {info}");
+
+        /// <summary> Ограничения в маршрутах </summary>
+        app.Map("constraint/{id:int}", (int id) => $"ID == {id}");
+        
+        app.Map("/constr/{name:alpha:minlength(2)}/{age:int:range(1, 110)}",
+                (string name, int age) => $"User Age: {age} \nUser Name:{name}");
+
+        app.Map("/phonebook/{phone:regex(^7-\\d{{3}}-\\d{{3}}-\\d{{4}}$)}/", (string phone) => $"Phone: {phone}");
 
         app.Run();
     }
