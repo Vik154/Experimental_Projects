@@ -4,6 +4,14 @@
 public class Program {
     public static void Main(string[] args) {
         var builder = WebApplication.CreateBuilder(args);
+
+        /// <summary> проецируем класс SecretCodeConstraint на inline-ограничение secretcode </summary>
+        builder.Services.Configure<RouteOptions>(options =>
+                        options.ConstraintMap.Add("secretcode", typeof(SecretCodeConstraint)));
+
+        // альтернативное добавление класса ограничения
+        // builder.Services.AddRouting(options => options.ConstraintMap.Add("secretcode", typeof(SecretConstraint)));
+
         var app = builder.Build();
 
         /// <summary> Метод Map
@@ -51,6 +59,11 @@ public class Program {
                 (string name, int age) => $"User Age: {age} \nUser Name:{name}");
 
         app.Map("/phonebook/{phone:regex(^7-\\d{{3}}-\\d{{3}}-\\d{{4}}$)}/", (string phone) => $"Phone: {phone}");
+
+        /*------------------------------------------------------------------------------------*/
+        /// <summary> кастомные ограничения маршрутов </summary>
+        app.Map("/custom/{name}/{token:secretcode(123456)}/",
+                (string name, int token) => $"Name: {name} \nToken: {token}");
 
         app.Run();
     }
