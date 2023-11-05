@@ -4,10 +4,36 @@
 public class Program {
     public static void Main(string[] args) {
         var builder = WebApplication.CreateBuilder(args);
+
+        /// <summary> AddInMemoryCollection() добавляет набор настроек в виде коллекции пар ключ-значение 
+        /// public static IConfigurationBuilder AddInMemoryCollection(
+        ///                 this IConfigurationBuilder configurationBuilder, 
+        ///                 IEnumerable<KeyValuePair<string, string>> initialData)
+        /// </summary>
+        builder.Configuration.AddInMemoryCollection(new Dictionary<string, string?> {
+            {"name1", "Timmy"},
+            {"age1", "33"}
+        });
+
         var app = builder.Build();
 
-        app.MapGet("/", () => "Hello World!");
+
+        // установка настроек конфигурации
+        app.Configuration["name2"] = "Tom";
+        app.Configuration["age2"] = "37";
+
+        /// <summary> Получение данных конфигурации </summary>
+        app.Map("/", async (context) => {
+            string? name = app.Configuration["name1"];    // получение настроек конфигурации
+            string? age = app.Configuration["age1"];      // получение настроек конфигурации
+            await context.Response.WriteAsync($"{name} - {age}");
+        });
+
+        /// <summary> Получение конфигурации через Dependency Injection </ summary>
+        app.Map("/get", (IConfiguration appConfig) => $"{appConfig["name2"]} - {appConfig["age2"]}");
+
 
         app.Run();
     }
 }
+
