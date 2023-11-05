@@ -66,6 +66,19 @@
    </ul>  
 </details>
 
+<details> <summary><b><i>12_ResultAPI - Results API:</i></b></summary>
+   <ul>
+      <li> Глава 10. Полностью </li>
+   </ul>  
+</details>
+
+<details> <summary><b><i>13_WebAPI - Пример приложения Web API:</i></b></summary>
+   <ul>
+      <li> Глава 11. Полностью </li>
+   </ul>  
+</details>
+
+
 
 
 
