@@ -1,4 +1,6 @@
-﻿namespace _08_Routing;
+﻿using System.Diagnostics.CodeAnalysis;
+
+namespace _08_Routing;
 
 
 public class Program {
@@ -11,6 +13,9 @@ public class Program {
 
         // альтернативное добавление класса ограничения
         // builder.Services.AddRouting(options => options.ConstraintMap.Add("secretcode", typeof(SecretConstraint)));
+
+        /// <summary> Передача зависимостей в конечные точки </ summary>
+        builder.Services.AddTransient<TimeService>();   // Добавляем сервис
 
         var app = builder.Build();
 
@@ -61,10 +66,23 @@ public class Program {
         app.Map("/phonebook/{phone:regex(^7-\\d{{3}}-\\d{{3}}-\\d{{4}}$)}/", (string phone) => $"Phone: {phone}");
 
         /*------------------------------------------------------------------------------------*/
+        
         /// <summary> кастомные ограничения маршрутов </summary>
         app.Map("/custom/{name}/{token:secretcode(123456)}/",
                 (string name, int token) => $"Name: {name} \nToken: {token}");
 
+        /*------------------------------------------------------------------------------------*/
+
+        /// <summary> Передача зависимостей в конечные точки </ summary>
+        app.Map("/time", (TimeService timeService) => $"Time: {timeService.Time}");
+
+
         app.Run();
     }
+}
+
+
+// сервис
+public class TimeService {
+    public string Time => DateTime.Now.ToLongTimeString();
 }
