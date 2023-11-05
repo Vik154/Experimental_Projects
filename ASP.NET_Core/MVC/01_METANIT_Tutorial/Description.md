@@ -36,3 +36,11 @@
    </ul>  
 </details>
 
+<details> <summary><b><i>07_DependencyInjection - Внедрение зависимостей:</i></b></summary>
+   <ul>
+      <li> Глава 3. Множественная регистрация сервисов </li>
+   </ul>  
+</details>
+
+
+
