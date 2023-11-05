@@ -16,8 +16,9 @@ public class Program {
         //app.UseMiddleware<HelloMiddleware>();
 
         /// <summary> Регистрация одного объекта для нескольких зависимостей </ summary>
-        builder.Services.AddSingleton<IGenerator, ValueStorage>();
-        builder.Services.AddSingleton<IReader, ValueStorage>();
+        var valueStorage = new ValueStorage();
+        builder.Services.AddSingleton<IGenerator>(valueStorage);
+        builder.Services.AddSingleton<IReader>(valueStorage);
 
         var app = builder.Build();
 
