@@ -44,7 +44,13 @@
 
 <details> <summary><b><i>08_Routing - Маршрутизация:</i></b></summary>
    <ul>
-      <li> Глава 4. Конечные точки. Метод Map </li>
+      <li> Глава 4. Полностью </li>
+   </ul>  
+</details>
+
+<details> <summary><b><i>09_Configuration - Конфигурация:</i></b></summary>
+   <ul>
+      <li> Глава 6. Полностью </li>
    </ul>  
 </details>
 
