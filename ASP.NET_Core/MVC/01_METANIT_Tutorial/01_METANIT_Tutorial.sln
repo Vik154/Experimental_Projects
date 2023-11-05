@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "06_DependencyInjection", "0
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "07_DependencyInjection", "07_DependencyInjection\07_DependencyInjection.csproj", "{DCA50C95-5C47-4874-8498-6D5ED505D033}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "08_Routing", "08_Routing\08_Routing.csproj", "{0041A150-2A45-4D6F-9D69-BE106F971639}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +53,10 @@ Global
 		{DCA50C95-5C47-4874-8498-6D5ED505D033}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DCA50C95-5C47-4874-8498-6D5ED505D033}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DCA50C95-5C47-4874-8498-6D5ED505D033}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0041A150-2A45-4D6F-9D69-BE106F971639}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0041A150-2A45-4D6F-9D69-BE106F971639}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0041A150-2A45-4D6F-9D69-BE106F971639}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0041A150-2A45-4D6F-9D69-BE106F971639}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
