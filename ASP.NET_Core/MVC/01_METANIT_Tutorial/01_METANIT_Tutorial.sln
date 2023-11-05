@@ -7,9 +7,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "01_Base", "01_Base\01_Base.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "02_SimpleAPI", "02_SimpleAPI\02_SimpleAPI.csproj", "{08764538-5B1A-4B5B-855B-DB7A433C0CDA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "03_UseMapWhenMiddleware", "03_UseMapWhenMiddleware\03_UseMapWhenMiddleware.csproj", "{A0475089-D802-43C5-A2E9-152C1C9F1C48}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "03_UseMapWhenMiddleware", "03_UseMapWhenMiddleware\03_UseMapWhenMiddleware.csproj", "{A0475089-D802-43C5-A2E9-152C1C9F1C48}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "04_DependencyInjection", "04_DependencyInjection\04_DependencyInjection.csproj", "{3B237537-318A-479F-9ED8-0269318AD652}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "04_DependencyInjection", "04_DependencyInjection\04_DependencyInjection.csproj", "{3B237537-318A-479F-9ED8-0269318AD652}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "05_DependencyInjection", "05_DependencyInjection\05_DependencyInjection.csproj", "{3C313276-596B-4918-B588-BA6350407927}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{3B237537-318A-479F-9ED8-0269318AD652}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3B237537-318A-479F-9ED8-0269318AD652}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3B237537-318A-479F-9ED8-0269318AD652}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3C313276-596B-4918-B588-BA6350407927}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3C313276-596B-4918-B588-BA6350407927}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3C313276-596B-4918-B588-BA6350407927}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3C313276-596B-4918-B588-BA6350407927}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
