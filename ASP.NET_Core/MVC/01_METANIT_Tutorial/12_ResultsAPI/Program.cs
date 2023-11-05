@@ -41,6 +41,20 @@ public class Program {
         app.Map("/person", () => Results.Json(new { name = "Tom", age = 37 })); // отправка анонимного объекта
         app.Map("/error", () => Results.Json(new { message = "Unexpected error" }, statusCode: 500));   // отправка ошибок.
 
+        /// <summary>
+        /// Для переадресации на локальный адрес в рамках приложения применяется метод LocalRedirect():
+        /// public static IResult LocalRedirect (string localUrl, bool permanent = false, bool preserveMethod = false);
+        /// </summary>
+        app.Map("/old", () => Results.LocalRedirect("/new"));
+        app.Map("/new", () => "New Address");
+
+        /// <summary>
+        /// Метод Redirect() также осуществляет переадресацию и принимает те же параметры, что и LocalRedirect(), 
+        /// только адрес для переадресации может не только локальным, но и внешним:
+        /// </summary>
+        app.Map("/metanit", () => Results.Redirect("https://metanit.com"));
+        app.Map("/home", () => "Hello World");
+
 
         app.Run();
     }
