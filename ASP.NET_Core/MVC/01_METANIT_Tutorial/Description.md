@@ -50,9 +50,16 @@
 
 <details> <summary><b><i>09_Configuration - Конфигурация:</i></b></summary>
    <ul>
-      <li> Глава 6. Полностью </li>
+      <li> Глава 6. Основы / провайдеры / JSON, XML и Ini / Анализ конфигурации / </li>
    </ul>  
 </details>
+
+<details> <summary><b><i>10_Configuration - Конфигурация:</i></b></summary>
+   <ul>
+      <li> Глава 6. Создание провайдера конфгурации </li>
+   </ul>  
+</details>
+
 
 
 
