@@ -60,6 +60,12 @@
    </ul>  
 </details>
 
+<details> <summary><b><i>11_Logger - Логгирование:</i></b></summary>
+   <ul>
+      <li> Глава 7. Ведение лога и ILogger </li>
+   </ul>  
+</details>
+
 
 
 
