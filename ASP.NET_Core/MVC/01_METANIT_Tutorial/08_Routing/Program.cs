@@ -1,4 +1,7 @@
-﻿namespace _08_Routing;
+﻿using Microsoft.AspNetCore.Mvc;
+using System;
+
+namespace _08_Routing;
 
 
 public class Program {
@@ -24,6 +27,25 @@ public class Program {
         /// <summary> Получение всех маршрутов приложения </summary>
         app.MapGet("/routes", (IEnumerable<EndpointDataSource> endpointSources) =>
             string.Join("\n", endpointSources.SelectMany(source => source.Endpoints)));
+
+        /// <summary> Параметры маршрута => {название_параметра} </summary>
+        app.Map("/users/{id}/{name}", (string id, string name) => $"User Id: {id} \nUser Name: {name}");
+        app.Map("/users/{id}", (string id) => $"User id == {id}");
+        app.Map("/users", () => "Users page");
+
+        /// <summary> Необязательные параметры маршрута </summary>
+        app.Map("param/{id?}", (string? id) => $"Param id == {id ?? "null"}");
+
+        /// <summary> Значения параметров по умолчанию </summary>
+        app.Map("test/{controller=Home}/{action=Page}/{id?}",
+                (string controller, string action, string? id) => 
+                    $"Controller: {controller} \nAction: {action} \nId: {id}");
+
+        /// <summary> Передача произвольного количества параметров в запросе </summary>
+        /* Мы можем обозначить любое количество сегментов в запросе, чтобы не быть жестко 
+         * привязанным к числу сегментов с помощью параметра со знаком * ("звездочка") 
+         * или ** (две звездочки) (это так называемый catchall-параметр): */
+        app.Map("all/{**info}", (string info) => $"info {info}");
 
         app.Run();
     }
