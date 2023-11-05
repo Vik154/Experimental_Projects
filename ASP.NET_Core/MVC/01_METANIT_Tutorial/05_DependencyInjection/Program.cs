@@ -1,11 +1,11 @@
-namespace _05_DependencyInjection;
+п»їnamespace _05_DependencyInjection;
 
-/* В ASP.NET Core мы можем получить добавленные в приложения сервисы различными способами:
- - Через свойство Services объекта WebApplication (service locator)
- - Через свойство RequestServices контекста запроса HttpContext в компонентах middleware (service locator)
- - Через конструктор класса
- - Через параметр метода Invoke компонента middleware
- - Через свойство Services объекта WebApplicationBuilder 
+/* Р’ ASP.NET Core РјС‹ РјРѕР¶РµРј РїРѕР»СѓС‡РёС‚СЊ РґРѕР±Р°РІР»РµРЅРЅС‹Рµ РІ РїСЂРёР»РѕР¶РµРЅРёСЏ СЃРµСЂРІРёСЃС‹ СЂР°Р·Р»РёС‡РЅС‹РјРё СЃРїРѕСЃРѕР±Р°РјРё:
+ - Р§РµСЂРµР· СЃРІРѕР№СЃС‚РІРѕ Services РѕР±СЉРµРєС‚Р° WebApplication (service locator)
+ - Р§РµСЂРµР· СЃРІРѕР№СЃС‚РІРѕ RequestServices РєРѕРЅС‚РµРєСЃС‚Р° Р·Р°РїСЂРѕСЃР° HttpContext РІ РєРѕРјРїРѕРЅРµРЅС‚Р°С… middleware (service locator)
+ - Р§РµСЂРµР· РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ РєР»Р°СЃСЃР°
+ - Р§РµСЂРµР· РїР°СЂР°РјРµС‚СЂ РјРµС‚РѕРґР° Invoke РєРѕРјРїРѕРЅРµРЅС‚Р° middleware
+ - Р§РµСЂРµР· СЃРІРѕР№СЃС‚РІРѕ Services РѕР±СЉРµРєС‚Р° WebApplicationBuilder 
 */
 
 public class Program {
@@ -17,36 +17,40 @@ public class Program {
 
         var app = builder.Build();
 
+
         app.Map("", async context => await context.Response.WriteAsync("Hello World"));
 
-        /// <summary> GetService<service>(): использует провайдер сервисов для создания объекта,
-        /// который представляет тип service. В случае если в провайдере сервисов для данного сервиса
-        /// не установлена зависимость, то возвращает значение null</summary>
+        /// <summary> GetService<service>(): РёСЃРїРѕР»СЊР·СѓРµС‚ РїСЂРѕРІР°Р№РґРµСЂ СЃРµСЂРІРёСЃРѕРІ РґР»СЏ СЃРѕР·РґР°РЅРёСЏ РѕР±СЉРµРєС‚Р°,
+        /// РєРѕС‚РѕСЂС‹Р№ РїСЂРµРґСЃС‚Р°РІР»СЏРµС‚ С‚РёРї service. Р’ СЃР»СѓС‡Р°Рµ РµСЃР»Рё РІ РїСЂРѕРІР°Р№РґРµСЂРµ СЃРµСЂРІРёСЃРѕРІ РґР»СЏ РґР°РЅРЅРѕРіРѕ СЃРµСЂРІРёСЃР°
+        /// РЅРµ СѓСЃС‚Р°РЅРѕРІР»РµРЅР° Р·Р°РІРёСЃРёРјРѕСЃС‚СЊ, С‚Рѕ РІРѕР·РІСЂР°С‰Р°РµС‚ Р·РЅР°С‡РµРЅРёРµ null</summary>
         app.Map("/GetService", async context => {
             var timeService = app.Services.GetService<ITimeService>();
             await context.Response.WriteAsync($"Time: {timeService?.GetTime()}");
         });
 
-        /// <summary> Аналогичный образом можно использовать метод GetRequiredService() 
-        /// за тем исключением, что если сервис не добавлен, то метод генерирует исключение:</summary>
+        /// <summary> РђРЅР°Р»РѕРіРёС‡РЅС‹Р№ РѕР±СЂР°Р·РѕРј РјРѕР¶РЅРѕ РёСЃРїРѕР»СЊР·РѕРІР°С‚СЊ РјРµС‚РѕРґ GetRequiredService() 
+        /// Р·Р° С‚РµРј РёСЃРєР»СЋС‡РµРЅРёРµРј, С‡С‚Рѕ РµСЃР»Рё СЃРµСЂРІРёСЃ РЅРµ РґРѕР±Р°РІР»РµРЅ, С‚Рѕ РјРµС‚РѕРґ РіРµРЅРµСЂРёСЂСѓРµС‚ РёСЃРєР»СЋС‡РµРЅРёРµ:</summary>
         app.Map("/GetRequiredService", async context => {
             var timeService = app.Services.GetRequiredService<ITimeService>();
             await context.Response.WriteAsync($"Time: {timeService.GetTime()}");
         });
 
-        /// <summary> HttpContext.RequestServices - Там, где доступен объект HttpContext,
-        /// мы можем использовать для получения сервисов его свойство RequestServices </summary>
+        /// <summary> HttpContext.RequestServices - РўР°Рј, РіРґРµ РґРѕСЃС‚СѓРїРµРЅ РѕР±СЉРµРєС‚ HttpContext,
+        /// РјС‹ РјРѕР¶РµРј РёСЃРїРѕР»СЊР·РѕРІР°С‚СЊ РґР»СЏ РїРѕР»СѓС‡РµРЅРёСЏ СЃРµСЂРІРёСЃРѕРІ РµРіРѕ СЃРІРѕР№СЃС‚РІРѕ RequestServices </summary>
         app.Map("/RequestServices", async context => {
             var timeService = context.RequestServices.GetService<ITimeService>();
             await context.Response.WriteAsync($"Time: {timeService?.GetTime()}");
         });
 
-        /// <summary> Использование сервиса TimeMessage </summary>
+        /// <summary> РСЃРїРѕР»СЊР·РѕРІР°РЅРёРµ СЃРµСЂРІРёСЃР° TimeMessage </summary>
         app.Map("/TimeMessage", async context => {
             var timeMessage = context.RequestServices.GetService<TimeMessage>();
             context.Response.ContentType = "text/html;charset=utf-8";
             await context.Response.WriteAsync($"<h2>{timeMessage?.GetTime()}</h2>");
         });
+
+        /// <summary> РСЃРїРѕР»СЊР·РѕРІР°РЅРёРµ РєРѕРјРїРѕРЅРµРЅС‚Р° middleware </summary>
+        // app.UseMiddleware<TimeMessageMiddleware>();
 
         app.Run();
     }
