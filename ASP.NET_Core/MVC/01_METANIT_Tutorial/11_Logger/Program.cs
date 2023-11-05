@@ -4,8 +4,19 @@
 public class Program {
     public static void Main(string[] args) {
         var builder = WebApplication.CreateBuilder(args);
+
+        /*--------------------------------------------------------------------------*/
+        // устанавливаем файл для логгирования
+        builder.Logging.AddFile(Path.Combine(Directory.GetCurrentDirectory(), "logger.txt"));
+
         var app = builder.Build();
 
+        app.Map("/FileLogger", async (context) => {
+            app.Logger.LogInformation($"Path: {context.Request.Path}  Time:{DateTime.Now.ToLongTimeString()}");
+            await context.Response.WriteAsync("Hello World!");
+        });
+
+        /*--------------------------------------------------------------------------*/
 
         app.Map("/", async (context) => {
             // пишем на консоль информацию
