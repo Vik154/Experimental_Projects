@@ -1,3 +1,10 @@
+<details> <summary><b><i>01_Base - начало работы с ASP.NET Core:</i></b></summary>
+   <ul>
+     <li> Глава 1. Введение в ASP.NET Core </li>
+     <li> Глава 2. Основы ASP.NET Core </li>
+   </ul>  
+</details>
+
 #### 01_Base - начало работы с ASP.NET Core:
 - Глава 1. Введение в ASP.NET Core
 - Глава 2. Основы ASP.NET Core
