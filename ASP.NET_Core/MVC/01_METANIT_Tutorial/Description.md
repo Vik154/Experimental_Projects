@@ -5,15 +5,17 @@
    </ul>  
 </details>
 
-#### 01_Base - начало работы с ASP.NET Core:
-- Глава 1. Введение в ASP.NET Core
-- Глава 2. Основы ASP.NET Core
+<details> <summary><b><i>02_SimpleAPI - пример простого API:</i></b></summary>
+   <ul>
+     <li> Глава 2. Пример простого API </li>
+   </ul>  
+</details>
 
-#### 02_SimpleAPI - пример простого API:
-- Глава 2. Пример простого API
-
-#### 03_UseMapWhenMiddleware - компоненты middleware:
-- Глава 2. Use Map UseWhen MapWhen Middleware
+<details> <summary><b><i>03_UseMapWhenMiddleware - компоненты middleware:</i></b></summary>
+   <ul>
+     <li> Глава 2. Use Map UseWhen MapWhen Middleware </li>
+   </ul>  
+</details>
 
 #### 04_DependencyInjection - Внедрение зависимостей:
 - Глава 3. Внедрение зависимостей и IServiceCollection / Создание сервисов
