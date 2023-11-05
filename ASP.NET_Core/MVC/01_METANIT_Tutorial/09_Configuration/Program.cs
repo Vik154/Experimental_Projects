@@ -32,6 +32,27 @@ public class Program {
         /// <summary> Получение конфигурации через Dependency Injection </ summary>
         app.Map("/get", (IConfiguration appConfig) => $"{appConfig["name2"]} - {appConfig["age2"]}");
 
+        /// <summary> Получение конфигурации из JSON </ summary>
+        builder.Configuration.AddJsonFile("config.json");
+        app.Map("/json", (IConfiguration appConfig) => $"{appConfig["person:profile:name"]} - {appConfig["company:name"]}");
+
+        /// <summary> Получение конфигурации из XML </ summary>
+        builder.Configuration.AddXmlFile("config.xml");
+        app.Map("/xml", (IConfiguration appConfig) => $"{appConfig["person:profile:name"]} - {appConfig["company:name"]}");
+
+        /* Объединение конфигов из разных источников:
+         
+         builder.Configuration
+            .AddJsonFile("config.json")
+            .AddXmlFile("config.xml")
+            .AddIniFile("config.ini")
+            .AddInMemoryCollection(new Dictionary<string, string>
+        {
+            { "name", "Sam"},
+            { "age", "32"}
+        }); ;
+         
+         */
 
         app.Run();
     }

@@ -1,0 +1,11 @@
+{
+  "person": {
+    "profile": {
+      "name": "Tor",
+      "email": "tor@gmail.com"
+    }
+  },
+  "company": {
+    "name": "Asgard"
+  }
+}
