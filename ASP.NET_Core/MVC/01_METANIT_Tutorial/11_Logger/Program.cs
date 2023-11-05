@@ -29,6 +29,28 @@ public class Program {
             await context.Response.WriteAsync("Hello World!");
         });
 
+        /*--------------------------------------------------------------------------*/
+
+        /// <summary> с помощью LoggerFactory.Create создается фабрика логгера в виде объекта ILoggerFactory </summary>
+        ILoggerFactory loggerFactory = LoggerFactory.Create(builder => builder.AddConsole());
+        ILogger logger = loggerFactory.CreateLogger<Program>();
+        
+        app.Map("/factory", async (context) => {
+            logger.LogInformation($"Requested Path: {context.Request.Path}");
+            await context.Response.WriteAsync("Hello World!");
+        });
+
+        /// <summary> Получение фабрики логгера через dependency injection </ summary>
+        app.Map("/DI", (ILoggerFactory loggerFactory) => {
+
+            // создаем логгер с категорией "MapLogger"
+            ILogger logger = loggerFactory.CreateLogger("MapLogger");                           
+            
+            // логгируем некоторое сообщение
+            logger.LogInformation($"Path: /hello   Time: {DateTime.Now.ToLongTimeString()}");
+            return "Hello World!";
+        });
+
         app.Run();
     }
 }
