@@ -1,57 +1,57 @@
-using System.Text;
+п»їusing System.Text;
 
 namespace _04_DependencyInjection;
 
 
 public class Program {
 
-    /// <summary> IServiceCollection - все встроенные сервисы </summary>
+    /// <summary> IServiceCollection - РІСЃРµ РІСЃС‚СЂРѕРµРЅРЅС‹Рµ СЃРµСЂРІРёСЃС‹ </summary>
     static IServiceCollection Services { get; set; }
 
     public static void Main(string[] args) {
         var builder = WebApplication.CreateBuilder(args);
 
-        /// <summary> Получение всех встроенных сервисов </summary>
+        /// <summary> РџРѕР»СѓС‡РµРЅРёРµ РІСЃРµС… РІСЃС‚СЂРѕРµРЅРЅС‹С… СЃРµСЂРІРёСЃРѕРІ </summary>
         Services = builder.Services;
 
-        /// <summary> Добавление в коллекцию сервисов свои собственные
-        /// система на место объектов интерфейса ITimeService будет 
-        /// передавать экземпляры класса ShortTimeService.</summary>
+        /// <summary> Р”РѕР±Р°РІР»РµРЅРёРµ РІ РєРѕР»Р»РµРєС†РёСЋ СЃРµСЂРІРёСЃРѕРІ СЃРІРѕРё СЃРѕР±СЃС‚РІРµРЅРЅС‹Рµ
+        /// СЃРёСЃС‚РµРјР° РЅР° РјРµСЃС‚Рѕ РѕР±СЉРµРєС‚РѕРІ РёРЅС‚РµСЂС„РµР№СЃР° ITimeService Р±СѓРґРµС‚ 
+        /// РїРµСЂРµРґР°РІР°С‚СЊ СЌРєР·РµРјРїР»СЏСЂС‹ РєР»Р°СЃСЃР° ShortTimeService.</summary>
         // 1 builder.Services.AddTransient<ITimeService, ShortTimeServices>();
 
-        /// <summary> 2. Расширения для добавления сервисов </summary>
+        /// <summary> 2. Р Р°СЃС€РёСЂРµРЅРёСЏ РґР»СЏ РґРѕР±Р°РІР»РµРЅРёСЏ СЃРµСЂРІРёСЃРѕРІ </summary>
         builder.Services.AddTimeService();
 
         var app = builder.Build();
 
-        /// <summary> Вывод всех встроенных сервисов фреймворка </summary>
+        /// <summary> Р’С‹РІРѕРґ РІСЃРµС… РІСЃС‚СЂРѕРµРЅРЅС‹С… СЃРµСЂРІРёСЃРѕРІ С„СЂРµР№РјРІРѕСЂРєР° </summary>
         // app.Run(TestServices);
 
-        /// <summary> Работа с сервисом ShortTimeServices </summary>
+        /// <summary> Р Р°Р±РѕС‚Р° СЃ СЃРµСЂРІРёСЃРѕРј ShortTimeServices </summary>
         // 1 app.Run(async context => {
         //    var timeService = app.Services.GetService<ITimeService>();
         //    await context.Response.WriteAsync($"Time: {timeService?.GetTime()}");
         //});
 
-        /// <summary> 2. Расширения для добавления сервисов </summary>
+        /// <summary> 2. Р Р°СЃС€РёСЂРµРЅРёСЏ РґР»СЏ РґРѕР±Р°РІР»РµРЅРёСЏ СЃРµСЂРІРёСЃРѕРІ </summary>
         app.Run(async context => {
             var timeService = app.Services.GetService<TimeService>();
             context.Response.ContentType = "text/html; charset=utf-8";
-            await context.Response.WriteAsync($"Текущее время: {timeService?.GetTime()}");
+            await context.Response.WriteAsync($"РўРµРєСѓС‰РµРµ РІСЂРµРјСЏ: {timeService?.GetTime()}");
         });
 
         app.Run();
 
     }
 
-    #region ВСТРОЕННЫЕ СЕРВИСЫ IServiceCollection
+    #region Р’РЎРўР РћР•РќРќР«Р• РЎР•Р Р’РРЎР« IServiceCollection
 
-    /// <summary> Вывод всех встроенных сервисов фреймворка </summary>
+    /// <summary> Р’С‹РІРѕРґ РІСЃРµС… РІСЃС‚СЂРѕРµРЅРЅС‹С… СЃРµСЂРІРёСЃРѕРІ С„СЂРµР№РјРІРѕСЂРєР° </summary>
     static async Task TestServices(HttpContext context) {
         var sb = new StringBuilder();
-        sb.Append("<h1>Все сервисы</h1>");
+        sb.Append("<h1>Р’СЃРµ СЃРµСЂРІРёСЃС‹</h1>");
         sb.Append("<table>");
-        sb.Append("<tr><th>Тип</th><th>Lifetime</th><th>Реализация</th></tr>");
+        sb.Append("<tr><th>РўРёРї</th><th>Lifetime</th><th>Р РµР°Р»РёР·Р°С†РёСЏ</th></tr>");
         foreach (var svc in Services) {
             sb.Append("<tr>");
             sb.Append($"<td>{svc.ServiceType.FullName}</td>");
@@ -59,6 +59,7 @@ public class Program {
             sb.Append($"<td>{svc.ImplementationType?.FullName}</td>");
             sb.Append("</tr>");
         }
+
         sb.Append("</table>");
         context.Response.ContentType = "text/html;charset=utf-8";
         await context.Response.WriteAsync(sb.ToString());
