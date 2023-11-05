@@ -32,15 +32,25 @@ public class Program {
 
         /// <summary> AddSingleton создает один объект для всех последующих запросов, 
         /// при этом объект создается только тогда, когда он непосредственно необходим.</summary>
-        builder.Services.AddSingleton<ICounter, RandomCounter>();
-        builder.Services.AddSingleton<CounterService>();
+        // builder.Services.AddSingleton<ICounter, RandomCounter>();
+        // builder.Services.AddSingleton<CounterService>();
         // Вывод:
         // Запрос 1; Counter: 298641; Service: 298641
         // Запрос 2; Counter: 298641; Service: 298641
 
+        /*------------------------------------------------------------------------------------------*/
+
+        /// <summary> Вывод текущего времени </summary>
+        builder.Services.AddTransient<TimeService>();
+
         var app = builder.Build();
 
-        app.UseMiddleware<CounterMiddleware>();
+        app.UseMiddleware<TimerMiddleware>();
+        app.Run(async (context) => await context.Response.WriteAsync("Hello World"));
+        // По пути /time вывод: Текущее время: 16:16:41
+        // По пути / вывод: "Hello World"
+
+        // app.UseMiddleware<CounterMiddleware>();
 
         app.Run();
     }
