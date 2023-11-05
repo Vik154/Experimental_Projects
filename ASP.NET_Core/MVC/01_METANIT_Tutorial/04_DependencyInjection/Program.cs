@@ -12,10 +12,34 @@ public class Program {
         var builder = WebApplication.CreateBuilder(args);
 
         /// <summary> Получение всех встроенных сервисов </summary>
-        Services = builder.Services;    
+        Services = builder.Services;
+
+        /// <summary> Добавление в коллекцию сервисов свои собственные
+        /// система на место объектов интерфейса ITimeService будет 
+        /// передавать экземпляры класса ShortTimeService.</summary>
+        // 1 builder.Services.AddTransient<ITimeService, ShortTimeServices>();
+
+        /// <summary> 2. Расширения для добавления сервисов </summary>
+        builder.Services.AddTimeService();
+
         var app = builder.Build();
 
-        app.Run(TestServices);
+        /// <summary> Вывод всех встроенных сервисов фреймворка </summary>
+        // app.Run(TestServices);
+
+        /// <summary> Работа с сервисом ShortTimeServices </summary>
+        // 1 app.Run(async context => {
+        //    var timeService = app.Services.GetService<ITimeService>();
+        //    await context.Response.WriteAsync($"Time: {timeService?.GetTime()}");
+        //});
+
+        /// <summary> 2. Расширения для добавления сервисов </summary>
+        app.Run(async context => {
+            var timeService = app.Services.GetService<TimeService>();
+            context.Response.ContentType = "text/html; charset=utf-8";
+            await context.Response.WriteAsync($"Текущее время: {timeService?.GetTime()}");
+        });
+
         app.Run();
 
     }
