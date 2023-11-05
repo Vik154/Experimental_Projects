@@ -17,11 +17,21 @@
    </ul>  
 </details>
 
-#### 04_DependencyInjection - Внедрение зависимостей:
-- Глава 3. Внедрение зависимостей и IServiceCollection / Создание сервисов
+<details> <summary><b><i>04_DependencyInjection - Внедрение зависимостей:</i></b></summary>
+   <ul>
+     <li> Глава 3. Внедрение зависимостей и IServiceCollection / Создание сервисов </li>
+   </ul>  
+</details>
 
-#### 05_DependencyInjection - Внедрение зависимостей:
-- Глава 3. Получение зависимостей
+<details> <summary><b><i>05_DependencyInjection - Внедрение зависимостей:</i></b></summary>
+   <ul>
+     <li> Глава 3. Получение зависимостей </li>
+   </ul>  
+</details>
 
-#### 06_DependencyInjection - Внедрение зависимостей:
-- Глава 3. Жизненный цикл зависимостей
+<details> <summary><b><i>06_DependencyInjection - Внедрение зависимостей:</i></b></summary>
+   <ul>
+     <li> Глава 3. Жизненный цикл зависимостей </li>
+   </ul>  
+</details>
+
