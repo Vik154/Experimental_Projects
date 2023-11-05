@@ -55,6 +55,34 @@ public class Program {
         app.Map("/metanit", () => Results.Redirect("https://metanit.com"));
         app.Map("/home", () => "Hello World");
 
+        /// <summary>
+        /// Метод StatusCode() позволяет отправить любой статусный код, числовой код которого 
+        /// передается в метод в качестве параметра:
+        /// </summary>
+        app.Map("/about", () => Results.StatusCode(401));
+
+        /// <summary> Метод NotFound() посылает код 404, уведомляя клиента о том, что ресурс не найден </summary>
+        app.Map("/contacts", () => Results.NotFound("Error 404. Invalid address"));
+
+        /// <summary> Unauthorized() посылает код 401, уведомляя пользователя, что он не авторизован для доступа к ресурсу: </ summary>
+        app.Map("/contactsto", () => Results.Unauthorized());
+
+        /// <summary> BadRequest() посылает код 400, который говорит о том, что запрос некорректный. </ summary>
+        app.Map("/contacts/{age:int}", (int age) => {
+            if (age < 18)  
+                return Results.BadRequest(new { message = "Invalid age" });
+            else
+                return Results.Content("Access is available");
+        });
+
+        /// <summary> 
+        /// Метод Ok() посылает статусный код 200, уведомляя об успешном выполнении запроса. 
+        /// В качестве параметра метод принимает отправляемую информацию: 
+        /// </ summary>
+        app.Map("/abouttwo", () => Results.Ok("Laudate omnes gentes laudate"));
+        app.Map("/contactstwo", () => Results.Ok(new { message = "Success!" }));
+
+
 
         app.Run();
     }
