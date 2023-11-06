@@ -33,6 +33,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "14_EntityFrameworkCore", "1
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "15_AuthenticationAndAuthorization", "15_AuthenticationAndAuthorization\15_AuthenticationAndAuthorization.csproj", "{E6A982FE-2692-4C1A-877E-0CA746B842BF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "16_AuthorizationJWT", "16_AuthorizationJWT\16_AuthorizationJWT.csproj", "{33BA40EF-D36E-4C91-80DD-516A7759188F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -99,6 +101,10 @@ Global
 		{E6A982FE-2692-4C1A-877E-0CA746B842BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E6A982FE-2692-4C1A-877E-0CA746B842BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E6A982FE-2692-4C1A-877E-0CA746B842BF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{33BA40EF-D36E-4C91-80DD-516A7759188F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{33BA40EF-D36E-4C91-80DD-516A7759188F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{33BA40EF-D36E-4C91-80DD-516A7759188F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{33BA40EF-D36E-4C91-80DD-516A7759188F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
