@@ -86,7 +86,13 @@
 
 <details> <summary><b><i>15_AuthenticationAndAuthorization - Аутентификация и авторизация:</i></b></summary>
    <ul>
-      <li> Глава 13. Полностью </li>
+      <li> Глава 13. Аутентификация с помощью JWT-токенов </li>
+   </ul>  
+</details>
+
+<details> <summary><b><i>16_AuthorizationJWT - Аутентификация и авторизация:</i></b></summary>
+   <ul>
+      <li> Глава 13. Авторизация с помощью JWT-токенов в клиенте JavaScript </li>
    </ul>  
 </details>
 
