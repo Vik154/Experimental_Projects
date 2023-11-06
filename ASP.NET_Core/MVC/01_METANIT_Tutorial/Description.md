@@ -84,6 +84,10 @@
    </ul>  
 </details>
 
-
+<details> <summary><b><i>15_AuthenticationAndAuthorization - Аутентификация и авторизация:</i></b></summary>
+   <ul>
+      <li> Глава 13. Полностью </li>
+   </ul>  
+</details>
 
 
