@@ -11,23 +11,25 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "03_UseMapWhenMiddleware", "
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "04_DependencyInjection", "04_DependencyInjection\04_DependencyInjection.csproj", "{3B237537-318A-479F-9ED8-0269318AD652}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "05_DependencyInjection", "05_DependencyInjection\05_DependencyInjection.csproj", "{3C313276-596B-4918-B588-BA6350407927}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "05_DependencyInjection", "05_DependencyInjection\05_DependencyInjection.csproj", "{3C313276-596B-4918-B588-BA6350407927}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "06_DependencyInjection", "06_DependencyInjection\06_DependencyInjection.csproj", "{0E2401A8-DE0F-479C-87EA-CB7BF59891E0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "06_DependencyInjection", "06_DependencyInjection\06_DependencyInjection.csproj", "{0E2401A8-DE0F-479C-87EA-CB7BF59891E0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "07_DependencyInjection", "07_DependencyInjection\07_DependencyInjection.csproj", "{DCA50C95-5C47-4874-8498-6D5ED505D033}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "07_DependencyInjection", "07_DependencyInjection\07_DependencyInjection.csproj", "{DCA50C95-5C47-4874-8498-6D5ED505D033}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "08_Routing", "08_Routing\08_Routing.csproj", "{0041A150-2A45-4D6F-9D69-BE106F971639}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "08_Routing", "08_Routing\08_Routing.csproj", "{0041A150-2A45-4D6F-9D69-BE106F971639}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "09_Configuration", "09_Configuration\09_Configuration.csproj", "{BE8D81B7-104E-41DF-BACA-FE32AA9E52CB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "09_Configuration", "09_Configuration\09_Configuration.csproj", "{BE8D81B7-104E-41DF-BACA-FE32AA9E52CB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "10_Configuration", "10_Configuration\10_Configuration.csproj", "{CB45E02F-2B23-402B-B274-D159983B7AFF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "10_Configuration", "10_Configuration\10_Configuration.csproj", "{CB45E02F-2B23-402B-B274-D159983B7AFF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "11_Logger", "11_Logger\11_Logger.csproj", "{05714435-99DB-46CB-B5DB-7A507809E2DB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "11_Logger", "11_Logger\11_Logger.csproj", "{05714435-99DB-46CB-B5DB-7A507809E2DB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "12_ResultsAPI", "12_ResultsAPI\12_ResultsAPI.csproj", "{02B54EC3-A0FF-41B3-B46E-CD3669846A4B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "12_ResultsAPI", "12_ResultsAPI\12_ResultsAPI.csproj", "{02B54EC3-A0FF-41B3-B46E-CD3669846A4B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "13_WebAPI", "13_WebAPI\13_WebAPI.csproj", "{EE8D9D77-D358-44E2-826E-2C6FE2060C6D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "13_WebAPI", "13_WebAPI\13_WebAPI.csproj", "{EE8D9D77-D358-44E2-826E-2C6FE2060C6D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "14_EntityFrameworkCore", "14_EntityFrameworkCore\14_EntityFrameworkCore.csproj", "{7B06ABD9-1669-412D-B520-10B3767BC8B2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -87,6 +89,10 @@ Global
 		{EE8D9D77-D358-44E2-826E-2C6FE2060C6D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EE8D9D77-D358-44E2-826E-2C6FE2060C6D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EE8D9D77-D358-44E2-826E-2C6FE2060C6D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7B06ABD9-1669-412D-B520-10B3767BC8B2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7B06ABD9-1669-412D-B520-10B3767BC8B2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7B06ABD9-1669-412D-B520-10B3767BC8B2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7B06ABD9-1669-412D-B520-10B3767BC8B2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
