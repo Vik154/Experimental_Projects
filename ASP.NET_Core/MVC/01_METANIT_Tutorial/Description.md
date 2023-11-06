@@ -78,7 +78,11 @@
    </ul>  
 </details>
 
-
+<details> <summary><b><i>14_EntityFrameworkCore - Работа с базой данных:</i></b></summary>
+   <ul>
+      <li> Глава 12. Полностью </li>
+   </ul>  
+</details>
 
 
 
