@@ -96,4 +96,10 @@
    </ul>  
 </details>
 
+<details> <summary><b><i>17 - Аутентификация и авторизация:</i></b></summary>
+   <ul>
+      <li> Глава 13. Авторизация с помощью JWT-токенов в клиенте JavaScript </li>
+   </ul>  
+</details>
+
 
