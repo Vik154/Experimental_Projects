@@ -1,0 +1,15 @@
+﻿@page
+
+@model _01_Base.Pages.HandlerModel
+@using _01_Base.Pages
+
+<h2>Список пользователей</h2>
+<table>
+    <tr><th>Name</th><th>Age</th></tr>
+    @foreach (Person1 person in Model.DisplayedPeople) {
+        <tr>
+            <td>@person.Name</td>
+            <td>@person.Age</td>
+        </tr>
+    }
+</table>
