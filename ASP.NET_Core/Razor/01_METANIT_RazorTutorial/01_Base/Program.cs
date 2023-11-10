@@ -1,4 +1,6 @@
-﻿namespace _01_Base;
+﻿using Microsoft.AspNetCore.Mvc;
+
+namespace _01_Base;
 
 
 public class Program {
@@ -6,7 +8,13 @@ public class Program {
         var builder = WebApplication.CreateBuilder(args);
 
         // добавляем в приложение сервисы Razor Pages
-        builder.Services.AddRazorPages();
+        // builder.Services.AddRazorPages();
+
+        // добавляем в приложение сервисы Razor Pages
+        builder.Services.AddRazorPages(options => {
+            // отключаем глобально Antiforgery-токен
+            options.Conventions.ConfigureFilter(new IgnoreAntiforgeryTokenAttribute());
+        });
 
         var app = builder.Build();
 
