@@ -96,6 +96,10 @@
    </ul>  
 </details>
 
-йцукен
+<details> <summary><b><i>17_AuthenticationCookie - Аутентификация и авторизация:</i></b></summary>
+   <ul>
+      <li> Глава 13. Аутентификация с помощью куки </li>
+   </ul>  
+</details>
 
 
