@@ -29,11 +29,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "12_ResultsAPI", "12_Results
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "13_WebAPI", "13_WebAPI\13_WebAPI.csproj", "{EE8D9D77-D358-44E2-826E-2C6FE2060C6D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "14_EntityFrameworkCore", "14_EntityFrameworkCore\14_EntityFrameworkCore.csproj", "{7B06ABD9-1669-412D-B520-10B3767BC8B2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "14_EntityFrameworkCore", "14_EntityFrameworkCore\14_EntityFrameworkCore.csproj", "{7B06ABD9-1669-412D-B520-10B3767BC8B2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "15_AuthenticationAndAuthorization", "15_AuthenticationAndAuthorization\15_AuthenticationAndAuthorization.csproj", "{E6A982FE-2692-4C1A-877E-0CA746B842BF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "15_AuthenticationAndAuthorization", "15_AuthenticationAndAuthorization\15_AuthenticationAndAuthorization.csproj", "{E6A982FE-2692-4C1A-877E-0CA746B842BF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "16_AuthorizationJWT", "16_AuthorizationJWT\16_AuthorizationJWT.csproj", "{33BA40EF-D36E-4C91-80DD-516A7759188F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "16_AuthorizationJWT", "16_AuthorizationJWT\16_AuthorizationJWT.csproj", "{33BA40EF-D36E-4C91-80DD-516A7759188F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "17_AuthenticationCookie", "17_AuthenticationCookie\17_AuthenticationCookie.csproj", "{BF8EA819-73F2-4589-AF09-D7501BA8E862}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -105,6 +107,10 @@ Global
 		{33BA40EF-D36E-4C91-80DD-516A7759188F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{33BA40EF-D36E-4C91-80DD-516A7759188F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{33BA40EF-D36E-4C91-80DD-516A7759188F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BF8EA819-73F2-4589-AF09-D7501BA8E862}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BF8EA819-73F2-4589-AF09-D7501BA8E862}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BF8EA819-73F2-4589-AF09-D7501BA8E862}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BF8EA819-73F2-4589-AF09-D7501BA8E862}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
