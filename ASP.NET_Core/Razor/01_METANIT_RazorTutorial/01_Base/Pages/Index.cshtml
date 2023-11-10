@@ -1,0 +1,57 @@
+﻿@*
+    Любая страница Razor должна начинаться с директивы @page - именно эта директива указывает, 
+    что данный файл представляет страницу Razor. После этой директивы может помещаться код html,
+    какие-то выражения синтаксиса Razor. Так, в данном случае с помощью директивы @model определяет
+    модель представления - в данном случае класс IndexModel - класс, который определен в файле Index.cshtml.cs.
+*@
+
+@page
+
+@using _01_Base @* подключение пространства имен _01_Base *@
+
+@model _01_Base.Pages.IndexModel
+
+@{
+    string head = "Hello world!";               // определяем переменную head
+    string text = "ASP.NET Core Application";   // определяем переменную text
+    string[] people = { "Tom", "Sam", "Bob" };
+
+    Person person = new Person("Timmy", 333);
+}
+
+@* Директива @functions позволяет определить функции, которые могут применяться в представлении. *@
+
+@functions {
+    public int Sum(int a, int b) => a + b;
+    public int Square(int n) => n * n;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hello world</title>
+    <meta charset="utf-8" />
+</head>
+<body>
+    <h2>Time: @DateTime.Now.ToShortTimeString()</h2>
+    <div>
+        <p>@head</p>    <!-- используем переменную head -->
+        <p>@text</p>    <!-- используем переменную text -->
+        <ul>
+            @for (var i = 0; i < people.Length; i++) {
+                <li>@people[i]</li>
+            }
+        </ul>
+        <p>
+            <h2>Sum: @Sum(10,12)</h2>
+            <br />
+            Square: @Square(9)
+            <br />
+            <h6>Hello world</h6>
+        </p>
+        <p>
+            @person
+        </p>
+    </div>
+</body>
+</html>
