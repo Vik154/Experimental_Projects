@@ -19,6 +19,12 @@
     Person person = new Person("Timmy", 333);
 }
 
+@* Для работы с Layout *@
+@{
+    ViewBag.Title = "Index";
+    Layout = "/Pages/Shared/_Layout.cshtml";
+}
+
 @* Директива @functions позволяет определить функции, которые могут применяться в представлении. *@
 
 @functions {
