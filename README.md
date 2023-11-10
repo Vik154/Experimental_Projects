@@ -65,4 +65,6 @@
    
    * *[MVC/METANIT_Tutorial](ASP.NET_Core/MVC/01_METANIT_Tutorial/Description.md) - Учебные проекты по туториалу METANIT.COM/ASP.NET Core*
    * *[Razor/METANIT_RazorTutorial](ASP.NET_Core/Razor/01_METANIT_RazorTutorial/Description.md) - Учебные проекты по туториалу METANIT.COM/ASP.NET Core Razor Pages*
+   * *[MVC/METANIT_Tutorial](ASP.NET_Core/MVC/02_METANIT_MVCTutorial/Description.md) - Учебные проекты по туториалу METANIT.COM/ASP.NET Core MVC*
+   * 
 </details>
