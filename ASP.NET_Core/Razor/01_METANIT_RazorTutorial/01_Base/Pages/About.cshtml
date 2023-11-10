@@ -1,0 +1,13 @@
+﻿@page
+
+@model _01_Base.Pages.AboutModel
+
+
+<h2>@Model.Message</h2>
+
+<h2>Request headers</h2>
+<table>
+    @foreach (var header in Request.Headers) {
+        <tr><td>@header.Key</td><td>@header.Value</td></tr>
+    }
+</table>
