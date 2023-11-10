@@ -16,6 +16,9 @@ public class Program {
             options.Conventions.ConfigureFilter(new IgnoreAntiforgeryTokenAttribute());
         });
 
+        // добавляем сервис ITimeService
+        builder.Services.AddTransient<ITimeService, SimpleTimeService>();
+
         var app = builder.Build();
 
         // добавляем поддержку маршрутизации для Razor Pages
@@ -23,4 +26,14 @@ public class Program {
 
         app.Run();
     }
+}
+
+/// <summary> Передача зависимостей на страницу </summary>
+public interface ITimeService {
+    string Time { get; }
+}
+
+/// <summary> Передача зависимостей на страницу </summary>
+public class SimpleTimeService : ITimeService {
+    public string Time => DateTime.Now.ToString("HH:mm:ss");
 }

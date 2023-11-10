@@ -1,0 +1,16 @@
+﻿@page
+
+@model _01_Base.Pages.TimeModel
+
+<h2>@Model.Message</h2>
+
+@* Директива @inject
+   На самой странице Razor также можно получать сервисы с помощью директивы @inject.
+
+   @inject ITimeService timeService
+
+   <h2>Current Time: @timeService.Time</h2>
+
+   Директива @inject принимает два параметра: первый параметр представляет тип сервиса
+   (в данном случае ITimeService), а второй - название переменной этого типа (в данном случае timeService).
+*@
