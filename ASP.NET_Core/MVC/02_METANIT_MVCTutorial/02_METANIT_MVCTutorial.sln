@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "03_Routes", "03_Routes\03_R
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "04_Models", "04_Models\04_Models.csproj", "{F1C8ED05-05E7-4FB5-82D3-DB03DDE3404A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "05_HtmlHelpers", "05_HtmlHelpers\05_HtmlHelpers.csproj", "{2D5066AB-0F15-4C10-AD4E-44C1FE452EE6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{F1C8ED05-05E7-4FB5-82D3-DB03DDE3404A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F1C8ED05-05E7-4FB5-82D3-DB03DDE3404A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F1C8ED05-05E7-4FB5-82D3-DB03DDE3404A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2D5066AB-0F15-4C10-AD4E-44C1FE452EE6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2D5066AB-0F15-4C10-AD4E-44C1FE452EE6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2D5066AB-0F15-4C10-AD4E-44C1FE452EE6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2D5066AB-0F15-4C10-AD4E-44C1FE452EE6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
