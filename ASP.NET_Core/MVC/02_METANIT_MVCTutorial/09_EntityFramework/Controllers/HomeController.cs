@@ -20,4 +20,31 @@ public class HomeController : Controller {
         await db.SaveChangesAsync();
         return RedirectToAction("Index");
     }
+
+    [HttpPost]
+    public async Task<IActionResult> Delete(int? id) {
+        if (id != null) {
+            User user = new User { Id = id.Value };
+            db.Entry(user).State = EntityState.Deleted;
+            await db.SaveChangesAsync();
+            return RedirectToAction("Index");
+        }
+        return NotFound();
+    }
+
+    [HttpGet]
+    public async Task<IActionResult> Edit(int? id) {
+        if (id != null) {
+            User? user = await db.Users.FirstOrDefaultAsync(p => p.Id == id);
+            if (user != null) return View(user);
+        }
+        return NotFound();
+    }
+
+    [HttpPost]
+    public async Task<IActionResult> Edit(User user) {
+        db.Users.Update(user);
+        await db.SaveChangesAsync();
+        return RedirectToAction("Index");
+    }
 }
