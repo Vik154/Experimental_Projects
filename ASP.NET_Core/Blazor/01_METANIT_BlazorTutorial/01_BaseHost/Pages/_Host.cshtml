@@ -1,0 +1,25 @@
+﻿@page "/"
+
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>TEST ASP + BLAZOR</title>
+    <base href="/" />
+</head>
+<body>
+    <!-- с помощью тег-хелпера component встраиваем компонент App из проекта Blazor WebAssembly -->
+    <component type="typeof(_01_Base.App)" render-mode="WebAssemblyPrerendered" />
+    
+    <h2>Blazor Host</h2>
+    
+    <!-- подключение скрипта blazor: -->
+    <script src="_framework/blazor.webassembly.js"></script>
+</body>
+</html>

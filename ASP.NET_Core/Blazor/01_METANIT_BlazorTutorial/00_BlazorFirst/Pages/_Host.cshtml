@@ -1,0 +1,37 @@
+﻿@* Директива @page "/" указывает, что этот файл представляет страницу 
+   Razor Page, которая будет обрабатывать запросы к корню приложения. *@
+@page "/"
+
+@*пространство имен razor view*@
+@namespace _00_BlazorFirst.Pages
+
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hello Blazor Server</title>
+    <base href="~/" />
+</head>
+<body>
+    <!-- 
+        Компонент Razor добавляется с помощью tag-хелпера <component>.
+        Параметр type указывает на тип компонента - в данном случае передается название компонента.
+        А параметр render-mode определяет на тип рендеринга. 
+        Значение "ServerPrerendered" указывает, что компонент будет рендерится предварительно 
+        в статический код HTML. Кроме того, при рендеринге компонента будет возвращать 
+        специальный маркер с дополнительной информацией о компоненте. 
+        Затем маркер будет использоваться для загрузки статического кода компонента.
+    -->
+    <component type="typeof(App)" render-mode="ServerPrerendered" />
+
+    <!--
+        И в самом низу страницы подключается скрипт "_framework/blazor.server.js".
+        Это автогенерируемый скрипт, нам не надо его специально подключать. 
+        Его роль заключается в установке подключения SignalR с сервером.
+    -->
+    <script src="_framework/blazor.server.js"></script>
+</body>
+</html>
