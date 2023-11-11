@@ -51,3 +51,9 @@
      <li> Глава 11. Работа с данными в Entity Framework </li>
    </ul>  
 </details>
+
+<details> <summary><b><i>10_EntityFrameworkSort - Работа с данными в Entity Framework:</i></b></summary>
+   <ul>
+     <li> Глава 11. Сортировка данных </li>
+   </ul>  
+</details>
