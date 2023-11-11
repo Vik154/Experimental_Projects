@@ -14,3 +14,19 @@
 <h2>-----------------------------</h2>
 
 <h2>@await Component.InvokeAsync("Header")</h2>
+
+<h2>-----------------------------</h2>
+
+<p>
+    24 часовой формат с секундами: <br />
+    @await Component.InvokeAsync("Stopwatch", new { includeSeconds = true, format24 = true })
+</p>
+
+<p>
+    12 часовой формат без секунд: <br />
+    <vc:Stopwatch include-seconds="false" format24="false"></vc:Stopwatch>
+</p>
+<p>
+    24 часовой формат без секунд: <br />
+    <vc:Stopwatch include-seconds="false" format24="true"></vc:Stopwatch>
+</p>
