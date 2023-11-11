@@ -1,0 +1,16 @@
+﻿@addTagHelper *, 07_ViewComponent
+
+@await Component.InvokeAsync("Timer")
+
+<h2>-----------------------------</h2>
+
+@* Tag-хелпер vc
+   Также мы можем встраивать компонент с помощью тег-хелпера vc в формате
+   <vc:[имя_компонента]></vc:[имя_компонента]>
+*@
+
+<vc:timer />
+
+<h2>-----------------------------</h2>
+
+<h2>@await Component.InvokeAsync("Header")</h2>
