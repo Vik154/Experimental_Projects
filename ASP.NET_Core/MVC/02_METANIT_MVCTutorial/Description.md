@@ -34,6 +34,12 @@
    </ul>  
 </details>
 
+<details> <summary><b><i>07_ViewComponent - View Component:</i></b></summary>
+   <ul>
+     <li> Глава 8. Определение компонента представлений </li>
+   </ul>  
+</details>
+
 
 
 
