@@ -5,6 +5,7 @@ public class Program {
         var builder = WebApplication.CreateBuilder(args);
 
         builder.Services.AddControllersWithViews();
+        builder.Services.AddTransient<ITimeService, SimpleTimeService>(); // добавляем сервис ITimeService
 
         var app = builder.Build();
 
