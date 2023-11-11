@@ -21,3 +21,22 @@
      <li> Глава 5. Введение в определение и применение моделей </li>
    </ul>  
 </details>
+
+<details> <summary><b><i>05_HtmlHelpers - HTML-хелперы:</i></b></summary>
+   <ul>
+     <li> Глава 6. HTML-хелперы </li>
+   </ul>  
+</details>
+
+<details> <summary><b><i>06_TagHelpers - Tag-хелперы:</i></b></summary>
+   <ul>
+     <li> Глава 7. Tag-хелперы </li>
+   </ul>  
+</details>
+
+
+
+
+
+
+
