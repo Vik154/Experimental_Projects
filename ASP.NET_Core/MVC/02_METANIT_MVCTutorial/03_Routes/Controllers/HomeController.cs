@@ -10,4 +10,6 @@ public class HomeController : Controller {
         var action = RouteData.Values["action"];
         return $"controller: {controller} | action: {action}";
     }
+
+    public string About(string id) => $"About Info {id}";
 }
