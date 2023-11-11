@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "06_TagHelpers", "06_TagHelp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "07_ViewComponent", "07_ViewComponent\07_ViewComponent.csproj", "{4BE232DB-292D-40F9-B216-F51D2136F263}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "08_MetaData", "08_MetaData\08_MetaData.csproj", "{5D0F743C-CB3F-46C0-9754-C0DCBBECF758}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +53,10 @@ Global
 		{4BE232DB-292D-40F9-B216-F51D2136F263}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4BE232DB-292D-40F9-B216-F51D2136F263}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4BE232DB-292D-40F9-B216-F51D2136F263}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5D0F743C-CB3F-46C0-9754-C0DCBBECF758}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5D0F743C-CB3F-46C0-9754-C0DCBBECF758}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5D0F743C-CB3F-46C0-9754-C0DCBBECF758}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5D0F743C-CB3F-46C0-9754-C0DCBBECF758}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
