@@ -6,13 +6,12 @@ namespace _10_EntityFrameworkSort.Controllers;
 
 public class HomeController : Controller {
 
-    UsersContext _db;
-    
+    UsersContext db;
     public HomeController(UsersContext context) {
-        _db = context;
+        db = context;
 
         // добавим начальные данные для тестирования
-        if (!_db.Companies.Any()) {
+        if (!db.Companies.Any()) {
             Company oracle    = new Company { Name = "Oracle" };
             Company google    = new Company { Name = "Google" };
             Company microsoft = new Company { Name = "Microsoft" };
@@ -27,26 +26,27 @@ public class HomeController : Controller {
             User user7 = new User { Name = "Олег Кузнецов", Company = google, Age = 25 };
             User user8 = new User { Name = "Андрей Петров", Company = apple, Age = 24 };
 
-            _db.Companies.AddRange(oracle, microsoft, google, apple);
-            _db.Users.AddRange(user1, user2, user3, user4, user5, user6, user7, user8);
-            _db.SaveChanges();
+            db.Companies.AddRange(oracle, microsoft, google, apple);
+            db.Users.AddRange(user1, user2, user3, user4, user5, user6, user7, user8);
+            db.SaveChanges();
         }
     }
-    public async Task<IActionResult> Index(SortState sortOrder = SortState.NameAsc) {
-        IQueryable<User>? users = _db.Users.Include(x => x.Company);
 
-        ViewData["NameSort"] = sortOrder == SortState.NameAsc ? SortState.NameDesc : SortState.NameAsc;
-        ViewData["AgeSort"]  = sortOrder == SortState.AgeAsc ? SortState.AgeDesc : SortState.AgeAsc;
-        ViewData["CompSort"] = sortOrder == SortState.CompanyAsc ? SortState.CompanyDesc : SortState.CompanyAsc;
+    public async Task<IActionResult> Index(SortState sortOrder = SortState.NameAsc) {
+        IQueryable<User> users = db.Users.Include(x => x.Company);
 
         users = sortOrder switch {
-            SortState.NameDesc    => users.OrderByDescending(s => s.Name),
-            SortState.AgeAsc      => users.OrderBy(s => s.Age),
-            SortState.AgeDesc     => users.OrderByDescending(s => s.Age),
-            SortState.CompanyAsc  => users.OrderBy(s => s.Company!.Name),
+            SortState.NameDesc => users.OrderByDescending(s => s.Name),
+            SortState.AgeAsc => users.OrderBy(s => s.Age),
+            SortState.AgeDesc => users.OrderByDescending(s => s.Age),
+            SortState.CompanyAsc => users.OrderBy(s => s.Company!.Name),
             SortState.CompanyDesc => users.OrderByDescending(s => s.Company!.Name),
             _ => users.OrderBy(s => s.Name),
         };
-        return View(await users.AsNoTracking().ToListAsync());
+        IndexViewModel viewModel = new IndexViewModel {
+            Users = await users.AsNoTracking().ToListAsync(),
+            SortViewModel = new SortViewModel(sortOrder)
+        };
+        return View(viewModel);
     }
 }
