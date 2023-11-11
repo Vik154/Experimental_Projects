@@ -1,0 +1,22 @@
+﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@using _10_EntityFrameworkSort.Models
+@model IEnumerable<User>
+
+<h1>Список пользователей</h1>
+<table>
+    <tr>
+        <th>
+            <a asp-action="Index" asp-route-sortOrder="@ViewBag.NameSort">Имя</a>
+        </th>
+        <th>
+            <a asp-action="Index" asp-route-sortOrder="@ViewBag.AgeSort">Возраст</a>
+        </th>
+        <th>
+            <a asp-action="Index" asp-route-sortOrder="@ViewBag.CompSort">Компания</a>
+        </th>
+    </tr>
+
+    @foreach (User u in Model) {
+        <tr><td>@u.Name</td><td>@u.Age</td><td>@u.Company?.Name</td></tr>
+    }
+</table>
