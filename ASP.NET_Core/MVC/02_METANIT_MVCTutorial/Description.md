@@ -16,3 +16,8 @@
    </ul>  
 </details>
 
+<details> <summary><b><i>04_Models - Модели:</i></b></summary>
+   <ul>
+     <li> Глава 5. Введение в определение и применение моделей </li>
+   </ul>  
+</details>
