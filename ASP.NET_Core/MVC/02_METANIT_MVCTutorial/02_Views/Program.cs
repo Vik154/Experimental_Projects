@@ -6,6 +6,10 @@ public class Program {
 
         // добавляем поддержку контроллеров с представлениями
         builder.Services.AddControllersWithViews();
+
+        // внедряем сервис ITimeService
+        builder.Services.AddTransient<ITimeService, SimpleTimeService>();
+
         var app = builder.Build();
 
         // устанавливаем сопоставление маршрутов с контроллерами

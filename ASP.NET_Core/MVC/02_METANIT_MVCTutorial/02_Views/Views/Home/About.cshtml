@@ -1,4 +1,7 @@
-﻿@functions {
+﻿@using _02_Views
+@inject ITimeService time
+
+@functions {
     public int Sum(int a, int b) => a + b;
     public int Square(int n) => n * n;
 }
@@ -14,5 +17,7 @@
     <h2>About page!</h2>
     <p>Sum of 5 and 4: <b> @Sum(5, 4)</b></p>
     <p>Square of 4: <b>@Square(4)</b></p>
+    <br />
+    <p>Current Time: @time.Time</p>
 </body>
 </html>
