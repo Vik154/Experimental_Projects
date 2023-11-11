@@ -1,0 +1,25 @@
+﻿@using (Html.BeginForm("Create", "Home", FormMethod.Post)) {
+    <p>
+        <label>Имя</label><br />
+        @Html.TextBox("Name")
+    </p>
+    <p>
+        <label>Возраст</label><br />
+        @Html.TextBox("Age", "", new { type = "number" })
+    </p>
+
+    <div>
+        @Html.RadioButton("color", "red")
+        <span>красный</span>
+        <br />
+        @Html.RadioButton("color", "blue")
+        <span>синий</span>
+        <br />
+        @Html.RadioButton("color", "green", true)
+        <span>зеленый</span>
+    </div>
+
+    <p>
+        <input type="submit" value="Отправить" />
+    </p>
+}
