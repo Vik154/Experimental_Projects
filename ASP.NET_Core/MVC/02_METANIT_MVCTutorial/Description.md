@@ -48,16 +48,6 @@
 
 <details> <summary><b><i>09_EntityFramework - Работа с данными в Entity Framework:</i></b></summary>
    <ul>
-     <li> Глава 11. Валидация модели на стороне сервера </li>
+     <li> Глава 11. Работа с данными в Entity Framework </li>
    </ul>  
 </details>
-
-
-
-
-
-
-
-
-
-
