@@ -1,0 +1,15 @@
+﻿@page "/"
+
+<h1>Hello, world!</h1>
+
+<h1>@Message @name</h1>
+<h2>------------------------------------------------------</h2>
+<h2>@DisplayTime()</h2>
+
+@code {
+    string name = "Qwerty";
+    string DisplayTime() {
+        return $"Current time: {DateTime.Now.ToString("HH:mm:ss")}";
+    }
+    string Message { get; } = "Hello";
+}
