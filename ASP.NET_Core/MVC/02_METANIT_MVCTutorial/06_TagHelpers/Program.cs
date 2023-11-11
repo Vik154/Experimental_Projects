@@ -9,7 +9,8 @@ public class Program {
 
         var app = builder.Build();
 
-        app.MapControllerRoute("default", "{controller=Home}/{action=Create}");
+        app.MapControllerRoute("default", "{controller=Home}/{action=Index}");
+        // app.MapControllerRoute("default", "{controller=Home}/{action=Create}");
         
         app.Run();
     }

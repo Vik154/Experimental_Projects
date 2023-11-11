@@ -1,4 +1,6 @@
-﻿
+﻿@addTagHelper *, 06_TagHelpers
+
+
 <a asp-controller="Home" asp-action="Contacts">Контакты</a>
 
 <div>
@@ -9,3 +11,9 @@
 <a asp-controller="Home" asp-action="About">О сайте</a>
 </div>
 
+
+@* Использование своих тег-хелперов *@
+<summary>
+    <timer></timer>
+    <date></date>
+</summary>
