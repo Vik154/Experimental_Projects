@@ -1,0 +1,11 @@
+﻿
+<a asp-controller="Home" asp-action="Contacts">Контакты</a>
+
+<div>
+@Html.ActionLink("О сайте", "About", "Home")
+<br />
+<a href='@Url.Action("About", "Home")'>О сайте</a>
+<br />
+<a asp-controller="Home" asp-action="About">О сайте</a>
+</div>
+
