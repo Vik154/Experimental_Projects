@@ -40,6 +40,14 @@
    </ul>  
 </details>
 
+<details> <summary><b><i>08_MetaData - Метаданные и валидация модели:</i></b></summary>
+   <ul>
+     <li> Глава 9. Валидация модели на стороне сервера </li>
+   </ul>  
+</details>
+
+
+
 
 
 
