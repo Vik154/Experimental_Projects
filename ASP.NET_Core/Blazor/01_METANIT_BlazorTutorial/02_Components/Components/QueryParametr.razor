@@ -1,0 +1,37 @@
+﻿@* Параметры строки запроса *@
+
+<!-- ?параметр1=значение1&параметр2=значение2&параметр3=значение3 -->
+
+@*
+    Чтобы получить значение из параметра строки запроса в свойство компонета, к этому свойству 
+    должен применяться атрибут [SupplyParameterFromQuery] вместе с атрибутом [Parameter].
+
+    Стоит отметить, что получить параметры из строки запроса можно только в маршрутизируемых 
+    компонентах, то есть в которых применяется директива @page.
+
+    Blazor позволяет получать из строки запроса значения следующих типов:
+    - bool, DateTime, decimal, double, float, Guid, int, long, string (а также их nullable-двойники)
+    - массивы выше указанных значений
+*@
+
+@page "/Query"
+
+<h1>Query Parameters</h1>
+
+<h2>Hello @Name</h2>
+
+@if (Age != null) {
+    <h3>Your age: @Age</h3>
+}
+
+@code {
+    [Parameter]
+    [SupplyParameterFromQuery]
+    public string? Name { get; set; }
+    
+    [Parameter]
+    [SupplyParameterFromQuery]
+    public int? Age { get; set; }
+}
+
+@* Ввод: http://localhost:[номер выделенного хоста]/Query?name=Timmy&age=22 *@
