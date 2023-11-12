@@ -7,6 +7,10 @@
 <html lang="en">
 <head>
     <meta charset="utf-8" />
+    <!-- 
+        Стоит отметить, что на веб-странице или на странице Razor, которая хостирует приложение,
+        для корректной работы маршрутизации в пределах элемента <head> необходимо указать тег <base>:
+    -->
     <base href="~/" />
     <link href="css/site.css" rel="stylesheet" />
     <component type="typeof(HeadOutlet)" render-mode="ServerPrerendered" />
