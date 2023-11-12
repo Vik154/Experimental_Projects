@@ -10,3 +10,41 @@
         </LayoutView>
     </NotFound>
 </Router>
+
+
+@using Microsoft.AspNetCore.Components.Web
+<h1>Hello World</h1>
+
+<button @onclick="Click">+</button>
+<span>@currentCount</span>
+
+@code {
+    private int currentCount = 0;
+    private void Click() => currentCount++;
+}
+
+<h2>------------------------------------------</h2>
+
+<_02_Components.Components.Home></_02_Components.Components.Home>
+
+<h2>------------------------------------------</h2>
+
+@* Параметры компонентов *@
+
+@using _02_Components.Components
+
+<h1>Hello Blazor</h1>
+<Home Title="Home Page" />
+<Home Title="@someTitle" />
+<Home />
+
+@code{
+    string someTitle = "Main Page";
+}
+
+<h2>------------------------------------------</h2>
+<Home Count="@users.Count" Users="@users"></Home>
+
+@code {
+    List<string> users = new List<string> { "Tom", "Bob", "Sam", "Mike" };
+}

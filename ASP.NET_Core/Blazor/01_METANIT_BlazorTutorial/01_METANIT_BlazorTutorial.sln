@@ -3,13 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.8.34302.71
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01_Base", "01_Base\01_Base.csproj", "{FF15DC88-8B89-4C30-8D3F-BEB7A981C3EC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "01_Base", "01_Base\01_Base.csproj", "{FF15DC88-8B89-4C30-8D3F-BEB7A981C3EC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "00_BlazorFirst", "00_BlazorFirst\00_BlazorFirst.csproj", "{962E1699-7040-414C-AD9D-9C9A9923DDAD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "00_BlazorFirst", "00_BlazorFirst\00_BlazorFirst.csproj", "{962E1699-7040-414C-AD9D-9C9A9923DDAD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01_BaseHost", "01_BaseHost\01_BaseHost.csproj", "{9A6E0D8F-8D10-4C79-9D51-2C7CB2DAECE8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "01_BaseHost", "01_BaseHost\01_BaseHost.csproj", "{9A6E0D8F-8D10-4C79-9D51-2C7CB2DAECE8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02_Components", "02_Components\02_Components.csproj", "{11F9BD0E-4BB6-4215-9533-C4458F3ABD01}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "02_Components", "02_Components\02_Components.csproj", "{11F9BD0E-4BB6-4215-9533-C4458F3ABD01}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
