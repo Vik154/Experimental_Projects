@@ -1,0 +1,46 @@
+﻿@*
+    Компоненты могут использовать дополнительные произвольные атрибуты в добавление
+    к свойствам-параметрам. Подобные атрибуты могут передаваться через словарь Dictionary
+    с помощью директивы @attributes и затем они будут использоваться при рендеринге элемента.
+
+    Данная функциональность может быть полезна при определении элемента,
+    для которого может быть не определен точный набор атрибутов,
+    либо мы точно не знаем, какие данные будут передаваться в элемент.
+*@
+
+@page "/Arbitrary"
+
+<h1>Переменное количество атрибутов</h1>
+
+<div>@Title</div>
+
+@*
+    В элемент <input /> через директиву @attributes передается набор атрибутов
+    в виде свойства InputAttributes, которое представляет свойство Dictionary<string, object>.
+    Директива @attributes должна принимать объект типа, который реализует интерфейс
+    IEnumerable<KeyValuePair<string, object>>. 
+    И объект Dictionary<string, object> как раз является таким объектом.
+*@
+
+<input id="userAge" @attributes="InputAttributes" />
+
+@code {
+    public string Title { get; set; } = "Input Age";
+
+    public Dictionary<string, object> InputAttributes { get; set; } =
+        new Dictionary<string, object>() {
+            {"type", "number" },
+            { "min", "1" },
+            { "max", "99" },
+            { "placeholder", "Input age" },
+            { "style", "width:150px;" }
+        };
+}
+
+@*
+    В итоге вместо элемента
+    <input id="userAge" @attributes="InputAttributes" />
+
+    будет сгенерирован элемент:
+    <input id="userAge" type="number" min="1" max="99" placeholder="Input age" style="width:150px;">
+*@
