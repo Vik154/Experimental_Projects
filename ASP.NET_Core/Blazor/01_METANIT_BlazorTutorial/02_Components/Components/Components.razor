@@ -1,0 +1,38 @@
+﻿@page "/Components"
+
+@* 
+   Параметры компонентов:
+
+   Теперь компонент содержит одно свойство Title, к которому применяется атрибут [Parameter],
+   поэтому это свойство можно назвать параметром компонента.
+   Через это свойства компонент может получить извне некоторые данные.
+
+   Следует учитывать, что подобные свойства-параметры должны представлять автосвойства,
+   у которых блоки set и get не содержат никакой логики.
+*@
+
+@code {
+    [Parameter]
+    public string Title { get; set; } = "Какой-то текст очень важный";
+
+    [Parameter]
+    public List<string> Users { get; set; } = new() { "Timmy", "Bobby", "Quarry" };
+
+    [Parameter]
+    public int Count { get; set; } = 0;
+}
+
+<h1>Components Page</h1>
+
+<h2>Title: @Title</h2>
+
+<h2>Количество пользователей: @Count</h2>
+
+<ul>
+    @foreach (var user in Users) {
+        <li>@user</li>
+        Count++;
+    }
+</ul>
+
+<h2>Количество пользователей: @Count</h2>
