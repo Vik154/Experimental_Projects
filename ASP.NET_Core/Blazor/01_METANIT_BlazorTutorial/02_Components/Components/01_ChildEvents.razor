@@ -1,0 +1,35 @@
+﻿@page "/Child"
+@using Microsoft.AspNetCore.Components.Web
+
+<h1>Child Events Page</h1>
+
+<div>
+    <button @onclick="OnIncreaseCallback">+</button>
+    <button @onclick="OnDecreaseCallback">-</button>
+</div>
+
+<div style="width:100px;height:100px;background-color:#ccc;" @onclick="OnClickCallback"></div>
+
+<!-- Передача произвольного объекта в обработчик события -->
+<div>
+    <input type="text" @bind-value="@item" />
+    <button @onclick="@(async() => await OnClickCallback2.InvokeAsync(item))">Add</button>
+</div>
+
+@code {
+    [Parameter]
+    public EventCallback OnIncreaseCallback { get; set; }
+    
+    [Parameter]
+    public EventCallback OnDecreaseCallback { get; set; }
+
+    [Parameter]
+    public EventCallback<MouseEventArgs> OnClickCallback { get; set; }
+
+
+    // <!-- Передача произвольного объекта в обработчик события -->
+    string item = "";
+
+    [Parameter]
+    public EventCallback<string> OnClickCallback2 { get; set; }
+}

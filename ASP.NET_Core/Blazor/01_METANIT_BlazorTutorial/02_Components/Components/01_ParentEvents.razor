@@ -1,0 +1,34 @@
+﻿@page "/Parent"
+@using _02_Components.Components
+
+<h1>Parent Events Page</h1>
+
+<div>@count</div>
+<_01_ChildEvents 
+    OnIncreaseCallback="@Increase" 
+    OnDecreaseCallback="@Decrease" 
+    OnClickCallback="@GetCoords"
+    OnClickCallback2="@AddNewUser"
+    />
+<div>@coords</div>
+<h3>User list:</h3>
+<ul>
+    @foreach (var user in users) {
+        <li>@user</li>
+    }
+</ul>
+
+
+@code {
+    int count;
+    string coords = "";
+
+    void Increase() => count++;
+    void Decrease() => count--;
+    void GetCoords(MouseEventArgs e) => coords = $"Coords X = {e.ClientX}  Y= {e.ClientY}";
+
+    // <!-- Передача произвольного объекта в обработчик события -->
+    List<string> users = new List<string>();
+
+    void AddNewUser(string user) => users.Add(user);
+}
