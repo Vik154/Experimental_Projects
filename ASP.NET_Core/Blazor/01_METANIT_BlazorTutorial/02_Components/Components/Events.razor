@@ -1,0 +1,81 @@
+﻿@* Обработка событий *@
+@*
+    Компоненты поддерживают обработку событий. Если элемент html имеет атрибуты 
+    вида on{СОБЫТИЕ}, которые позволяют связать событие с некоторой функцией 
+    javascript (например, атрибут onclick), то Blazor предоставляет их двойники - 
+    атрибуты типа @on{СОБЫТИЕ}, которые позволяют прикрепить к событию в качестве обработчика метод компонента.
+
+    Поддержка привязки событий сосредоточена в пространстве имен 
+    Microsoft.AspNetCore.Components.Web.
+    В частности, в нем определен класс EventHandlers, который конфигурирует сопоставление 
+    между именами событий и типами аргументов события
+*@
+
+@page "/Events"
+@using Microsoft.AspNetCore.Components.Web
+
+<h1>Events Page</h1>
+
+@*
+    Html-элемент <button>, который представляет кнопку, поддерживает атрибут onclick,
+    который позволяет при нажатии кнопки вызвать какую-нибудь функцию javascript.
+    Поэтому Blazor предоставляет для этого атрибута его аналог @onclick.
+    В качестве значению этому атрибуту можно передать один из методов компонента.
+*@
+
+<button @onclick="DecrementCount">-</button>
+<span>@currentCount</span>
+<button @onclick="IncrementCount">+</button>
+
+<!-- Обработка событий с помощью лямбда функций -->
+<button @onclick="@(e => currentCount++)">+</button>
+<span>@currentCount</span>
+<button @onclick="@(e => currentCount--)">-</button>
+
+
+@code {
+    int currentCount;
+
+    void IncrementCount() {
+        currentCount++;
+    }
+    void DecrementCount() {
+        if (currentCount > 0)
+            currentCount--;
+    }
+}
+
+<h3>----------------------------------------------------------</h3>
+
+<!-- Работа с события мыши (аргументом) -->
+<style>
+    #canvas {
+        margin: 20px;
+        width: 200px;
+        height: 200px;
+        background-color: #ccc;
+    }
+</style>
+
+<div id="canvas" @onclick="Click"></div>
+<div>
+    <p>ClientX: @clientX , ClientY: @clientY</p>
+    <p>OffsetX: @offsetX , OffsetY: @offsetY</p>
+    <p>PageX: @pageX , PageY: @pageY</p>
+    <p>ScreenX: @screenX , ScreenY: @screenY</p>
+</div>
+
+@code {
+    double clientX, clientY, offsetX, offsetY, pageX, pageY, screenX, screenY;
+
+    void Click(MouseEventArgs e) {
+        clientX = e.ClientX;
+        clientY = e.ClientY;
+        offsetX = e.OffsetX;
+        offsetY = e.OffsetY;
+        pageX = e.PageX;
+        pageY = e.PageY;
+        screenX = e.ScreenX;
+        screenY = e.ScreenY;
+    }
+}
