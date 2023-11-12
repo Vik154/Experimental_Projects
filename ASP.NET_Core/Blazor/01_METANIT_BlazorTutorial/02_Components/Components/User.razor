@@ -1,0 +1,18 @@
+﻿@page "/user/{name?}/{age?}/{*info}"
+
+<h1>User Page</h1>
+<h2>Hello, @Name</h2>
+<h2>Your age, @Age</h2>
+<h2>сatch-all param: @Info</h2>
+
+@code {
+    [Parameter]
+    public string Name { get; set; } = "";
+
+    [Parameter]
+    public string Age { get; set; } = "";
+
+    /// <summary> Параметр сatch-all </summary>
+    [Parameter]
+    public string? Info { get; set; }
+}
