@@ -25,6 +25,7 @@
     Чтобы передать компоненту Router текущую сборку, используется выражение 
     @typeof(Program).Assembly. То есть получаем тип класса Program, а затем его сборку.
 -->
+
 <Router AppAssembly="@typeof(App).Assembly">
     <!--
         У компонента Found устанавливается свойство Context, которое представляет объект RouteData 
@@ -66,7 +67,7 @@
     </NotFound>
 </Router>
 
-
+@*
 @using Microsoft.AspNetCore.Components.Web
 
 <h2>------------------------------------------</h2>
@@ -79,7 +80,7 @@
     private int currentCount = 0;
     private void Click() => currentCount++;
 }
-
+*@
 
 
 @* Параметры компонентов 

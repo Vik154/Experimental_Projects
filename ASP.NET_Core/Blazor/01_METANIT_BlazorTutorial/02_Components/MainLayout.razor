@@ -14,13 +14,40 @@
    вложенного содержимого в определенной части компонента
 *@
 
+@*
+    Встроенный компонент NavLink применяется для создания ссылок на компоненты.
+    В целом этот компонент ведет себя как стандартный html-элемент <a> за тем исключением,
+    что он также переключает css-класс active, который позволяет стилизовать текущую активную ссылку.
+*@
+
 @inherits LayoutComponentBase
- 
+
+@using Microsoft.AspNetCore.Components.Routing  @*для NavLink*@
+
+
+<style>
+    a {
+        color: #00897B;
+    }
+    a.active {
+        color: #004D40;
+        font-weight: 700;
+    }
+</style> 
+
+<!--
+    С помощью свойства Match класс NavLink позволяет установить, в каком случае
+    к ссылке будет применяться класс active.
+    Это свойство принимает значение типа NavLinkMatch и может принимать два значения:
+    - NavLinkMatch.All: ссылка активна, если ее адрес полностью соответствует адресу текущего компонента.
+    - NavLinkMatch.Prefix: ссылка активна, если ее адрес соответствует началу адреса текущего компонента (значение по умолчанию).
+-->
+
 <div>
     <div>
-        <a href="">App</a> | 
-        <a href="/Home">Home</a> |
-        <a href="/Index">Index</a>
+        <NavLink Match="NavLinkMatch.All" href="/">Home</NavLink> |
+        <NavLink href="/Index">Index</NavLink> |
+        <NavLink href="/About">About</NavLink> |
     </div>
  
     <div>
