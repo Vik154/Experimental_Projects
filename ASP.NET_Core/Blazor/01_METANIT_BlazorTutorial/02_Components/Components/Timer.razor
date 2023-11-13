@@ -1,0 +1,7 @@
+﻿@page "/Timer"
+@using _02_Components.Util
+@inject ITimeService timer
+
+<h1>Timer Page</h1>
+ 
+<h2>Time: @timer.GetTime()</h2>

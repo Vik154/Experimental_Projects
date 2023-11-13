@@ -1,9 +1,13 @@
-﻿using Microsoft.AspNetCore.Components;
+﻿using _02_Components.Util;
+using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Web;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddRazorPages();
 builder.Services.AddServerSideBlazor();
+
+// добавляем сервис TimeService
+builder.Services.AddTransient<ITimeService, TimeService>();
 
 var app = builder.Build();
 
