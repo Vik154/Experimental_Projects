@@ -1,0 +1,38 @@
+﻿@* Вместо установки свойства Model у формы EditForm также можно 
+   использовать свойство EditContext, которое принимает объект 
+   одноименного типа EditContext и которое устанавливает контекст формы.
+*@
+
+@page "/EditContext"
+@using Microsoft.AspNetCore.Components.Forms
+@using Microsoft.AspNetCore.Components.Web
+
+<EditForm EditContext="editContext" OnSubmit="Submit">
+    <p>
+        Name:<br />
+        <InputText id="name" @bind-Value="person.Name" />
+    </p>
+    <p>
+        Age:<br />
+        <InputNumber id="age" @bind-Value="person.Age" />
+    </p>
+    <button type="submit">Submit</button>
+</EditForm>
+
+@code {
+    Person person = new();
+    EditContext? editContext;
+
+    protected override void OnInitialized() {
+        editContext = new(person);
+    }
+
+    void Submit() {
+        Console.WriteLine($"Name: {person.Name} \tAge: {person.Age}");
+    }
+
+    public class Person {
+        public string Name { get; set; } = "";
+        public int Age { get; set; }
+    }
+}
