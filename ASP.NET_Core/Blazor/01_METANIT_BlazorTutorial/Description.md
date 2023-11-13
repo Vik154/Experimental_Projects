@@ -9,3 +9,9 @@
      <li> Глава 1. Хостирование приложений Blazor </li>
    </ul>  
 </details>
+
+<details> <summary><b><i>02_Components - Компоненты:</i></b></summary>
+   <ul>
+     <li> Глава 2-3. Компоненты - маршрутизация </li>
+   </ul>  
+</details>
