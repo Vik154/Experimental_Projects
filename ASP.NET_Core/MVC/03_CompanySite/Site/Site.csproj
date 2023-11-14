@@ -24,6 +24,7 @@
   <ItemGroup>
     <None Include="bundleconfig.json" />
     <None Include="compilerconfig.json" />
+    <None Include="Views\Account\Login.cshtml" />
   </ItemGroup>
 
   <ItemGroup>
