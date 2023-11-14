@@ -12,7 +12,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Models\ViewComponents\" />
     <Folder Include="wwwroot\css\" />
     <Folder Include="wwwroot\images\" />
     <Folder Include="wwwroot\js\" />
@@ -28,6 +27,7 @@
     <None Include="Views\Account\Login.cshtml" />
     <None Include="Views\Services\Index.cshtml" />
     <None Include="Views\Services\Show.cshtml" />
+    <None Include="Views\Shared\Components\Sidebar\Default.cshtml" />
   </ItemGroup>
 
   <ItemGroup>
