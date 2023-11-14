@@ -1,8 +1,13 @@
-﻿namespace Site;
+﻿using Site.Service;
+
+namespace Site;
 
 public class Program {
+
     public static void Main(string[] args) {
         var builder = WebApplication.CreateBuilder(args);
+
+        builder.Configuration.Bind("Project", new Config());
 
 		builder.Services.AddControllersWithViews();
 
