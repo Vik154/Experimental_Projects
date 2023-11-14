@@ -48,10 +48,9 @@ public class Program {
 		});
 
 		// Добавляем поддержку контроллеров и представлений (MVC)
-		builder.Services.AddControllersWithViews();
-		//builder.Services.AddControllersWithViews((x) => {
-		//	x.Conventions.Add(new AdminAreaAuthorization("Admin", "AdminArea"));
-		//})
+		builder.Services.AddControllersWithViews((x) => {
+			x.Conventions.Add(new AdminAreaAuthorization("Admin", "AdminArea"));
+		});
 
 		var app = builder.Build();
 
