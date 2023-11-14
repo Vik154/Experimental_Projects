@@ -7,6 +7,11 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Remove="bundleconfig.json" />
+    <Content Remove="compilerconfig.json" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Folder Include="Areas\Admin\Controllers\" />
     <Folder Include="Areas\Admin\Views\" />
     <Folder Include="Controllers\" />
@@ -17,6 +22,11 @@
     <Folder Include="wwwroot\sass\" />
     <Folder Include="Domain\" />
     <Folder Include="Service\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="bundleconfig.json" />
+    <None Include="compilerconfig.json" />
   </ItemGroup>
 
   <ItemGroup>
