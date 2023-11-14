@@ -67,7 +67,7 @@
    * *[Razor/METANIT_RazorTutorial](ASP.NET_Core/Razor/01_METANIT_RazorTutorial/Description.md) - Учебные проекты по туториалу METANIT.COM/ASP.NET Core Razor Pages*
    * *[MVC/METANIT_MVCTutorial](ASP.NET_Core/MVC/02_METANIT_MVCTutorial/Description.md) - Учебные проекты по туториалу METANIT.COM/ASP.NET Core MVC*
    * *[Blazor/METANIT_BlazorTutorial](ASP.NET_Core/Blazor/01_METANIT_BlazorTutorial/Description.md) - Учебные проекты по туториалу METANIT.COM/ASP.NET Blazor*
-   * *[MVC/03_CompanySite](ASP.NET_Core/MVC/03_CompanySite/) - "Создание сайта с нуля на ASP.NET Core MVC" по серии уроков https://www.youtube.com/@alekseev74/playlists*
+   * *[MVC/03_CompanySite](ASP.NET_Core/MVC/03_CompanySite/) - "Создание сайта" по серии уроков https://www.youtube.com/@alekseev74/playlists*
    * 
 </details>
 
