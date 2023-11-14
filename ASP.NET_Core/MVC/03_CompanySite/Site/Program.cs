@@ -70,8 +70,8 @@ public class Program {
 		app.UseAuthorization();
 
 		// Регистрация нужных маршрутов
+		app.MapControllerRoute("Admin", "{area:exists}/{controller=Home}/{action=Index}/{id?}");
         app.MapControllerRoute("default", "{controller=Home}/{action=Index}/{id?}");
-		app.MapControllerRoute("admin", "{area:exists}/{controller=Home}/{action=Index}/{id?}");
 
         app.Run();
     }
