@@ -70,7 +70,7 @@
    * *[MVC/03_CompanySite](ASP.NET_Core/MVC/03_CompanySite/) - "Создание сайта" по серии уроков https://www.youtube.com/@alekseev74/playlists*
    * *[MVC/04_SimpleWebSite](ASP.NET_Core/MVC/04_SimpleWebSite/) - "Форма сайта" по серии уроков https://www.youtube.com/watch?v=xNLhFNxYAWQ*
    * *[WebAPI](ASP.NET_Core/WebAPI/) - по серии уроков*
-   * ASP.NET_Core/
+   * 
 </details>
 
 
