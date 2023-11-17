@@ -1,4 +1,4 @@
-Проблема ---> CSharpAddImportCodeFixProvider
+Проблема ---> автоматически отключается CSharpAddImportCodeFixProvider
 
 Попробовать:
 1. Снести .vs и запуститься (т.к. студия кеширует данные)
