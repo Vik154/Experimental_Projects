@@ -1,7 +1,8 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using System.Reflection;
 using MediatR;
-// using Notes.WebApi;
+using FluentValidation;
+using Notes.Application.Common.Behaviors;
 
 namespace Notes.Application;
 
@@ -11,7 +12,8 @@ public static class DependencyInjection {
         //services.AddMediatR(cfg => {
         //    cfg.RegisterServicesFromAssembly(typeof(dummy).Assembly);
         //});
-
+        services.AddValidatorsFromAssemblies(new[] { Assembly.GetExecutingAssembly() });
+        services.AddTransient(typeof(IPipelineBehavior<,>), typeof(ValidatorBehavior<,>));
         return services;
     }
 }
