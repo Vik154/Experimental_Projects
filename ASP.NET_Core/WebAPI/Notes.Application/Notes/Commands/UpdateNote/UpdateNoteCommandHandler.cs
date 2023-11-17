@@ -30,9 +30,9 @@ public class UpdateNoteCommandHandler : IRequestHandler<UpdateNoteCommand> {
         return Unit.Value;
     }
 
-    Task IRequestHandler<UpdateNoteCommand>.Handle(UpdateNoteCommand request, 
-        CancellationToken cancellationToken) 
-    {
-        throw new NotImplementedException();
-    }
+    //Task IRequestHandler<UpdateNoteCommand>.Handle(UpdateNoteCommand request, 
+    //    CancellationToken cancellationToken) 
+    //{
+    //    throw new NotImplementedException();
+    //}
 }
