@@ -44,7 +44,7 @@ public class Program {
             }
         }
 
-        app.UseExceptionHandler();
+       // app.UseExceptionHandler();
         app.UseRouting();
         app.UseHttpsRedirection();
         app.UseCors("AllowAll");
