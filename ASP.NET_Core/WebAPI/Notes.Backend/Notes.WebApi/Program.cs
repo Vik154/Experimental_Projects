@@ -42,12 +42,15 @@ public class Program {
                 opt.RequireHttpsMetadata = false;
             });
 
+        // builder.Services.AddEndpointsApiExplorer()
+
         builder.Services.AddSwaggerGen(config => {
             var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
             var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
             config.IncludeXmlComments(xmlPath);
         });
 
+        builder.Services.AddApiVersioning();
        
 
         var app = builder.Build();
@@ -77,7 +80,7 @@ public class Program {
         app.UseCors("AllowAll");
         app.UseAuthentication();
         app.UseAuthorization();
-
+        // app.UseApiVersioning();
         // app.UseEndpoints(endp => endp.MapControllers());
 
         app.MapControllerRoute(

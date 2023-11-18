@@ -7,11 +7,14 @@ using Notes.Application.Notes.Commands.UpdateNote;
 using Notes.Application.Notes.Queries.GetNoteDetails;
 using Notes.Application.Notes.Queries.GetNoteList;
 using Notes.WebApi.Models;
+using Asp.Versioning;
 
 namespace Notes.WebApi.Controllers;
 
+// [ApiVersion("1.0")]
+[ApiVersionNeutral]
 [Produces("application/json")]
-[Route("api/[controller]")]
+[Route("api/{version:apiVersion}/[controller]")]
 public class NoteController : BaseController {
 
     private readonly IMapper _mapper;
