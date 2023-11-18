@@ -16,6 +16,7 @@ public class Program {
 
         var app = builder.Build();
 
+        // Добавление данных dotnet run seeddata (из консоли)
         if (args.Length == 1 && args[0].ToLower() == "seeddata") {
             Seed.SeedData(app);
         }
