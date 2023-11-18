@@ -6,11 +6,15 @@ public class Program {
     public static void Main(string[] args) {
         var builder = WebApplication.CreateBuilder(args);
 
+        var connectionString = builder.Configuration.GetConnectionString("DbConnection");
+        // builder.Services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(connectionString));
+
+
         builder.Services.AddIdentityServer()
-            .AddInMemoryApiResources(new List<ApiResource>())
-            .AddInMemoryIdentityResources(new List<IdentityResource>())
-            .AddInMemoryApiScopes(new List<ApiScope>())
-            .AddInMemoryClients(new List<Client>())
+            .AddInMemoryApiResources(Configuration.ApiResources)
+            .AddInMemoryIdentityResources(Configuration.IdentityResources)
+            .AddInMemoryApiScopes(Configuration.ApiScopes)
+            .AddInMemoryClients(Configuration.Clients)
             .AddDeveloperSigningCredential();
 
         var app = builder.Build();
