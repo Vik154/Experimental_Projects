@@ -1,4 +1,7 @@
-﻿namespace RunGroopWebApp;
+﻿using Microsoft.EntityFrameworkCore;
+using RunGroopWebApp.Data;
+
+namespace RunGroopWebApp;
 
 public class Program {
     public static void Main(string[] args) {
@@ -6,6 +9,10 @@ public class Program {
 
         // Add services to the container.
         builder.Services.AddControllersWithViews();
+        builder.Services.AddDbContext<ApplicationDbContext>(options => {
+            options.UseSqlServer(builder.Configuration
+                .GetConnectionString("DefaultConnection"));
+        });
 
         var app = builder.Build();
 
