@@ -28,6 +28,8 @@
                <li> :link: Програмысли - https://www.youtube.com/@Dev-lessons</li>
                <li> :link: АйтишныйДомосед - https://www.youtube.com/@ITHomester/playlists</li>
                <li> --------------------------- EN Tutorials --------------------------------</li>
+               <li> :link: Teddy Smith - https://www.youtube.com/@TeddySmithDev</li>
+               <li> :link: Les Jackson - https://www.youtube.com/@binarythistle</li>
             </ul>
          </details>
       </li>
