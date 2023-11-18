@@ -75,8 +75,7 @@
    * *[MVC/04_SimpleWebSite](ASP.NET_Core/MVC/04_SimpleWebSite/) - "Форма сайта" по серии уроков https://www.youtube.com/watch?v=xNLhFNxYAWQ*
    * *[WebAPI](ASP.NET_Core/WebAPI/) - по серии уроков "Web Api" https://www.youtube.com/@PlatinumTechTalks/playlists*
    * *[MVC/05_RunGroopApplication](ASP.NET_Core/MVC/05_RunGroopApplication) - Веб-приложение для бега https://www.youtube.com/@TeddySmithDev* <br>
-      _По серии уроков из плейлиста "ASP.NET Core MVC 2022 .NET 6"_ 
-   * 
+      _По серии уроков из плейлиста "ASP.NET Core MVC 2022 .NET 6"_
    * 
 </details>
 
