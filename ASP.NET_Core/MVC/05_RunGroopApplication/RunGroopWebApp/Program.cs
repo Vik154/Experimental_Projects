@@ -1,4 +1,4 @@
-namespace RunGroopWebApp;
+﻿namespace RunGroopWebApp;
 
 public class Program {
     public static void Main(string[] args) {
