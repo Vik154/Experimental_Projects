@@ -42,6 +42,14 @@ public class Program {
                 opt.RequireHttpsMetadata = false;
             });
 
+        builder.Services.AddSwaggerGen(config => {
+            var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
+            var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
+            config.IncludeXmlComments(xmlPath);
+        });
+
+       
+
         var app = builder.Build();
 
         using (var scope = app.Services.CreateScope()) {
@@ -56,7 +64,14 @@ public class Program {
             }
         }
 
-       // app.UseExceptionHandler();
+        // app.UseExceptionHandler();
+
+        app.UseSwagger();
+        app.UseSwaggerUI(config => {
+            config.RoutePrefix = string.Empty;
+            config.SwaggerEndpoint("swagger/v1/swagger.json", "Notes API");
+        });
+
         app.UseRouting();
         app.UseHttpsRedirection();
         app.UseCors("AllowAll");
@@ -74,6 +89,3 @@ public class Program {
         app.Run();
     }
 }
-
-// test commit
-// test commit
