@@ -74,6 +74,9 @@
    * *[MVC/03_CompanySite](ASP.NET_Core/MVC/03_CompanySite/) - "Создание сайта" по серии уроков https://www.youtube.com/@alekseev74/playlists*
    * *[MVC/04_SimpleWebSite](ASP.NET_Core/MVC/04_SimpleWebSite/) - "Форма сайта" по серии уроков https://www.youtube.com/watch?v=xNLhFNxYAWQ*
    * *[WebAPI](ASP.NET_Core/WebAPI/) - по серии уроков "Web Api" https://www.youtube.com/@PlatinumTechTalks/playlists*
+   * *[MVC/05_RunGroopApplication](ASP.NET_Core/MVC/05_RunGroopApplication) - https://www.youtube.com/@TeddySmithDev*
+      Веб-приложение для бкга - по серии уроков "ASP.NET Core MVC 2022 .NET 6" 
+   * 
    * 
 </details>
 
