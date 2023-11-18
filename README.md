@@ -21,11 +21,13 @@
       <li>
          <details> <summary><b><i> :recycle: ASP.NET Core:</i></b></summary>
             <ul>
+               <li> ------------------------- RU Tutorials ------------------------------</li>
                <li> :link: Семен Алексеев - https://www.youtube.com/@alekseev74/playlists</li>
                <li> :link: Просто программист - https://www.youtube.com/@RadmirT/playlists</li>
                <li> :link: Cleannetcode - https://www.youtube.com/@Cleannetcode/playlists</li>
                <li> :link: Програмысли - https://www.youtube.com/@Dev-lessons</li>
                <li> :link: АйтишныйДомосед - https://www.youtube.com/@ITHomester/playlists</li>
+               <li> ------------------------- EN Tutorials ------------------------------</li>
             </ul>
          </details>
       </li>
