@@ -1,5 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using RunGroopWebApp.Data;
+using RunGroopWebApp.Interfaces;
+using RunGroopWebApp.Repository;
 
 namespace RunGroopWebApp;
 
@@ -9,6 +11,12 @@ public class Program {
 
         // Add services to the container.
         builder.Services.AddControllersWithViews();
+
+        // Внедрение зависимостей
+        builder.Services.AddScoped<IClubRepository, ClubRepository>();
+        builder.Services.AddScoped<IRaceRepository, RaceRepository>();
+
+        // Добавление БД контекста
         builder.Services.AddDbContext<ApplicationDbContext>(options => {
             options.UseSqlServer(builder.Configuration
                 .GetConnectionString("DefaultConnection"));
