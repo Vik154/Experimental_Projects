@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using RunGroopWebApp.Data;
 using RunGroopWebApp.Models;
 
@@ -15,5 +16,12 @@ public class ClubController : Controller {
     public IActionResult Index() {
         List<Club> clubs = _context.Clubs.ToList();
         return View(clubs);
+    }
+
+    public IActionResult Detail(int id) {
+        Club? club = _context.Clubs
+            .Include(r => r.Address)
+            .FirstOrDefault(x => x.Id == id);
+        return club != null ? View(club) : NotFound("Club not found");
     }
 }
