@@ -10,6 +10,9 @@ public class Seed {
         using (var serviceScope = applicationBuilder.ApplicationServices.CreateScope()) {
             var context = serviceScope.ServiceProvider.GetService<ApplicationDbContext>();
 
+            byte[] default_image = ImageConverter.ImageToByteArray(
+                $"{Directory.GetCurrentDirectory()}/wwwroot/img/running.webp");
+
             context.Database.EnsureCreated();
 
             if (!context.Clubs.Any()) {
@@ -17,7 +20,7 @@ public class Seed {
 
                     new Club() {
                         Title = "Running Club 1",
-                        Image = ImageConverter.ImageToByteArray("~/wwwroot/img/running.webp"),
+                        Image = default_image,
                         Description = "This is the description of the first cinema",
                         ClubCategory = ClubCategory.City,
                         Address = new Address() {
@@ -28,7 +31,7 @@ public class Seed {
                     },
                     new Club() {
                         Title = "Running Club 2",
-                        Image = ImageConverter.ImageToByteArray("~/wwwroot/img/running.webp"),
+                        Image = default_image,
                         Description = "This is the description of the first cinema",
                         ClubCategory = ClubCategory.Endurance,
                         Address = new Address() {
@@ -39,7 +42,7 @@ public class Seed {
                     },
                     new Club() {
                         Title = "Running Club 3",
-                        Image = ImageConverter.ImageToByteArray("~/wwwroot/img/running.webp"),
+                        Image = default_image,
                         Description = "This is the description of the first club",
                         ClubCategory = ClubCategory.Trail,
                         Address = new Address() {
@@ -50,7 +53,7 @@ public class Seed {
                     },
                     new Club() {
                         Title = "Running Club 3",
-                        Image = ImageConverter.ImageToByteArray("~/wwwroot/img/running.webp"),
+                        Image = default_image,
                         Description = "This is the description of the first club",
                         ClubCategory = ClubCategory.City,
                         Address = new Address() {
@@ -68,7 +71,7 @@ public class Seed {
                     new Race()
                     {
                         Title = "Running Race 1",
-                        Image = ImageConverter.ImageToByteArray("~/wwwroot/img/running.webp"),
+                        Image = default_image,
                         Description = "This is the description of the first race",
                         RaceCategory = RaceCategory.Marathon,
                         Address = new Address()
@@ -81,7 +84,7 @@ public class Seed {
                     new Race()
                     {
                         Title = "Running Race 2",
-                        Image = ImageConverter.ImageToByteArray("~/wwwroot/img/running.webp"),
+                        Image = default_image,
                         Description = "This is the description of the first race",
                         RaceCategory = RaceCategory.Ultra,
                         AddressId = 5,

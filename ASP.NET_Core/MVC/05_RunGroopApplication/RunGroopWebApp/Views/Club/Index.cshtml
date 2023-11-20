@@ -19,6 +19,7 @@
         <p>Category: @club.ClubCategory</p>
         <p>Address: @club.Address</p>
         <p>Desc: @club.Description</p>
-        <img src="@club.Image" alt="Image" width="300" height="300" />
+        @Html.Raw("<img style='width:380px; height:260px;' src=\"data:image/jpeg;base64,"
+                    + Convert.ToBase64String(club.Image) + "\" />")
     </div>
 }
