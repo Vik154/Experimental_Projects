@@ -3,6 +3,6 @@
 namespace RunGroopWebApp.Interfaces;
 
 public interface IPhotoService {
-    Task<FileResult> AddPhotoAsync(IFormFile file);
-    Task<FileResult> DeletePhotoAsync(string publicUrl);
+    Task<string> AddPhotoAsync(IFormFile file);
+    Task<string> DeletePhotoAsync(string publicUrl);
 }

@@ -2,6 +2,7 @@
 using RunGroopWebApp.Interfaces;
 using RunGroopWebApp.Models;
 using RunGroopWebApp.ViewModels;
+using System;
 
 namespace RunGroopWebApp.Controllers;
 
@@ -32,18 +33,20 @@ public class ClubController : Controller {
     [HttpPost]
     public async Task<IActionResult> Create(CreateClubViewModel clubViewModel) {
         if (ModelState.IsValid) {
-
-            var img = clubViewModel.Image;
-
-            string str = "123";
             
-            
-            var result = await _photoService.AddPhotoAsync(clubViewModel.Image);
+            string res = await _photoService.AddPhotoAsync(clubViewModel.Image);
+           
+            byte[]? imageData = null;
+
+            // считываем переданный файл в массив байтов
+            using (var binaryReader = new BinaryReader(clubViewModel.Image.OpenReadStream())) {
+                imageData = binaryReader.ReadBytes((int)clubViewModel.Image.Length);
+            }
 
             var club = new Club {
                 Title = clubViewModel.Title,
                 Description = clubViewModel.Description,
-                Image = result.FileDownloadName.ToString(),
+                Image = imageData,
                 ClubCategory = clubViewModel.ClubCategory,
                 // AppUserId = clubViewModel.AppUserId,
                 Address = new Address {

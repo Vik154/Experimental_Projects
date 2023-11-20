@@ -1,11 +1,24 @@
 ﻿@model IEnumerable<Club>
 
 
-
-<div>
-    @foreach (var item in Model) {
-        <h4>id: @item.Id</h4>
+<style>
+    div.block {
+        display: inline-block;
+        padding: 25px;
+        margin: 15px;
     }
-</div>
 
+    div.block:hover {
+        margin: 5px;
+        padding: 35px;
+    }
+</style>
 
+@foreach (var club in Model) {
+    <div class="block">
+        <p>Category: @club.ClubCategory</p>
+        <p>Address: @club.Address</p>
+        <p>Desc: @club.Description</p>
+        <img src="@club.Image" alt="Image" width="300" height="300" />
+    </div>
+}

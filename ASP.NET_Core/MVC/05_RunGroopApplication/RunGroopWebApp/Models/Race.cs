@@ -7,9 +7,9 @@ namespace RunGroopWebApp.Models;
 public class Race {
     [Key]
     public int Id { get; set; }
-    public string Title { get; set; }
-    public string Description { get; set; }
-    public string? Image { get; set; }
+    public string? Title { get; set; }
+    public string? Description { get; set; }
+    public byte[]? Image { get; set; }
     public DateTime? StartTime { get; set; }
     public int? EntryFee { get; set; }
     public string? Website { get; set; }

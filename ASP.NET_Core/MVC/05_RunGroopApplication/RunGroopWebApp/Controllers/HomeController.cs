@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
+using RunGroopWebApp.Extensions;
 using RunGroopWebApp.Models;
 using System.Diagnostics;
 
@@ -10,7 +11,9 @@ namespace RunGroopWebApp.Controllers {
             _logger = logger;
         }
 
+
         public IActionResult Index() {
+            ViewBag.img = ImageConverter.ImageToByteArray($"{Directory.GetCurrentDirectory()}/wwwroot/img/running.webp");
             return View();
         }
 
