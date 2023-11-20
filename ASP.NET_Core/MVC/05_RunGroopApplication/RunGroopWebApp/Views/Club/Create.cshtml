@@ -1,7 +1,9 @@
 ﻿@using RunGroopWebApp.Data.Enum
-@model Club
+@using RunGroopWebApp.ViewModels
 
-<form method="post" asp-controller="Club" asp-action="Create">
+@model CreateClubViewModel
+
+<form method="post" asp-controller="Club" asp-action="Create" enctype="multipart/form-data">    
     <div class="form-group">
         <label asp-for="Title">Title</label>
         <input asp-for="Title" class="form-control" placeholder="Title" />

@@ -2,6 +2,7 @@
 using RunGroopWebApp.Data;
 using RunGroopWebApp.Interfaces;
 using RunGroopWebApp.Repository;
+using RunGroopWebApp.Services;
 
 namespace RunGroopWebApp;
 
@@ -15,6 +16,7 @@ public class Program {
         // Внедрение зависимостей
         builder.Services.AddScoped<IClubRepository, ClubRepository>();
         builder.Services.AddScoped<IRaceRepository, RaceRepository>();
+        builder.Services.AddScoped<IPhotoService, PhotoService>();
 
         // Добавление БД контекста
         builder.Services.AddDbContext<ApplicationDbContext>(options => {

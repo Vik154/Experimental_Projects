@@ -10,7 +10,11 @@ public class PhotoService : IPhotoService {
      * хранить где-то отдельно, ну точно в репозиториях на гите */
 
     public Task<FileResult> AddPhotoAsync(IFormFile file) {
+        //if (file.Length > 0) {
+
+        //}
         throw new NotImplementedException();
+
     }
 
     public Task<FileResult> DeletePhotoAsync(string publicUrl) {
