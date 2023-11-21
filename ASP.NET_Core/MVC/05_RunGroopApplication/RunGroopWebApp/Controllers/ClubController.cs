@@ -56,4 +56,19 @@ public class ClubController : Controller {
         }
         return View(clubViewModel);
     }
+
+    public async Task<IActionResult> Edit(int id) {
+        var club = await _clubRepository.GetByIdAsync(id);
+        if (club == null) { return View("Error"); }
+
+        var clubViewModel = new EditClubViewModel {
+            Title = club.Title,
+            Description = club.Description,
+            AddressId = club.AddressId,
+            Address = club.Address,
+            Image = ImageConverter.ByteArrayToImage(club.Image),
+            ClubCategory = club.ClubCategory
+        };
+        return View(clubViewModel);
+    }
 }
