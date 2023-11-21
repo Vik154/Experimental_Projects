@@ -57,6 +57,7 @@ public class ClubController : Controller {
         return View(clubViewModel);
     }
 
+    [HttpGet]
     public async Task<IActionResult> Edit(int id) {
         var club = await _clubRepository.GetByIdAsync(id);
         if (club == null) { return View("Error"); }

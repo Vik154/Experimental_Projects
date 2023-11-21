@@ -20,5 +20,13 @@
         <p>Desc: @race.Description</p>
         @Html.Raw("<img style='width:380px; height:260px;' src=\"data:image/jpeg;base64,"
                 + Convert.ToBase64String(race.Image) + "\" />")
+        <div>
+            <a type="button" class="btn btn-sm btn-outline-info" asp-controller="Race" asp-action="Edit" asp-route-id="@race.Id">
+                Edit
+            </a>
+            <a type="button" class="btn btn-sm btn-outline-danger" asp-controller="Race" asp-action="Delete" asp-route-id="@race.Id">
+                Delete
+            </a>
+        </div>
     </div>
 }
