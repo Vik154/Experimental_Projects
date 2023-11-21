@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using RunGroopWebApp.Extensions;
 using RunGroopWebApp.Interfaces;
 
 namespace RunGroopWebApp.Services;
@@ -13,18 +14,18 @@ public class PhotoService : IPhotoService {
      * В общем, клиент загружает с локальной машины картинку
      * вместо cloud сервиса - она на сервер падает сразу в БД
      */
-    public async Task<string> AddPhotoAsync(IFormFile file) {
-        if (file.Length > 0) {
-            var path = $"{Directory.GetCurrentDirectory()}/wwwroot/img/{file.FileName}";
-            using (var fileStream = new FileStream(path, FileMode.Create)) {
-                await file.CopyToAsync(fileStream);
+    public async Task<byte[]> AddPhotoAsync(IFormFile file) {
+        if (file.Length > 0) { 
+            // считываем переданный файл в массив байтов
+            using (var binaryReader = new BinaryReader(file.OpenReadStream())) {
+                return binaryReader.ReadBytes((int)file.Length);
             }
-            return $"wwwroot/img/{file.FileName}";
         }
-        return "wwwroot/img/rikmorty.jpg";
+        return await ImageConverter.ImageToByteArrayAsync(
+            $"{Directory.GetCurrentDirectory()}/wwwroot/img/running.webp");
     }
 
-    public Task<string> DeletePhotoAsync(string publicUrl) {
+    public Task<byte[]> DeletePhotoAsync(string publicUrl) {
         throw new NotImplementedException();
     }
 }
