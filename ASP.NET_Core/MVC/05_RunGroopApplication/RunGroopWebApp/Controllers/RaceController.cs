@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using RunGroopWebApp.Data;
+using RunGroopWebApp.Extensions;
 using RunGroopWebApp.Interfaces;
 using RunGroopWebApp.Models;
 using RunGroopWebApp.Repository;
@@ -58,5 +59,50 @@ public class RaceController : Controller {
             ModelState.AddModelError("", "Photo upload failed");
         }
         return View(raceViewModel);
+    }
+
+    [HttpGet]
+    public async Task<IActionResult> Edit(int id) {
+        var race = await _raceRepository.GetByIdAsync(id);
+        if (race == null) { return View("Error"); }
+
+        var raceViewModel = new EditRaceViewModel {
+            Title = race.Title,
+            Description = race.Description,
+            AddressId = race.AddressId,
+            Address = race.Address,
+            Image = ImageConverter.ByteArrayToImage(race.Image),
+            RaceCategory = race.RaceCategory
+        };
+        return View(raceViewModel);
+    }
+
+    [HttpPost]
+    public async Task<IActionResult> Edit(int id, EditRaceViewModel raceViewModel) {
+        if (!ModelState.IsValid) {
+            ModelState.AddModelError("", "Failed to edit club");
+            return View("Edit", raceViewModel);
+        }
+
+        var userRace = await _raceRepository.GetByIdAsyncNoTracking(id);
+
+        if (userRace == null) {
+            return View("Error");
+        }
+
+        var photoResult = await _photoService.AddPhotoAsync(raceViewModel.Image);
+
+        var race = new Race {
+            Id = id,
+            Title = raceViewModel.Title,
+            Description = raceViewModel.Description,
+            Image = photoResult,
+            AddressId = raceViewModel.AddressId,
+            Address = raceViewModel.Address,
+        };
+
+        _raceRepository.Update(race);
+
+        return RedirectToAction("Index");
     }
 }
