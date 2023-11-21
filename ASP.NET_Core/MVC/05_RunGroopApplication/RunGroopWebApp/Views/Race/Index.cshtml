@@ -21,12 +21,19 @@
         @Html.Raw("<img style='width:380px; height:260px;' src=\"data:image/jpeg;base64,"
                 + Convert.ToBase64String(race.Image) + "\" />")
         <div>
-            <a type="button" class="btn btn-sm btn-outline-info" asp-controller="Race" asp-action="Edit" asp-route-id="@race.Id">
-                Edit
+            <a type="btn btn-success" class="btn btn-sm btn-outline-secondary"
+               asp-controller="Race" asp-action="Detail" asp-route-id="@race.Id">
+                View
             </a>
-            <a type="button" class="btn btn-sm btn-outline-danger" asp-controller="Race" asp-action="Delete" asp-route-id="@race.Id">
-                Delete
+            @if (User.Identity.IsAuthenticated && User.IsInRole("admin"))
+            {
+                <a type="button" class="btn btn-sm btn-outline-info" asp-controller="Race" asp-action="Edit" asp-route-id="@race.Id">
+                    Edit
+                </a>
+                <a type="button" class="btn btn-sm btn-outline-danger" asp-controller="Race" asp-action="Delete" asp-route-id="@race.Id">
+                    Delete
             </a>
+            }
         </div>
     </div>
 }
