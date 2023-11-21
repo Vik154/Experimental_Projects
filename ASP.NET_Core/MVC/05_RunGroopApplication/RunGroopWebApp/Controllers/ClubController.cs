@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.IdentityModel.Tokens;
 using RunGroopWebApp.Extensions;
 using RunGroopWebApp.Interfaces;
 using RunGroopWebApp.Models;
@@ -71,5 +72,34 @@ public class ClubController : Controller {
             ClubCategory = club.ClubCategory
         };
         return View(clubViewModel);
+    }
+
+    [HttpPost]
+    public async Task<IActionResult> Edit(int id, EditClubViewModel clubVM) {
+        if (!ModelState.IsValid) {
+            ModelState.AddModelError("", "Failed to edit club");
+            return View("Edit", clubVM);
+        }
+
+        var userClub = await _clubRepository.GetByIdAsyncNoTracking(id);
+
+        if (userClub == null) {
+            return View("Error");
+        }
+
+        var photoResult = await _photoService.AddPhotoAsync(clubVM.Image);
+
+        var club = new Club {
+            Id = id,
+            Title = clubVM.Title,
+            Description = clubVM.Description,
+            Image = photoResult,
+            AddressId = clubVM.AddressId,
+            Address = clubVM.Address,
+        };
+
+        _clubRepository.Update(club);
+
+        return RedirectToAction("Index");
     }
 }

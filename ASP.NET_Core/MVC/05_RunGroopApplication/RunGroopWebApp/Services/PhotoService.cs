@@ -15,7 +15,7 @@ public class PhotoService : IPhotoService {
      * вместо cloud сервиса - она на сервер падает сразу в БД
      */
     public async Task<byte[]> AddPhotoAsync(IFormFile file) {
-        if (file.Length > 0) { 
+        if (file != null && file.Length > 0) { 
             // считываем переданный файл в массив байтов
             using (var binaryReader = new BinaryReader(file.OpenReadStream())) {
                 return binaryReader.ReadBytes((int)file.Length);
