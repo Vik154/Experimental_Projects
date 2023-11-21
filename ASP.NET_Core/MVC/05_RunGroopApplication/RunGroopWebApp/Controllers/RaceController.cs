@@ -4,15 +4,19 @@ using RunGroopWebApp.Data;
 using RunGroopWebApp.Interfaces;
 using RunGroopWebApp.Models;
 using RunGroopWebApp.Repository;
+using RunGroopWebApp.Services;
+using RunGroopWebApp.ViewModels;
 
 namespace RunGroopWebApp.Controllers;
 
 public class RaceController : Controller {
 
     private readonly IRaceRepository _raceRepository;
+    private readonly IPhotoService _photoService;
 
-    public RaceController(IRaceRepository raceRepository) {
+    public RaceController(IRaceRepository raceRepository, IPhotoService photoService) {
         _raceRepository = raceRepository;
+        _photoService = photoService;
     }
 
     public async Task<IActionResult> Index() {
@@ -30,11 +34,29 @@ public class RaceController : Controller {
     }
 
     [HttpPost]
-    public async Task<IActionResult> Create(Race race) {
-        if (!ModelState.IsValid) {
-            return View(race);
+    public async Task<IActionResult> Create(CreateRaceViewModel raceViewModel) {
+        if (ModelState.IsValid) {
+
+            byte[] imageData = await _photoService.AddPhotoAsync(raceViewModel.Image);
+
+            var club = new Race {
+                Title = raceViewModel.Title,
+                Description = raceViewModel.Description,
+                Image = imageData,
+                RaceCategory = raceViewModel.RaceCategory,
+                // AppUserId = clubViewModel.AppUserId,
+                Address = new Address {
+                    Street = raceViewModel.Address.Street,
+                    City = raceViewModel.Address.City,
+                    State = raceViewModel.Address.State,
+                }
+            };
+            _raceRepository.Add(club);
+            return RedirectToAction("Index");
         }
-        _raceRepository.Add(race);
-        return RedirectToAction("Index");
+        else {
+            ModelState.AddModelError("", "Photo upload failed");
+        }
+        return View(raceViewModel);
     }
 }
