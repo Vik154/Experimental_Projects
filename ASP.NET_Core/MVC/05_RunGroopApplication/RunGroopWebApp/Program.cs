@@ -1,13 +1,16 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
 using RunGroopWebApp.Data;
 using RunGroopWebApp.Interfaces;
+using RunGroopWebApp.Models;
 using RunGroopWebApp.Repository;
 using RunGroopWebApp.Services;
 
 namespace RunGroopWebApp;
 
 public class Program {
-    public static void Main(string[] args) {
+    public static async Task Main(string[] args) {
         var builder = WebApplication.CreateBuilder(args);
 
         // Add services to the container.
@@ -24,11 +27,20 @@ public class Program {
                 .GetConnectionString("DefaultConnection"));
         });
 
+        // Добавление Identity и ролей
+        builder.Services.AddIdentity<AppUser, IdentityRole>()
+            .AddEntityFrameworkStores<ApplicationDbContext>();
+        builder.Services.AddMemoryCache();
+        builder.Services.AddSession();
+        builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+            .AddCookie();
+
         var app = builder.Build();
 
         // Добавление данных dotnet run seeddata (из консоли)
         if (args.Length == 1 && args[0].ToLower() == "seeddata") {
-            Seed.SeedData(app);
+            await Seed.SeedUsersAndRolesAsync(app);
+            // Seed.SeedData(app);
         }
 
         // Configure the HTTP request pipeline.
