@@ -1,42 +1,56 @@
-﻿<head>
+﻿@model LoginViewModel
+
+<head>
 	<meta charset="UTF-8">
 	<link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.2.0/css/all.css'>
 	<link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.2.0/css/fontawesome.css'>
 	<link rel="stylesheet" href="./css/login.css">
 </head>
-	<!-- partial:index.partial.html -->
-	<div class="container_login">
-		<div class="screen">
-			<div class="screen__content">
-				<form class="login">
-					<div class="login__field">
-						<i class="login__icon fas fa-user"></i>
-						<input type="text" class="login__input" placeholder="Email">
-					</div>
-					<div class="login__field">
-						<i class="login__icon fas fa-lock"></i>
-						<input type="password" class="login__input" placeholder="Password">
-					</div>
-					<button class="button login__submit">
-						<span class="button__text">Войди и бегай</span>
-						<i class="button__icon fas fa-chevron-right"></i>
-					</button>
-				</form>
-				<div class="social-login">
-					<h3>Ещё Форресты</h3>
-					<div class="social-icons">
-						<a href="#" class="social-login__icon fab fa-instagram"></a>
-						<a href="#" class="social-login__icon fab fa-facebook"></a>
-						<a href="#" class="social-login__icon fab fa-twitter"></a>
-					</div>
+
+<!-- partial:index.partial.html -->
+<div class="container_login">
+	<div class="screen">
+		@if (TempData["Error"] != null) {
+			<div class="col-md-12 alert alert-danger">
+				<span><b>Sorry!</b> - @TempData["Error"]</span>
+			</div>
+		}
+
+		<div class="screen__content">
+
+			<form class="login" asp-action="Login" asp-controller="Account">
+				<div asp-validation-summary="ModelOnly" class="text-danger"></div>
+				<div class="login__field">
+					<i class="login__icon fas fa-user"></i>
+					<input asp-for="EmailAddress" class="login__input" placeholder="Email" />
+					<span asp-validation-for="EmailAddress" class="text-danger"></span>
+				</div>
+				<div class="login__field">
+					<i class="login__icon fas fa-lock"></i>
+@* 					<input type="password" class="login__input" placeholder="Password">
+ *@					<input asp-for="Password" class="login__input" placeholder="Password" />
+					<span asp-validation-for="Password" class="text-danger"></span>
+				</div>
+				<button class="button login__submit">
+					<span class="button__text">Войди и бегай</span>
+					<i class="button__icon fas fa-chevron-right"></i>
+				</button>
+			</form>
+			<div class="social-login">
+				<h3>Ещё Форресты</h3>
+				<div class="social-icons">
+					<a href="#" class="social-login__icon fab fa-instagram"></a>
+					<a href="#" class="social-login__icon fab fa-facebook"></a>
+					<a href="#" class="social-login__icon fab fa-twitter"></a>
 				</div>
 			</div>
-			<div class="screen__background">
-				<span class="screen__background__shape screen__background__shape4"></span>
-				<span class="screen__background__shape screen__background__shape3"></span>
-				<span class="screen__background__shape screen__background__shape2"></span>
-				<span class="screen__background__shape screen__background__shape1"></span>
-			</div>
+		</div>
+		<div class="screen__background">
+			<span class="screen__background__shape screen__background__shape4"></span>
+			<span class="screen__background__shape screen__background__shape3"></span>
+			<span class="screen__background__shape screen__background__shape2"></span>
+			<span class="screen__background__shape screen__background__shape1"></span>
 		</div>
 	</div>
-	<!-- partial -->
+</div>
+<!-- partial -->
