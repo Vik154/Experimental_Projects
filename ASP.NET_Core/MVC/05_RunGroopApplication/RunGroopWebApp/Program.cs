@@ -20,6 +20,7 @@ public class Program {
         builder.Services.AddScoped<IClubRepository, ClubRepository>();
         builder.Services.AddScoped<IRaceRepository, RaceRepository>();
         builder.Services.AddScoped<IPhotoService, PhotoService>();
+        builder.Services.AddScoped<IDashboardRepository, DashboardRepository>();
 
         // Добавление БД контекста
         builder.Services.AddDbContext<ApplicationDbContext>(options => {
