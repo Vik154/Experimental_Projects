@@ -1,5 +1,4 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.IdentityModel.Tokens;
 using RunGroopWebApp.Extensions;
 using RunGroopWebApp.Interfaces;
 using RunGroopWebApp.Models;
@@ -108,5 +107,17 @@ public class ClubController : Controller {
         _clubRepository.Update(club);
 
         return RedirectToAction("Index");
+    }
+
+    [HttpGet]
+    public async Task<IActionResult> Delete(int id) {
+        var clubDetails = await _clubRepository.GetByIdAsync(id);
+
+        if (clubDetails == null) {
+            return View("Error");
+        }
+
+        _clubRepository.Delete(clubDetails);
+        return RedirectToAction("Index", "Club");
     }
 }

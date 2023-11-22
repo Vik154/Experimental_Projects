@@ -21,6 +21,7 @@ public class Program {
         builder.Services.AddScoped<IRaceRepository, RaceRepository>();
         builder.Services.AddScoped<IPhotoService, PhotoService>();
         builder.Services.AddScoped<IDashboardRepository, DashboardRepository>();
+        builder.Services.AddScoped<IUserRepository, UserRepository>();
 
         // Добавление БД контекста
         builder.Services.AddDbContext<ApplicationDbContext>(options => {
