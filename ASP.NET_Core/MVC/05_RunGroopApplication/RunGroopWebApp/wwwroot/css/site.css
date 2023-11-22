@@ -42,8 +42,9 @@ body {
 }
 
 header {
-    background-color: #d0f1ff;
-}
+    background-color: #9b98d2;
+/*    background-color: #d0f1ff;
+*/}
 
 h2.logo-text {
     font-size: 24px;
@@ -61,8 +62,9 @@ h2.logo-text {
 }
 
 .logo-bg {
-    background-color: #63c6ae;
-    position: absolute;
+    background-color: #9b98d2;
+/*    background-color: #63c6ae;
+*/    position: absolute;
     left: 0px;
     top: 0px;
     padding: 34px;
@@ -72,6 +74,7 @@ h2.logo-text {
 nav {
     float: left;
     background-color: #d0f1ff;
+    background-color: #9b98d2;
 }
 
     nav ul {
@@ -111,7 +114,7 @@ nav {
 
 
 footer {
-    background-color: #242a2c;
+    background-color: #9b98d2;
     padding: 13px 0 13px 0;
     color: #454e51;
     position: absolute;
@@ -141,3 +144,9 @@ footer {
             color: #687579;
             text-decoration: none;
         }
+
+.inline {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}

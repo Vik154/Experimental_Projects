@@ -2,12 +2,12 @@
     ViewData["Title"] = "Home Page";
 }
 
-<div class="d-inline-block">
-
-    <div class="d-inline-block">
-    @Html.Raw("<img style='width:960px; height:630px;' src=\"data:image/jpeg;base64,"
-            + Convert.ToBase64String(ViewBag.img) + "\" />")
-</div>
-    <div class="d-inline-block">
-</div>
+<div class="inline" style="background-color: silver">
+    <div>
+        @Html.Raw("<img style='width:1110px; height:630px;' src=\"data:image/jpeg;base64,"
+                + Convert.ToBase64String(ViewBag.img) + "\" />")
+    </div>
+    <div>
+        @await Html.PartialAsync("_AuthPartial")
+    </div>
 </div>
