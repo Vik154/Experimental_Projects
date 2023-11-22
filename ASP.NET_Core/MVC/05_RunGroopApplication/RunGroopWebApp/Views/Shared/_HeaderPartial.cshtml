@@ -1,4 +1,28 @@
-﻿
+﻿<div class="logo col-md-3"><h2 class="logo-text">Форрест - пробежки</h2></div>
+<nav class="clearfix">
+    <ul class="clearfix">
+        <li><a asp-controller="Home" asp-action="Index">Главная</a></li>
+        <li><a asp-controller="Club" asp-action="Index">Клуб</a></li>
+        <li><a asp-controller="Race" asp-action="Index">Забег</a></li>
+ 
+        @if (User.Identity.IsAuthenticated) {
+            <li><a asp-area="" asp-controller="User" asp-action="Index">Участники</a></li>
+            <li><a asp-area="" asp-controller="Dashboard" asp-action="Index">Управление заметками</a></li>
+            <li>
+                <form asp-area="" asp-controller="Account" asp-action="Logout">
+                    <button class="btn btn-outline-danger">Выйти</button>
+                </form>
+            </li>
+        }
+        else {
+            <li><a asp-area="" asp-controller="Account" asp-action="Login">Вход</a></li>
+            <li><a asp-area="" asp-controller="Account" asp-action="Register">Регистрация</a></li>
+        }
+    </ul>
+</nav>
+
+
+@* 
 <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
     <div class="container-fluid">
         <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">RunGroopWebApp</a>
@@ -49,3 +73,4 @@
         </div>
     </div>
 </nav>
+ *@

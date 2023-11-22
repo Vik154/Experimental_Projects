@@ -9,34 +9,10 @@
 @*     <link rel="stylesheet" href="~/RunGroopWebApp.styles.css" asp-append-version="true" />
  *@</head>
 <body>
-
     <header class="clearfix">
-        <div class="logo col-md-3"><h2 class="logo-text">Форрест - пробежки</h2></div>
-        <nav class="clearfix">
-            <ul class="clearfix">
-                <li><a asp-controller="Home" asp-action="Index">Главная</a></li>
-                <li><a href="#">Клуб</a></li>
-                <li><a href="#">Забег</a></li>
-                <li><a href="#">Участники</a></li>
-            </ul>
-        </nav>
-
-    </header>
-@*     <header>
         @await Html.PartialAsync("_HeaderPartial")
-    </header> *@
-
-@*     <div class="container">
-        <main role="main" class="pb-3">
-            @RenderBody()
-        </main>
-    </div>
-
-    <footer class="border-top footer text-muted">
-        @await Html.PartialAsync("_FooterPartial")
-    </footer> *@
-
-
+    </header>
+    
     <div>
         <main>
             @RenderBody()

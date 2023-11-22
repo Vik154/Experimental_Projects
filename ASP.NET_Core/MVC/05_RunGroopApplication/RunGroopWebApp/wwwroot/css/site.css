@@ -110,6 +110,10 @@ nav {
                     color: #63c6ae;
                 }
 
+            nav ul li button {
+                margin: 15px 0;
+                position: absolute;
+            }
 
 
 
