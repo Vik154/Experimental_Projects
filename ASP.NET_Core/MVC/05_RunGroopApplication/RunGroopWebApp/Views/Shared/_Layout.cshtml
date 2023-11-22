@@ -6,13 +6,27 @@
     <title>@ViewData["Title"] - RunGroopWebApp</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/RunGroopWebApp.styles.css" asp-append-version="true" />
-</head>
+@*     <link rel="stylesheet" href="~/RunGroopWebApp.styles.css" asp-append-version="true" />
+ *@</head>
 <body>
-    <header>
-        @await Html.PartialAsync("_HeaderPartial")
+
+    <header class="clearfix">
+        <div class="logo col-md-3"><h2 class="logo-text">Форест - пробежки</h2></div>
+        <nav class="clearfix">
+            <ul class="clearfix">
+                <li><a href="#">Главная</a></li>
+                <li><a href="#">Клуб</a></li>
+                <li><a href="#">Забег</a></li>
+                <li><a href="#">Участники</a></li>
+            </ul>
+        </nav>
+
     </header>
-    <div class="container">
+@*     <header>
+        @await Html.PartialAsync("_HeaderPartial")
+    </header> *@
+
+@*     <div class="container">
         <main role="main" class="pb-3">
             @RenderBody()
         </main>
@@ -20,7 +34,19 @@
 
     <footer class="border-top footer text-muted">
         @await Html.PartialAsync("_FooterPartial")
+    </footer> *@
+
+
+    <div>
+        <main>
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer>
+        @await Html.PartialAsync("_FooterPartial")
     </footer>
+
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>

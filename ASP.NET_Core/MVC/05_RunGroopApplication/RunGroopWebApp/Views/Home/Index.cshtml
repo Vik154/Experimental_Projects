@@ -2,18 +2,12 @@
     ViewData["Title"] = "Home Page";
 }
 
+<div class="d-inline-block">
 
-<div>
-    @Html.Raw("<img src=\"data:image/jpeg;base64,"
+    <div class="d-inline-block">
+    @Html.Raw("<img style='width:960px; height:630px;' src=\"data:image/jpeg;base64,"
             + Convert.ToBase64String(ViewBag.img) + "\" />")
 </div>
-
-
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>
-        <a asp-controller="Club" asp-action="Index">ClubIndex</a>
-        <a asp-controller="Club" asp-action="Detail">ClubDetail</a>
-        <a asp-controller="Race" asp-action="Detail">Race</a>
-    </p>
+    <div class="d-inline-block">
+</div>
 </div>
