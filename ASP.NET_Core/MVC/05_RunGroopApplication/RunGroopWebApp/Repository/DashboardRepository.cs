@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
 using RunGroopWebApp.Data;
 using RunGroopWebApp.Extensions;
 using RunGroopWebApp.Interfaces;
@@ -25,6 +26,7 @@ public class DashboardRepository : IDashboardRepository {
         var userRaces = _context.Races.Where(r => r.AppUser.Id == curUser);
         return userRaces.ToList();
     }
+
     public async Task<AppUser> GetUserById(string id) {
         return await _context.Users.FindAsync(id);
     }
@@ -33,13 +35,21 @@ public class DashboardRepository : IDashboardRepository {
         return await _context.Users.Where(u => u.Id == id).AsNoTracking().FirstOrDefaultAsync();
     }
 
+    //public async Task<IdentityUser> GetUserById(string id) {
+    //    return await _context.Users.FindAsync(id);
+    //}
+
+    //public async Task<IdentityUser> GetByIdNoTracking(string id) {
+    //    return await _context.Users.Where(u => u.Id == id).AsNoTracking().FirstOrDefaultAsync();
+    //}
+
     public bool Update(AppUser user) {
         _context.Users.Update(user);
         return Save();
     }
 
     public bool Save() {
-        var saved = _context.SaveChanges();
+        var saved = _context.SaveChanges(true);
         return saved > 0 ? true : false;
     }
 }

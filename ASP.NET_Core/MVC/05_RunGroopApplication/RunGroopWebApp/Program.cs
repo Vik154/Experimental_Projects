@@ -41,9 +41,11 @@ public class Program {
 
         // Добавление данных dotnet run seeddata (из консоли)
         if (args.Length == 1 && args[0].ToLower() == "seeddata") {
-            await Seed.SeedUsersAndRolesAsync(app);
+            //await Seed.SeedUsersAndRolesAsync(app);
             // Seed.SeedData(app);
         }
+        //Seed.SeedData(app);
+        //await Seed.SeedUsersAndRolesAsync(app);
 
         // Configure the HTTP request pipeline.
         if (!app.Environment.IsDevelopment()) {

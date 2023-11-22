@@ -1,10 +1,13 @@
-﻿using RunGroopWebApp.Models;
+﻿using Microsoft.AspNetCore.Identity;
+using RunGroopWebApp.Models;
 
 namespace RunGroopWebApp.Interfaces;
 
 public interface IUserRepository {
     Task<IEnumerable<AppUser>> GetAllUsers();
     Task<AppUser> GetUserById(string id);
+    //Task<IEnumerable<IdentityUser>> GetAllUsers();
+    //Task<IdentityUser> GetUserById(string id);
     bool Add(AppUser user);
     bool Update(AppUser user);
     bool Delete(AppUser user);

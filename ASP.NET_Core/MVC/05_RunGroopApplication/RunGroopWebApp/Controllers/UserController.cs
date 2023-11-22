@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using RunGroopWebApp.Extensions;
 using RunGroopWebApp.Interfaces;
 using RunGroopWebApp.Models;
 using RunGroopWebApp.ViewModels;
@@ -34,7 +35,10 @@ public class UserController : Controller {
                 State = user.State,
                 Mileage = user.Mileage,
                 UserName = user.UserName,
-                ProfileImageUrl = user.ProfileImageUrl ?? "/img/avatar-male-4.jpg",
+                ProfileImageUrl = user.ProfileImageUrl is null
+                ? ImageConverter.ByteArrayToImage(ImageConverter
+                    .ImageToByteArray($"{Directory.GetCurrentDirectory()}/wwwroot/img/avatar.jpg"))
+                : ImageConverter.ByteArrayToImage(user.ProfileImageUrl)
             };
             result.Add(userViewModel);
         }
@@ -54,10 +58,15 @@ public class UserController : Controller {
             City = user.City,
             State = user.State,
             Mileage = user.Mileage,
-            UserName = user.UserName,
-            ProfileImageUrl = user.ProfileImageUrl ?? "/img/avatar-male-4.jpg",
-        };
+            UserName = user.UserName ?? "No Name",
+            ProfileImageUrl = user.ProfileImageUrl is null
+                ? ImageConverter.ByteArrayToImage(ImageConverter
+                    .ImageToByteArray($"{Directory.GetCurrentDirectory()}/wwwroot/img/avatar.jpg"))
+                : ImageConverter.ByteArrayToImage(user.ProfileImageUrl)
+		};
         return View(userDetailViewModel);
+
+        
     }
 
     [HttpGet]
@@ -74,7 +83,7 @@ public class UserController : Controller {
             State = user.State,
             Pace = user.Pace,
             Mileage = user.Mileage,
-            ProfileImageUrl = user.ProfileImageUrl,
+            ProfileImageUrl = ImageConverter.ByteArrayToImage(user.ProfileImageUrl)
         };
         return View(editMV);
     }
@@ -102,12 +111,9 @@ public class UserController : Controller {
                 return View("EditProfile", editVM);
             }
 
-            if (!string.IsNullOrEmpty(user.ProfileImageUrl)) {
-                _ = _photoService.DeletePhotoAsync(user.ProfileImageUrl);
-            }
 
-            user.ProfileImageUrl = photoResult.ToString();
-            editVM.ProfileImageUrl = user.ProfileImageUrl;
+            user.ProfileImageUrl = photoResult;
+            editVM.ProfileImageUrl = ImageConverter.ByteArrayToImage(user.ProfileImageUrl);
 
             await _userManager.UpdateAsync(user);
 

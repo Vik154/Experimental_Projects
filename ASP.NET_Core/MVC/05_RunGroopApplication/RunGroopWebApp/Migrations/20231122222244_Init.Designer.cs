@@ -12,8 +12,8 @@ using RunGroopWebApp.Data;
 namespace RunGroopWebApp.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20231121072922_Initialize")]
-    partial class Initialize
+    [Migration("20231122222244_Init")]
+    partial class Init
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -237,8 +237,8 @@ namespace RunGroopWebApp.Migrations
                     b.Property<bool>("PhoneNumberConfirmed")
                         .HasColumnType("bit");
 
-                    b.Property<string>("ProfileImageUrl")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<byte[]>("ProfileImageUrl")
+                        .HasColumnType("varbinary(max)");
 
                     b.Property<string>("SecurityStamp")
                         .HasColumnType("nvarchar(max)");
@@ -293,9 +293,6 @@ namespace RunGroopWebApp.Migrations
                     b.Property<string>("StateCode")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("Zip")
-                        .HasColumnType("int");
 
                     b.HasKey("Id");
 
@@ -355,6 +352,7 @@ namespace RunGroopWebApp.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Description")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int?>("EntryFee")
@@ -373,6 +371,7 @@ namespace RunGroopWebApp.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Title")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Twitter")

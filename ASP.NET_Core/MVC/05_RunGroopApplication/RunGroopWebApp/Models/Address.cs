@@ -4,7 +4,7 @@ namespace RunGroopWebApp.Models;
 
 /// <summary> POCO - object </summary>
 public class Address {
-    
+
     [Key]
     public int Id { get; set; }
     public string Street { get; set; }

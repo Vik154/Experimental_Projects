@@ -61,12 +61,13 @@
                     <div class="row">
                         <div class="col-12">
                             <div class="media flex-wrap mb-0 align-items-center">
-                                @{
-                                    var imageUrl = string.IsNullOrEmpty(Model.ProfileImageUrl)
-                                    ? "/img/avatar-male-3.jpg"
+@*                                 @{
+                                    var imageUrl = Model.ProfileImageUrl is null
+                                    ? 
                                     : Model.ProfileImageUrl;
-                                }
-                                <img alt="Image" src="@imageUrl" class="avatar avatar-lg mb-3 mb-md-0" />
+                                } *@
+
+                                <img alt="Image" src="@Model.ProfileImageUrl" class="avatar avatar-lg mb-3 mb-md-0" />
                                 <div class="media-body">
                                     <form asp-action="EditProfile" enctype="multipart/form-data">
                                         <label asp-for="Image" class="custom-file mb-2" for="file2">

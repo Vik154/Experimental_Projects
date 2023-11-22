@@ -1,6 +1,4 @@
-﻿using System.Collections;
-
-namespace RunGroopWebApp.Extensions;
+﻿namespace RunGroopWebApp.Extensions;
 
 public static class ImageConverter {
 
@@ -17,5 +15,4 @@ public static class ImageConverter {
             return new FormFile(stream, 0, file.Length, "Header", Path.GetRandomFileName());
         }
     }
-
 }

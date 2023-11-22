@@ -61,7 +61,7 @@ public class ClubRepository : IClubRepository {
     }
 
     public bool Save() {
-        var saved = _context.SaveChanges();
+        var saved = _context.SaveChanges(true);
         return saved > 0;
     }
 

@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
 using RunGroopWebApp.Data;
 using RunGroopWebApp.Interfaces;
 using RunGroopWebApp.Models;
@@ -29,8 +30,16 @@ public class UserRepository : IUserRepository {
         return await _context.Users.FindAsync(id);
     }
 
+    //public async Task<IEnumerable<IdentityUser>> GetAllUsers() {
+    //    return await _context.Users.ToListAsync();
+    //}
+
+    //public async Task<IdentityUser> GetUserById(string id) {
+    //    return await _context.Users.FindAsync(id);
+    //}
+
     public bool Save() {
-        var saved = _context.SaveChanges();
+        var saved = _context.SaveChanges(true);
         return saved > 0 ? true : false;
     }
 
