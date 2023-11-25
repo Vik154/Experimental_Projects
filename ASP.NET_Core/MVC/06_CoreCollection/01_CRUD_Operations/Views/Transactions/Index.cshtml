@@ -57,13 +57,17 @@
                 @Html.DisplayFor(modelItem => item.Date)
             </td>
             <td>
-                <a asp-action="AddOrEdit" asp-route-id="@item.TransactionId" class="btn btn-warning">
-                        <i class="fa-solid fa-pen-to-square"></i>
-                </a> 
-                |
-                <a asp-action="Delete" asp-route-id="@item.TransactionId">
-                    Delete
-                </a>
+                <form asp-action="Delete" asp-route-id="@item.TransactionId">
+                    <div class="btn-group btn-group-sm">
+                        <a asp-action="AddOrEdit" asp-route-id="@item.TransactionId" class="btn btn-warning">
+                            <i class="fa-solid fa-pen-to-square"></i>
+                        </a>
+                        <button type="submit" class="btn btn-danger"
+                                onclick="return confirm('Are you sure?')">
+                            <i class="far fa-trash-alt"></i>
+                        </button>
+                    </div>
+                </form>
             </td>
         </tr>
 }
