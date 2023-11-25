@@ -57,8 +57,8 @@
                 @Html.DisplayFor(modelItem => item.Date)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.TransactionId" class="btn btn-warning">
-                        <i class="fa-solid fa-pen-to-square">Edit</i>
+                <a asp-action="AddOrEdit" asp-route-id="@item.TransactionId" class="btn btn-warning">
+                        <i class="fa-solid fa-pen-to-square"></i>
                 </a> 
                 |
                 <a asp-action="Delete" asp-route-id="@item.TransactionId">

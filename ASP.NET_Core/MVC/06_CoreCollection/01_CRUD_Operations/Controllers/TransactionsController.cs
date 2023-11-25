@@ -17,17 +17,15 @@ public class TransactionsController : Controller
     }
 
     // GET: Transactions/Details/5
-    public async Task<IActionResult> Details(int? id)
-    {
-        if (id == null)
-        {
+    public async Task<IActionResult> Details(int? id) {
+        if (id == null) {
             return NotFound();
         }
 
         var transaction = await _context.Transactions
             .FirstOrDefaultAsync(m => m.TransactionId == id);
-        if (transaction == null)
-        {
+        
+        if (transaction == null) {
             return NotFound();
         }
 
@@ -35,8 +33,11 @@ public class TransactionsController : Controller
     }
 
     // GET: Transactions/AddOrEdit
-    public IActionResult AddOrEdit() {
-        return View(new Transaction());
+    public IActionResult AddOrEdit(int id = 0) {
+        if (id == 0)
+            return View(new Transaction());
+        else
+            return View(_context.Transactions.Find(id));
     }
 
     // POST: Transactions/AddOrEdit
@@ -45,8 +46,12 @@ public class TransactionsController : Controller
     public async Task<IActionResult> AddOrEdit([Bind("TransactionId,AccountNumber,BeneficiaryName,BankName,SWIFTCode,Amount,Date")] Transaction transaction)
     {
         if (ModelState.IsValid) {
-            transaction.Date = DateTime.Now;
-            _context.Add(transaction);
+            if (transaction.TransactionId == 0) {
+                transaction.Date = DateTime.Now;
+                _context.Add(transaction);
+            }
+            else
+                _context.Update(transaction);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
