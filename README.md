@@ -76,6 +76,8 @@
    * *[WebAPI](ASP.NET_Core/WebAPI/) - по серии уроков "Web Api" https://www.youtube.com/@PlatinumTechTalks/playlists*
    * *[MVC/05_RunGroopApplication](ASP.NET_Core/MVC/05_RunGroopApplication) - Веб-приложение для бега https://www.youtube.com/@TeddySmithDev* <br>
       _По серии уроков из плейлиста "ASP.NET Core MVC 2022 .NET 6"_
+   * *[MVC/06_CoreCollection](ASP.NET_Core/MVC/06_CoreCollection) - по серии "Asp.Net Core Tutorial" https://www.youtube.com/@CodAffection* <br>
+      _Набор проектов по работе с .Net Core, основные концепции_
    *
 </details>
 
