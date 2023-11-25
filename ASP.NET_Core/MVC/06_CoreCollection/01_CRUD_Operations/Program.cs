@@ -1,6 +1,7 @@
-﻿namespace _01_CRUD_Operations;
+﻿using _01_CRUD_Operations.Models;
+using Microsoft.EntityFrameworkCore;
 
-// Юникод проверка ----
+namespace _01_CRUD_Operations;
 
 public class Program {
     public static void Main(string[] args) {
@@ -8,6 +9,11 @@ public class Program {
 
         // Add services to the container.
         builder.Services.AddControllersWithViews();
+
+        // Добавление контекста бд
+        builder.Services.AddDbContext<TransactionDbContext>(option => {
+            option.UseSqlServer(builder.Configuration.GetConnectionString("ConnectionSQL"));
+        });
 
         var app = builder.Build();
 
