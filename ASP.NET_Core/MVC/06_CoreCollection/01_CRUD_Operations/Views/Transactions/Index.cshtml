@@ -4,11 +4,9 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
+<h1>Passbook</h1>
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
+
 <table class="table">
     <thead>
         <tr>
@@ -30,7 +28,11 @@
             <th>
                 @Html.DisplayNameFor(model => model.Date)
             </th>
-            <th></th>
+            <th>
+                <a asp-action="AddOrEdit" class="btn btn-sm btn-success">
+                    <i class="fa-solid fa-plus">New</i>
+                </a>
+            </th>
         </tr>
     </thead>
     <tbody>
@@ -55,9 +57,13 @@
                 @Html.DisplayFor(modelItem => item.Date)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.TransactionId">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.TransactionId">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.TransactionId">Delete</a>
+                <a asp-action="Edit" asp-route-id="@item.TransactionId" class="btn btn-warning">
+                        <i class="fa-solid fa-pen-to-square">Edit</i>
+                </a> 
+                |
+                <a asp-action="Delete" asp-route-id="@item.TransactionId">
+                    Delete
+                </a>
             </td>
         </tr>
 }
