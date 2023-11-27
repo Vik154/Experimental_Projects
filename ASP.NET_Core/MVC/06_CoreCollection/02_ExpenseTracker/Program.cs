@@ -1,4 +1,7 @@
-﻿namespace _02_ExpenseTracker;
+﻿using _02_ExpenseTracker.Models;
+using Microsoft.EntityFrameworkCore;
+
+namespace _02_ExpenseTracker;
 
 public class Program {
     public static void Main(string[] args) {
@@ -6,6 +9,11 @@ public class Program {
 
         // Add services to the container.
         builder.Services.AddControllersWithViews();
+
+        // Добавление контекста БД
+        builder.Services.AddDbContext<ApplicationDbContext>(options => {
+            options.UseSqlServer(builder.Configuration.GetConnectionString(""));
+        });
 
         var app = builder.Build();
 
