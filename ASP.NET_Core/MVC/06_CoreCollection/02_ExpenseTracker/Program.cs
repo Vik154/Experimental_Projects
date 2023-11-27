@@ -12,7 +12,7 @@ public class Program {
 
         // Добавление контекста БД
         builder.Services.AddDbContext<ApplicationDbContext>(options => {
-            options.UseSqlServer(builder.Configuration.GetConnectionString(""));
+            options.UseSqlServer(builder.Configuration.GetConnectionString("ConnectionSQL"));
         });
 
         var app = builder.Build();
@@ -20,7 +20,6 @@ public class Program {
         // Configure the HTTP request pipeline.
         if (!app.Environment.IsDevelopment()) {
             app.UseExceptionHandler("/Home/Error");
-            // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
             app.UseHsts();
         }
 
