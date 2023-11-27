@@ -1,4 +1,4 @@
-namespace _02_ExpenseTracker;
+﻿namespace _02_ExpenseTracker;
 
 public class Program {
     public static void Main(string[] args) {
