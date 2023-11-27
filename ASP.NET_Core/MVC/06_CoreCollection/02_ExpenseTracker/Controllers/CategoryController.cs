@@ -38,44 +38,24 @@ public class CategoryController : Controller
     }
 
 
-    // GET: Category/AddOrEdit/id
-    public async Task<IActionResult> AddOrEdit(int id = 0) {
+    // GET: Category/AddOrEdit/id:int
+    public IActionResult AddOrEdit(int id = 0) {
         if (id == 0)
             return View(new Category());
         else
             return View(_context.Categories.Find(id));
     }
 
-    // POST: Category/Edit/5
-    // To protect from overposting attacks, enable the specific properties you want to bind to.
-    // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+    // POST: Category/AddOrEdit
     [HttpPost]
     [ValidateAntiForgeryToken]
-    public async Task<IActionResult> AddOrEdit(int id, [Bind("CategoryId,Title,Icon,Type")] Category category)
-    {
-        if (id != category.CategoryId)
-        {
-            return NotFound();
-        }
-
-        if (ModelState.IsValid)
-        {
-            try
-            {
+    public async Task<IActionResult> AddOrEdit([Bind("CategoryId,Title,Icon,Type")] Category category) {
+        if (ModelState.IsValid) {
+            if (category.CategoryId == 0)
+                _context.Add(category);
+            else
                 _context.Update(category);
-                await _context.SaveChangesAsync();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!CategoryExists(category.CategoryId))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
-            }
+            await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
         return View(category);
