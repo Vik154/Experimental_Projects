@@ -11,6 +11,11 @@
                <li> :speech_balloon: <i> ASP.NET Core Blazor </i> - https://metanit.com/sharp/blazor/ </li>
             </ul>
          </details>
+         <details> <summary><b><i> :flags: Microservices:</i></b></summary>
+            <ul>
+               <li> :speech_balloon: <i> ... </i> - ...</li>
+            </ul>
+         </details>
       </li>
    </ul>  
 
