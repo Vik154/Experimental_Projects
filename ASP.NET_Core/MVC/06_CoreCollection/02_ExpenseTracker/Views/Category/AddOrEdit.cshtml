@@ -1,7 +1,7 @@
 ﻿@model _02_ExpenseTracker.Models.Category
 
 @{
-    ViewData["Title"] = "Create";
+    ViewData["PageTitle"] = Model.CategoryId == 0 ? "Создать новую категорию" : "Редактировать категорию";
 }
 
 

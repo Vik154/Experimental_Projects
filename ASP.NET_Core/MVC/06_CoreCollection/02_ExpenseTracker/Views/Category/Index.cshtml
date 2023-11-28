@@ -1,8 +1,8 @@
 ﻿@model IEnumerable<_02_ExpenseTracker.Models.Category>
 
 @{
-    ViewData["PageTitle"] = "Categories";
-    ViewData["PageActionText"] = "+ New Category";
+    ViewData["PageTitle"] = "Категории";
+    ViewData["PageActionText"] = "+ Новая категория";
     ViewData["PageActionUrl"] = "/Category/AddOrEdit";
 }
 
@@ -40,9 +40,9 @@
             <i class="fa-solid fa-pen fa-lg"></i>
         </a>
         <form action="/Category/Delete/${CategoryId}" method="post">
-    @Html.AntiForgeryToken()
+            @Html.AntiForgeryToken()
             <button type="submit" class="btn btn-sm btn-link no-a-decoration"
-            onclick="return confirm(&quot;Are sure to delete this record?&quot;)">
+            onclick="return confirm(&quot;Уверены что хотите удалить запись?&quot;)">
                 <i class="fa-solid fa-trash-can fa-lg text-danger"></i>
             </button>
         </form>
