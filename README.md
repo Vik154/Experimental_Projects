@@ -35,7 +35,9 @@
       </details>
       <details> <summary><b><i> :flags: Microservices:</i></b></summary>
          <ul>
+            <li> --------------------------- RU Tutorials --------------------------------</li>
             <li> :link: Микросервисы или SOA? - https://www.youtube.com/@mahayogin</li>
+            <li> --------------------------- EN Tutorials --------------------------------</li>
          </ul>
       </details>
    </ul>  
@@ -43,34 +45,39 @@
 
 <details> <summary><b><i>3. :books: Книги:</i></b></summary>
    <ul>
-      <li>
-         <details> <summary><b><i> :recycle: ASP.NET Core:</i></b></summary>
-            <ul>
-               <li>:book: Эндрю Лок - "ASP.NET Core в действии"</li>
-            </ul>
-         </details>
-      </li>
+      <details> <summary><b><i> :recycle: ASP.NET Core:</i></b></summary>
+         <ul>
+            <li>:book: Эндрю Лок - "ASP.NET Core в действии"</li>
+            <li>:book: Адам Фримен - "ASP.NET Core MVC 2 '7-е издание'"</li>
+         </ul>
+      </details>
+      <details> <summary><b><i> :flags: Microservices:</i></b></summary>
+         <ul>
+            <li> :book: <i> ... </i> - ...</li>
+         </ul>
+      </details>
    </ul>  
-   
 </details>
 
 <details> <summary><b><i>4. :bookmark_tabs: Документация:</i></b></summary>
    <ul>
-      <li>
-         <details> <summary><b><i> :recycle: ASP.NET Core:</i></b></summary>
-            <ul>
-               <li>:mag_right: MSDN: https://learn.microsoft.com/ru-ru/aspnet/core/?view=aspnetcore-7.0</li>
-            </ul>
-         </details>
-      </li>
+      <details> <summary><b><i> :recycle: ASP.NET Core:</i></b></summary>
+         <ul>
+            <li>:mag_right: MSDN: https://learn.microsoft.com/ru-ru/aspnet/core/?view=aspnetcore-7.0</li>
+         </ul>
+      </details>
+      <details> <summary><b><i> :flags: Microservices:</i></b></summary>
+         <ul>
+            <li> :mag_right: </li>
+         </ul>
+      </details>
    </ul> 
-   
 </details>
 
 
 ## Структура репозитория:
 <details>
-   <summary><b><i>ASP.NET_Core</i></b></summary>
+   <summary><b><i> :recycle: ASP.NET_Core</i></b></summary>
    
    * *[MVC/METANIT_Tutorial](ASP.NET_Core/MVC/01_METANIT_Tutorial/Description.md) - Учебные проекты по туториалу METANIT.COM/ASP.NET Core*
    * *[Razor/METANIT_RazorTutorial](ASP.NET_Core/Razor/01_METANIT_RazorTutorial/Description.md) - Учебные проекты по туториалу METANIT.COM/ASP.NET Core Razor Pages*
@@ -86,6 +93,12 @@
    *
 </details>
 
+<details> 
+   <summary><b><i> :flags: Microservices:</i></b></summary>
+
+   * _Search courses_
+
+</details>
 
 
 
