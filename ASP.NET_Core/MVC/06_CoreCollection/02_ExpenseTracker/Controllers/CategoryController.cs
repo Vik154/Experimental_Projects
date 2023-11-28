@@ -8,35 +8,12 @@ public class CategoryController : Controller
 {
     private readonly ApplicationDbContext _context;
 
-    public CategoryController(ApplicationDbContext context)
-    {
-        _context = context;
-    }
+    public CategoryController(ApplicationDbContext context) => _context = context;
 
     // GET: Category
-    public async Task<IActionResult> Index()
-    {
+    public async Task<IActionResult> Index() {
         return View(await _context.Categories.ToListAsync());
     }
-
-    // GET: Category/Details/5
-    public async Task<IActionResult> Details(int? id)
-    {
-        if (id == null)
-        {
-            return NotFound();
-        }
-
-        var category = await _context.Categories
-            .FirstOrDefaultAsync(m => m.CategoryId == id);
-        if (category == null)
-        {
-            return NotFound();
-        }
-
-        return View(category);
-    }
-
 
     // GET: Category/AddOrEdit/id:int
     public IActionResult AddOrEdit(int id = 0) {
@@ -61,24 +38,6 @@ public class CategoryController : Controller
         return View(category);
     }
 
-    // GET: Category/Delete/5
-    public async Task<IActionResult> Delete(int? id)
-    {
-        if (id == null)
-        {
-            return NotFound();
-        }
-
-        var category = await _context.Categories
-            .FirstOrDefaultAsync(m => m.CategoryId == id);
-        if (category == null)
-        {
-            return NotFound();
-        }
-
-        return View(category);
-    }
-
     // POST: Category/Delete/5
     [HttpPost, ActionName("Delete")]
     [ValidateAntiForgeryToken]
@@ -92,10 +51,5 @@ public class CategoryController : Controller
 
         await _context.SaveChangesAsync();
         return RedirectToAction(nameof(Index));
-    }
-
-    private bool CategoryExists(int id)
-    {
-        return _context.Categories.Any(e => e.CategoryId == id);
     }
 }
