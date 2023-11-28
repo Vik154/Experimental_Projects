@@ -36,6 +36,7 @@
       <details> <summary><b><i> :flags: Microservices:</i></b></summary>
          <ul>
             <li> --------------------------- RU Tutorials --------------------------------</li>
+            <li> :link: DotNetRu «Простая архитектура» - https://www.youtube.com/watch?v=FfT45ZEoxJ8</li>
             <li> :link: DotNetRu «Чистая архитектура» - https://www.youtube.com/watch?v=13OfxIRBsO4</li>
             <li> :link: Микросервисы или SOA? - https://www.youtube.com/@mahayogin</li>
             <li> :link: Архитектура ПО - https://www.youtube.com/@UlbiTV/playlists</li>
