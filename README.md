@@ -2,7 +2,6 @@
 
 <details> <summary><b><i>1. :earth_asia: WEB</i></b></summary>
    <ul>
-      <li>
          <details> <summary><b><i> :recycle: ASP.NET Core:</i></b></summary>
             <ul>
                <li> :speech_balloon: <i> ASP.NET Core </i> - https://metanit.com/sharp/aspnet6/</li>
@@ -16,6 +15,7 @@
                <li> :speech_balloon: <i> ... </i> - ...</li>
             </ul>
          </details>
+      <li>
       </li>
    </ul>  
 
