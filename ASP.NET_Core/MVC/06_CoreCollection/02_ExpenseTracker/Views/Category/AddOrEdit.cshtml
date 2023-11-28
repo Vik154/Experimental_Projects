@@ -14,28 +14,17 @@
                 <div class="mb-3">
                     <div class='e-btn-group custom-rbt-group'>
                         <input type="radio" id="radioleft" name="Type" value="Expense" checked="@(Model.Type=="Expense")" />
-                        <label class="e-btn" for="radioleft">Expense</label>
+                        <label class="e-btn" for="radioleft">Расход</label>
                         <input type="radio" id="radiomiddle" name="Type" value="Income" checked="@(Model.Type=="Income")" />
-                        <label class="e-btn" for="radiomiddle">Income</label>
+                        <label class="e-btn" for="radiomiddle">Доход</label>
                     </div>
-                    @*                 <label asp-for="Type" class="control-label"></label>
-                    <input asp-for="Type" class="form-control" /> *@
-                    <span asp-validation-for="Type" class="text-danger"></span>
                 </div>
                 <div class="mb-3">
-                    <ejs-textbox id="title" placeholder="Title" ejs-for="@Model.Title" floatLabelType="Always"></ejs-textbox>
-                    @*
-                    <label asp-for="Title" class="control-label"></label>
-                    <input asp-for="Title" class="form-control" />
-                    *@
-                    <span asp-validation-for="Title" class="text-danger"></span>
+                    <ejs-textbox id="title" placeholder="Название" ejs-for="@Model.Title" floatLabelType="Always"></ejs-textbox>
+                    <span asp-validation-for="Title" class="text-danger fs-6"></span>
                 </div>
                 <div class="mb-3">
-                    <ejs-textbox id="icon" placeholder="Icon" ejs-for="@Model.Icon" floatLabelType="Always"></ejs-textbox>
-                    @*
-                    <label asp-for="Icon" class="control-label"></label>
-                    <input asp-for="Icon" class="form-control" />
-                    *@
+                    <ejs-textbox id="icon" placeholder="Иконка" ejs-for="@Model.Icon" floatLabelType="Always"></ejs-textbox>
                     <span asp-validation-for="Icon" class="text-danger"></span>
                 </div>
 
@@ -51,6 +40,6 @@
 </div>
 
 
-@section Scripts {
+@* @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
-}
+} *@
