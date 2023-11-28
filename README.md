@@ -37,6 +37,7 @@
          <ul>
             <li> --------------------------- RU Tutorials --------------------------------</li>
             <li> :link: Микросервисы или SOA? - https://www.youtube.com/@mahayogin</li>
+            <li> :link: Архитектура ПО - https://www.youtube.com/@UlbiTV/playlists</li>
             <li> --------------------------- EN Tutorials --------------------------------</li>
          </ul>
       </details>
