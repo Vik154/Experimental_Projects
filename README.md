@@ -16,26 +16,28 @@
          </ul>
       </details>
    </ul>  
-
 </details>
 
 <details> <summary><b><i>2. :movie_camera: YouTube:</i></b></summary>
    <ul>
-      <li>
-         <details> <summary><b><i> :recycle: ASP.NET Core:</i></b></summary>
-            <ul>
-               <li> --------------------------- RU Tutorials --------------------------------</li>
-               <li> :link: Семен Алексеев - https://www.youtube.com/@alekseev74/playlists</li>
-               <li> :link: Просто программист - https://www.youtube.com/@RadmirT/playlists</li>
-               <li> :link: Cleannetcode - https://www.youtube.com/@Cleannetcode/playlists</li>
-               <li> :link: Програмысли - https://www.youtube.com/@Dev-lessons</li>
-               <li> :link: АйтишныйДомосед - https://www.youtube.com/@ITHomester/playlists</li>
-               <li> --------------------------- EN Tutorials --------------------------------</li>
-               <li> :link: Teddy Smith - https://www.youtube.com/@TeddySmithDev</li>
-               <li> :link: Les Jackson - https://www.youtube.com/@binarythistle</li>
-            </ul>
-         </details>
-      </li>
+      <details> <summary><b><i> :recycle: ASP.NET Core:</i></b></summary>
+         <ul>
+            <li> --------------------------- RU Tutorials --------------------------------</li>
+            <li> :link: Семен Алексеев - https://www.youtube.com/@alekseev74/playlists</li>
+            <li> :link: Просто программист - https://www.youtube.com/@RadmirT/playlists</li>
+            <li> :link: Cleannetcode - https://www.youtube.com/@Cleannetcode/playlists</li>
+            <li> :link: Програмысли - https://www.youtube.com/@Dev-lessons</li>
+            <li> :link: АйтишныйДомосед - https://www.youtube.com/@ITHomester/playlists</li>
+            <li> --------------------------- EN Tutorials --------------------------------</li>
+            <li> :link: Teddy Smith - https://www.youtube.com/@TeddySmithDev</li>
+            <li> :link: Les Jackson - https://www.youtube.com/@binarythistle</li>
+         </ul>
+      </details>
+      <details> <summary><b><i> :flags: Microservices:</i></b></summary>
+         <ul>
+            <li> :link: Микросервисы или SOA? - https://www.youtube.com/@mahayogin</li>
+         </ul>
+      </details>
    </ul>  
 </details>
 
