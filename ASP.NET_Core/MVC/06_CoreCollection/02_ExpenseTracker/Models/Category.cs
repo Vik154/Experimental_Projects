@@ -9,6 +9,7 @@ public class Category {
     public int CategoryId { get; set; }
 
     [Column(TypeName = "nvarchar(50)")]
+    [Required(ErrorMessage = "Требуется название.")]
     public string Title { get; set; }
 
     [Column(TypeName = "nvarchar(5)")]

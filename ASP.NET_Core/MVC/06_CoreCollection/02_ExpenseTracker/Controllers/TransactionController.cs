@@ -17,9 +17,13 @@ public class TransactionController : Controller {
     }
 
     // GET: Transaction/AddOrEdit
-    public IActionResult AddOrEdit() {
-        ViewData["CategoryId"] = new SelectList(_context.Categories, "CategoryId", "CategoryId");
-        return View();
+    public IActionResult AddOrEdit(int id = 0) {
+        PopulateCategories();
+
+        if (id == 0)
+            return View(new Transaction());
+        else 
+            return View(_context.Transactions.Find(id));
     }
 
     // POST: Transaction/AddOrEdit
@@ -27,11 +31,14 @@ public class TransactionController : Controller {
     [ValidateAntiForgeryToken]
     public async Task<IActionResult> AddOrEdit([Bind("TransactionId,CategoryId,Amount,Note,Date")] Transaction transaction) {
         if (ModelState.IsValid) {
-            _context.Add(transaction);
+            if (transaction.TransactionId == 0)
+                _context.Add(transaction);
+            else
+                _context.Update(transaction);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
-        ViewData["CategoryId"] = new SelectList(_context.Categories, "CategoryId", "CategoryId", transaction.CategoryId);
+        PopulateCategories();
         return View(transaction);
     }
 
@@ -47,5 +54,13 @@ public class TransactionController : Controller {
 
         await _context.SaveChangesAsync();
         return RedirectToAction(nameof(Index));
+    }
+
+    [NonAction]
+    public void PopulateCategories() {
+        var CategoryCollection = _context.Categories.ToList();
+        Category DefaultCategory = new Category() { CategoryId = 0, Title = "Choose a Category" };
+        CategoryCollection.Insert(0, DefaultCategory);
+        ViewBag.Categories = CategoryCollection;
     }
 }
