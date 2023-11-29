@@ -12,6 +12,7 @@
       </details>
       <details> <summary><b><i> :flags: Microservices:</i></b></summary>
          <ul>
+            <li> :speech_balloon: <i>Микросервисы (Microservices)</i> - https://habr.com/ru/articles/249183/</li>
             <li> :speech_balloon: <i>Заблуждения Clean Architecture</i> - https://habr.com/ru/companies/mobileup/articles/335382/</li>
          </ul>
       </details>
