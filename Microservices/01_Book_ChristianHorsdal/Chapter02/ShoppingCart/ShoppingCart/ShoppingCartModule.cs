@@ -1,5 +1,7 @@
 ﻿using Nancy;
 using Nancy.ModelBinding;
+using ShoppingCart.EventFeed;
+using ShoppingCart.ProductCatalogue;
 
 namespace ShoppingCart.ShoppingCart;
 
@@ -7,7 +9,11 @@ namespace ShoppingCart.ShoppingCart;
 public class ShoppingCartModule : NancyModule {
 
     /// <summary> Все маршруты в этом модуле начинаются с /shoppingcart </summary>
-    public ShoppingCartModule(IShoppingCartStore shoppingCartStore)
+    public ShoppingCartModule(
+        IShoppingCartStore shoppingCartStore,
+        IProductCatalogueClient productCatalogue,
+        IEventStore eventStore
+        )
         : base("/shoppingcart")
     {
         /// <summary> 
@@ -23,6 +29,39 @@ public class ShoppingCartModule : NancyModule {
         Get("/{userid:int}", parameters => {
             var userId = (int)parameters.userid;
             return shoppingCartStore.Get(userId);
+        });
+
+
+        /// <summary> Добавление товаров в корзину заказов </summary>
+        Post("/{userid:int}/items", async (parameters, _) => {
+
+            // Чтение и десериализация массива Id товаров из тела HTTP
+            var productCatalogueIds = this.Bind<int[]>();
+            var userId = (int)parameters.userid;
+
+            var shoppingCart = shoppingCartStore.Get(userId);
+
+            // Извлечение информации о товарах из микросервиса ProductCatalog
+            var shoppingCartItems = await productCatalogue
+                .GetShoppingCartItems(productCatalogueIds)
+                .ConfigureAwait(false);
+
+            shoppingCart.AddItems(shoppingCartItems, eventStore);   // Добавить товар в корзину
+            shoppingCartStore.Save(shoppingCart);                   // Сохранить обновленную корзину в хранилище
+
+            return shoppingCart;    // Вернуть обновленную корзину товаров
+        });
+
+        /// <summary> Конечная точка для удаления товаров из корзины заказов </summary>
+        Delete("/{userid:int}/items", parameters => {
+            var productCatalogueIds = this.Bind<int[]>();
+            var userId = (int)parameters.userid;
+
+            var shoppingCart = shoppingCartStore.Get(userId);
+            shoppingCart.RemoveItems(productCatalogueIds, eventStore);
+            shoppingCartStore.Save(shoppingCart);
+
+            return shoppingCart;
         });
     }
 

@@ -1,11 +1,17 @@
 ﻿namespace ShoppingCart.ShoppingCart;
 
+/// <summary> Класс представляющий корзину покупок </summary>
 public class ShoppingCartStore : IShoppingCartStore {
+
+    private static readonly Dictionary<int, ShoppingCart> database = new Dictionary<int, ShoppingCart>();
+
     public ShoppingCart Get(int userId) {
-        throw new NotImplementedException();
+        if (!database.ContainsKey(userId))
+            database[userId] = new ShoppingCart(userId);
+        return database[userId];
     }
 
     public void Save(ShoppingCart shoppingCart) {
-        throw new NotImplementedException();
+        // Nothing needed. Saving would be needed with a real DB
     }
 }
