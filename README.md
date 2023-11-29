@@ -45,6 +45,7 @@
             <li> :link: Микросервисы или SOA? - https://www.youtube.com/@mahayogin</li>
             <li> :link: Архитектура ПО - https://www.youtube.com/@UlbiTV/playlists</li>
             <li> --------------------------- EN Tutorials --------------------------------</li>
+            <li> :link: Microservices - https://www.youtube.com/@DotNetCoreCentral/playlists</li>
          </ul>
       </details>
    </ul>  
