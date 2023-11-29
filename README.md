@@ -37,6 +37,7 @@
       <details> <summary><b><i> :flags: Microservices:</i></b></summary>
          <ul>
             <li> --------------------------- RU Tutorials --------------------------------</li>
+            <li> :link: Всё про Микросервисы - https://www.youtube.com/watch?v=-zMtSZDxcMY&list=PLIB8be7sunXMXTZKptqEtXAACpsYZdzi_</li>  
             <li> :link: Excalib «Чистая архитектура ASP.NET Core 7» - https://www.youtube.com/watch?v=UPZ8pcOdnUI</li>
             <li> :link: DotNetRu «Простая архитектура» - https://www.youtube.com/watch?v=FfT45ZEoxJ8</li>
             <li> :link: DotNetRu «Чистая архитектура» - https://www.youtube.com/watch?v=13OfxIRBsO4</li>
