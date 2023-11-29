@@ -61,7 +61,7 @@
       </details>
       <details> <summary><b><i> :flags: Microservices:</i></b></summary>
          <ul>
-            <li> :book: Микросервисы на платформе.NET - Кристиан Хорсдал</li>
+            <li> :book: Кристиан Хорсдал - "Микросервисы на платформе.NET"</li>
          </ul>
       </details>
    </ul>  
