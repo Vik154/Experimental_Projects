@@ -13,10 +13,10 @@
       <details> <summary><b><i> :flags: Microservices:</i></b></summary>
          <ul>
             <li> :speech_balloon: <i>Внедрение и контейнеризация микросервисов с использованием .NET Core 6 и Docker</i><br />
-               - https://wedx.ru/vnedrenie-i-kontejnerizacziya-mikroservisov-s-ispolzovaniem-net-core-6.html?ysclid=lpknb1uosu15012384
+                https://wedx.ru/vnedrenie-i-kontejnerizacziya-mikroservisov-s-ispolzovaniem-net-core-6.html?ysclid=lpknb1uosu15012384
             </li>
-            <li> :speech_balloon: <i>Микросервисная архитектура</i><br />
-               - https://proglib.io/p/po-stopam-luchshih-mikroservisnaya-arhitektura-v-razreze-2019-11-07
+            <li> :speech_balloon: <i>Микросервисная архитектура в разрезе</i><br />
+                https://proglib.io/p/po-stopam-luchshih-mikroservisnaya-arhitektura-v-razreze-2019-11-07
             </li>
             <li> :speech_balloon: <i>Микросервисы (Microservices)</i> - https://habr.com/ru/articles/249183/</li>
             <li> :speech_balloon: <i>Заблуждения Clean Architecture</i> - https://habr.com/ru/companies/mobileup/articles/335382/</li>
