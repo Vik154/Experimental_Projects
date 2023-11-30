@@ -12,6 +12,9 @@
       </details>
       <details> <summary><b><i> :flags: Microservices:</i></b></summary>
          <ul>
+            <li> :speech_balloon: <i>Микросервисная архитектура и 10 наиболее важных шаблонов проектирования</i><br />
+               https://www.digitrain.ru/articles/169469/
+            </li>            
             <li> :speech_balloon: <i>Внедрение и контейнеризация микросервисов с использованием .NET Core 6 и Docker</i><br />
                 https://wedx.ru/vnedrenie-i-kontejnerizacziya-mikroservisov-s-ispolzovaniem-net-core-6.html?ysclid=lpknb1uosu15012384
             </li>
