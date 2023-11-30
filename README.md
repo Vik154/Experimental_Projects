@@ -85,7 +85,7 @@
       </details>
       <details> <summary><b><i> :flags: Microservices:</i></b></summary>
          <ul>
-            <li> :mag_right: </li>
+            <li> :mag_right: MSDN: https://learn.microsoft.com/ru-ru/dotnet/architecture/microservices/</li>
          </ul>
       </details>
    </ul> 
