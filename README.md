@@ -25,6 +25,11 @@
             <li> :speech_balloon: <i>Заблуждения Clean Architecture</i> - https://habr.com/ru/companies/mobileup/articles/335382/</li>
          </ul>
       </details>
+      <details> <summary><b><i> :snowflake: Kubernetes:</i></b></summary>
+         <ul>
+            <li> :speech_balloon: </li>
+         </ul>
+      </details>
    </ul>  
 </details>
 
@@ -78,6 +83,11 @@
             <li> :book: Кристиан Хорсдал - "Микросервисы на платформе.NET" (обо всём и ...)</li>
          </ul>
       </details>
+      <details> <summary><b><i> :snowflake: Kubernetes:</i></b></summary>
+         <ul>
+            <li> :book: .... - .....</li>
+         </ul>
+      </details>
    </ul>  
 </details>
 
@@ -91,6 +101,11 @@
       <details> <summary><b><i> :flags: Microservices:</i></b></summary>
          <ul>
             <li> :mag_right: MSDN: https://learn.microsoft.com/ru-ru/dotnet/architecture/microservices/</li>
+         </ul>
+      </details>
+      <details> <summary><b><i> :snowflake: Kubernetes:</i></b></summary>
+         <ul>
+            <li> :mag_right: Kubernetes: https://kubernetes.io/docs/home/</li>
          </ul>
       </details>
    </ul> 
