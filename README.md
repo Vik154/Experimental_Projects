@@ -64,7 +64,7 @@
       </details>
       <details> <summary><b><i> :snowflake: Kubernetes:</i></b></summary>
          <ul>
-            <li> :link: Слёрм «Kubernetes для разработчиков» - https://www.youtube.com/@slurm_io/playlists</li>
+            <li> :link: Введение в Kubernetes на примере Minikube - https://www.youtube.com/watch?v=sLQefhPfwWE</li>
          </ul>
       </details>
    </ul>  
