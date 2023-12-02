@@ -2,9 +2,9 @@
 
 <details> <summary><b><i>1. :earth_asia: WEB</i></b></summary>
    <ul>
-      <details> <summary><b><i>:recycle: ASP.NET Core:</i></b></summary>
+      <details> <summary><b><i> ♻️ ASP.NET Core:</i></b></summary>
          <ul>
-            <li> 💬: <i> ASP.NET Core </i> - https://metanit.com/sharp/aspnet6/</li>
+            <li> 💬 <i> ASP.NET Core </i> - https://metanit.com/sharp/aspnet6/</li>
             <li>:speech_balloon:<i> ASP.NET Core MVC </i> - https://metanit.com/sharp/aspnetmvc/</li>
             <li>:speech_balloon:<i> ASP.NET Core Razor Pages </i> - https://metanit.com/sharp/razorpages/ </li>
             <li>:speech_balloon:<i> ASP.NET Core Blazor </i> - https://metanit.com/sharp/blazor/ </li>
