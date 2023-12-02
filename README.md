@@ -71,39 +71,39 @@
    </ul>  
 </details>
 
-<details> <summary><b><i>3. :books: Книги:</i></b></summary>
+<details> <summary><b><i>3. 📚 Книги:</i></b></summary>
    <ul>
-      <details> <summary><b><i> :recycle: ASP.NET Core:</i></b></summary>
+      <details> <summary><b><i> ♻️ ASP.NET Core:</i></b></summary>
          <ul>
             <li>:book: Эндрю Лок - "ASP.NET Core в действии"</li>
             <li>:book: Адам Фримен - "ASP.NET Core MVC 2 '7-е издание'"</li>
          </ul>
       </details>
-      <details> <summary><b><i> :flags: Microservices:</i></b></summary>
+      <details> <summary><b><i> 🎏 Microservices:</i></b></summary>
          <ul>
             <li> :book: Кристиан Хорсдал - "Микросервисы на платформе.NET" (обо всём и ...)</li>
          </ul>
       </details>
-      <details> <summary><b><i> :snowflake: Kubernetes:</i></b></summary>
+      <details> <summary><b><i> ❄️ Kubernetes:</i></b></summary>
          <ul>
             <li> :book: .... - .....</li>
          </ul>
       </details>
    </ul>  
 </details>
-<details> <summary><b><i>4. :bookmark_tabs: Документация:</i></b></summary>
+<details> <summary><b><i>4. 📑 Документация:</i></b></summary>
    <ul>
-      <details> <summary><b><i> :recycle: ASP.NET Core:</i></b></summary>
+      <details> <summary><b><i> ♻️ ASP.NET Core:</i></b></summary>
          <ul>
             <li>:mag_right: MSDN: https://learn.microsoft.com/ru-ru/aspnet/core/?view=aspnetcore-7.0</li>
          </ul>
       </details>
-      <details> <summary><b><i> :flags: Microservices:</i></b></summary>
+      <details> <summary><b><i> 🎏 Microservices:</i></b></summary>
          <ul>
             <li> :mag_right: MSDN: https://learn.microsoft.com/ru-ru/dotnet/architecture/microservices/</li>
          </ul>
       </details>
-      <details> <summary><b><i> :snowflake: Kubernetes:</i></b></summary>
+      <details> <summary><b><i> ❄️ Kubernetes:</i></b></summary>
          <ul>
             <li> :mag_right: Kubernetes: https://kubernetes.io/docs/home/</li>
          </ul>
