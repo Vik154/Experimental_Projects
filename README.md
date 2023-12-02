@@ -65,6 +65,7 @@
       <details> <summary><b><i> :snowflake: Kubernetes:</i></b></summary>
          <ul>
             <li> :link: Введение в Kubernetes на примере Minikube - https://www.youtube.com/watch?v=sLQefhPfwWE</li>
+            <li> :link: Введение в Kubernetes на примере Minikube - https://www.youtube.com/watch?v=sLQefhPfwWE</li>
          </ul>
       </details>
    </ul>  
