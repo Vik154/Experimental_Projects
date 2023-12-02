@@ -29,7 +29,6 @@
          </ul>
       </details>
       </li>
-      
       <details> <summary><b><i> :snowflake: Kubernetes:</i></b></summary>
          <ul>
             <li> :speech_balloon: </li>
@@ -37,6 +36,7 @@
       </details>
    </ul>  
 </details>
+
 
 <details> <summary><b><i>2. :movie_camera: YouTube:</i></b></summary>
    <ul>
@@ -71,10 +71,13 @@
          <ul>
             <li> :link: Введение в Kubernetes на примере Minikube - https://www.youtube.com/watch?v=sLQefhPfwWE</li>
             <li> :link: </li>
+            <li> :link: </li>
+            <li> :link: </li>
          </ul>
       </details>
    </ul>  
 </details>
+
 
 <details> <summary><b><i>3. :books: Книги:</i></b></summary>
    <ul>
