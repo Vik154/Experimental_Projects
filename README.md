@@ -36,8 +36,6 @@
       </details>
    </ul>  
 </details>
-
-
 <details> <summary><b><i>2. :movie_camera: YouTube:</i></b></summary>
    <ul>
       <details> <summary><b><i> :recycle: ASP.NET Core:</i></b></summary>
@@ -74,8 +72,6 @@
       </details>
    </ul>  
 </details>
-
-
 <details> <summary><b><i>3. :books: Книги:</i></b></summary>
    <ul>
       <details> <summary><b><i> :recycle: ASP.NET Core:</i></b></summary>
@@ -96,7 +92,6 @@
       </details>
    </ul>  
 </details>
-
 <details> <summary><b><i>4. :bookmark_tabs: Документация:</i></b></summary>
    <ul>
       <details> <summary><b><i> :recycle: ASP.NET Core:</i></b></summary>
