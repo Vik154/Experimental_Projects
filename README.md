@@ -35,7 +35,7 @@
 
 <details> <summary><b><i>2. 🎥 YouTube:</i></b></summary>
    <ul>
-      <details> <summary><b><i> :recycle: ASP.NET Core:</i></b></summary>
+      <details> <summary><b><i> ♻️ ASP.NET Core:</i></b></summary>
          <ul>
             <li> --------------------------- RU Tutorials --------------------------------</li>
             <li> :link: Семен Алексеев - https://www.youtube.com/@alekseev74/playlists</li>
@@ -48,7 +48,7 @@
             <li> :link: Les Jackson - https://www.youtube.com/@binarythistle</li>
          </ul>
       </details>
-      <details> <summary><b><i> :flags: Microservices:</i></b></summary>
+      <details> <summary><b><i> 🎏 Microservices:</i></b></summary>
          <ul>
             <li> --------------------------- RU Tutorials --------------------------------</li>
             <li> :link: Микросервисы на C# - https://www.youtube.com/watch?v=HHQbRDX7g8k</li>  
@@ -62,9 +62,10 @@
             <li> :link: Microservices - https://www.youtube.com/@DotNetCoreCentral/playlists</li>
          </ul>
       </details>
-      <details> <summary><b><i> :snowflake: Kubernetes:</i></b></summary>
+      <details> <summary><b><i> ❄️ Kubernetes:</i></b></summary>
          <ul>
             <li> :link: Введение в Kubernetes на примере Minikube - https://www.youtube.com/watch?v=sLQefhPfwWE</li>
+            <li> :link: Kubernetes — оркестровщик микросервисных приложений - https://www.youtube.com/watch?v=yI37GPp06uc</li>
          </ul>
       </details>
    </ul>  
