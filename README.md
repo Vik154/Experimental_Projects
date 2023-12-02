@@ -65,7 +65,7 @@
       <details> <summary><b><i> ❄️ Kubernetes:</i></b></summary>
          <ul>
             <li> :link: Введение в Kubernetes на примере Minikube - https://www.youtube.com/watch?v=sLQefhPfwWE</li>
-            <li> :link: Kubernetes — оркестровщик микросервисных приложений - https://www.youtube.com/watch?v=yI37GPp06uc</li>
+            <li> :link: Kubernetes - оркестровщик микросервисов - https://www.youtube.com/watch?v=yI37GPp06uc</li>
          </ul>
       </details>
    </ul>  
