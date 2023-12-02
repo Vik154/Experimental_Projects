@@ -12,7 +12,7 @@
          </ul>
       </details>
       </li>
-      
+      <li>
       <details> <summary><b><i> :flags: Microservices:</i></b></summary>
          <ul>
             <li> :speech_balloon: <i>Микросервисная архитектура и 10 наиболее важных шаблонов проектирования</i><br />
@@ -28,6 +28,7 @@
             <li> :speech_balloon: <i>Заблуждения Clean Architecture</i> - https://habr.com/ru/companies/mobileup/articles/335382/</li>
          </ul>
       </details>
+      </li>
       
       <details> <summary><b><i> :snowflake: Kubernetes:</i></b></summary>
          <ul>
