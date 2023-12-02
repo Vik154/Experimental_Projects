@@ -1,39 +1,39 @@
 ## Основные источники информации:
 
-<details> <summary><b><i>1. :earth_asia: WEB</i></b></summary>
+<details> <summary><b><i>1. 🌏 WEB</i></b></summary>
    <ul>
       <details> <summary><b><i> ♻️ ASP.NET Core:</i></b></summary>
          <ul>
-            <li> 💬 <i> ASP.NET Core </i> - https://metanit.com/sharp/aspnet6/</li>
-            <li>:speech_balloon:<i> ASP.NET Core MVC </i> - https://metanit.com/sharp/aspnetmvc/</li>
-            <li>:speech_balloon:<i> ASP.NET Core Razor Pages </i> - https://metanit.com/sharp/razorpages/ </li>
-            <li>:speech_balloon:<i> ASP.NET Core Blazor </i> - https://metanit.com/sharp/blazor/ </li>
+            <li>💬<i> ASP.NET Core </i> - https://metanit.com/sharp/aspnet6/</li>
+            <li>💬<i> ASP.NET Core MVC </i> - https://metanit.com/sharp/aspnetmvc/</li>
+            <li>💬<i> ASP.NET Core Razor Pages </i> - https://metanit.com/sharp/razorpages/ </li>
+            <li>💬<i> ASP.NET Core Blazor </i> - https://metanit.com/sharp/blazor/ </li>
          </ul>
       </details>
-      <details> <summary><b><i> :flags: Microservices:</i></b></summary>
+      <details> <summary><b><i> 🎏 Microservices:</i></b></summary>
          <ul>
-            <li> :speech_balloon: <i>Микросервисная архитектура и 10 наиболее важных шаблонов проектирования</i><br />
+            <li>💬<i>Микросервисная архитектура и 10 наиболее важных шаблонов проектирования</i><br />
                https://www.digitrain.ru/articles/169469/
             </li>            
-            <li> :speech_balloon: <i>Внедрение и контейнеризация микросервисов с использованием .NET Core 6 и Docker</i><br />
+            <li>💬<i>Внедрение и контейнеризация микросервисов с использованием .NET Core 6 и Docker</i><br />
                 https://wedx.ru/vnedrenie-i-kontejnerizacziya-mikroservisov-s-ispolzovaniem-net-core-6.html?ysclid=lpknb1uosu15012384
             </li>
-            <li> :speech_balloon: <i>Микросервисная архитектура в разрезе</i><br />
+            <li>💬<i>Микросервисная архитектура в разрезе</i><br />
                 https://proglib.io/p/po-stopam-luchshih-mikroservisnaya-arhitektura-v-razreze-2019-11-07
             </li>
-            <li> :speech_balloon: <i>Микросервисы (Microservices)</i> - https://habr.com/ru/articles/249183/</li>
-            <li> :speech_balloon: <i>Заблуждения Clean Architecture</i> - https://habr.com/ru/companies/mobileup/articles/335382/</li>
+            <li>💬<i>Микросервисы (Microservices)</i> - https://habr.com/ru/articles/249183/</li>
+            <li>💬<i>Заблуждения Clean Architecture</i> - https://habr.com/ru/companies/mobileup/articles/335382/</li>
          </ul>
       </details>
-      <details> <summary><b><i> :snowflake: Kubernetes:</i></b></summary>
+      <details> <summary><b><i> ❄️ Kubernetes:</i></b></summary>
          <ul>
-            <li> :speech_balloon: </li>
+            <li> 💬 </li>
          </ul>
       </details>
    </ul>  
 </details>
 
-<details> <summary><b><i>2. :movie_camera: YouTube:</i></b></summary>
+<details> <summary><b><i>2. 🎥 YouTube:</i></b></summary>
    <ul>
       <details> <summary><b><i> :recycle: ASP.NET Core:</i></b></summary>
          <ul>
