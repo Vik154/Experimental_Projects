@@ -27,7 +27,7 @@
       </details>
       <details> <summary><b><i> ❄️ Kubernetes:</i></b></summary>
          <ul>
-            <li> 💬 </li>
+            <li>💬<i>MSDN Learn</i> - https://learn.microsoft.com/ru-ru/training/modules/intro-to-kubernetes/ </li>
          </ul>
       </details>
    </ul>  
