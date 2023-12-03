@@ -66,6 +66,7 @@
          <ul>
             <li> :link: Введение в Kubernetes на примере Minikube - https://www.youtube.com/watch?v=sLQefhPfwWE</li>
             <li> :link: Kubernetes - оркестровщик микросервисов - https://www.youtube.com/watch?v=yI37GPp06uc</li>
+            <li> :link: Артур Крюков "Kubernetes" - https://www.youtube.com/@OldPythonKAA/playlists</li>
          </ul>
       </details>
    </ul>  
