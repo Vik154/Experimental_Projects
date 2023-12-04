@@ -29,7 +29,7 @@
          <ul>
             <li> 
                <details> <summary><b><i> 💬 MSDN Learn:</i></b></summary>
-                  <ol>
+                  <ol type="1">
                      <li>https://learn.microsoft.com/ru-ru/training/modules/intro-to-kubernetes/</li>
                      <li>https://learn.microsoft.com/ru-ru/training/modules/dotnet-deploy-microservices-kubernetes/</li>
                   </ol>
