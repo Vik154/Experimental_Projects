@@ -32,6 +32,7 @@
                   <ol type="1">
                      <li>https://learn.microsoft.com/ru-ru/training/modules/intro-to-kubernetes/</li>
                      <li>https://learn.microsoft.com/ru-ru/training/modules/dotnet-deploy-microservices-kubernetes/</li>
+                     <li>https://learn.microsoft.com/ru-ru/training/modules/intro-to-azure-kubernetes-service/</li>
                   </ol>
                </details>
             </li>
