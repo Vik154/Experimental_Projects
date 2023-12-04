@@ -27,7 +27,14 @@
       </details>
       <details> <summary><b><i> ❄️ Kubernetes:</i></b></summary>
          <ul>
-            <li>💬<i>MSDN Learn</i> - https://learn.microsoft.com/ru-ru/training/modules/intro-to-kubernetes/ </li>
+            <li> 
+               <details> <summary><b><i> 💬 MSDN Learn:</i></b></summary>
+                  <ol>
+                     <li>https://learn.microsoft.com/ru-ru/training/modules/intro-to-kubernetes/</li>
+                     <li>https://learn.microsoft.com/ru-ru/training/modules/dotnet-deploy-microservices-kubernetes/</li>
+                  </ol>
+               </details>
+            </li>
          </ul>
       </details>
    </ul>  
