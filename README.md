@@ -33,6 +33,8 @@
                      <li>https://learn.microsoft.com/ru-ru/training/modules/intro-to-kubernetes/</li>
                      <li>https://learn.microsoft.com/ru-ru/training/modules/dotnet-deploy-microservices-kubernetes/</li>
                      <li>https://learn.microsoft.com/ru-ru/training/modules/intro-to-azure-kubernetes-service/</li>
+                     <li>https://learn.microsoft.com/ru-ru/training/paths/develop-deploy-applications-kubernetes/</li>
+                     <li>https://learn.microsoft.com/ru-ru/training/paths/manage-virtualization-containers-hybrid-environment/</li>
                   </ol>
                </details>
             </li>
