@@ -117,7 +117,8 @@
       </details>
       <details> <summary><b><i> ❄️ Kubernetes:</i></b></summary>
          <ul>
-            <li> :mag_right: Kubernetes: https://kubernetes.io/docs/home/</li>
+            <li>🔎 Kubernetes: https://kubernetes.io/docs/home/</li>
+            <li>🔎 Podman: https://podman.io/docs</li>
          </ul>
       </details>
    </ul> 
