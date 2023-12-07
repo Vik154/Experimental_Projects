@@ -79,6 +79,7 @@
             <li> :link: Артур Крюков "Kubernetes" - https://www.youtube.com/@OldPythonKAA/playlists</li>
             <li> :link: Docker с 0 до 100% - https://www.youtube.com/watch?v=O8N1lvkIjig&t=5709s</li>
             <li> :link: Docker И Python - https://www.youtube.com/watch?v=eAXjeh5MRVU</li>
+            <li> :link: Просто о контенеризации. Docker - https://www.youtube.com/watch?v=Sa7uOGczoHc</li>
          </ul>
       </details>
    </ul>  
