@@ -80,6 +80,7 @@
             <li> 🔗 Docker с 0 до 100% - https://www.youtube.com/watch?v=O8N1lvkIjig&t=5709s</li>
             <li> 🔗 Docker И Python - https://www.youtube.com/watch?v=eAXjeh5MRVU</li>
             <li> 🔗 Просто о контенеризации. Docker - https://www.youtube.com/watch?v=Sa7uOGczoHc</li>
+            <li> 🔗 Курс Docker и Kubernetes - https://www.youtube.com/@PracticU2/playlists</li>            
          </ul>
       </details>
    </ul>  
@@ -121,6 +122,7 @@
          <ul>
             <li>🔎 Kubernetes: https://kubernetes.io/docs/home/</li>
             <li>🔎 Podman: https://podman.io/docs</li>
+            <li>🔎 MSDN: https://learn.microsoft.com/ru-ru/virtualization/windowscontainers/</li>
          </ul>
       </details>
    </ul> 
