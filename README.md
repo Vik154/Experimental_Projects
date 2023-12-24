@@ -145,7 +145,6 @@
    * *[MVC/06_CoreCollection](ASP.NET_Core/MVC/06_CoreCollection) - по серии "Asp.Net Core Tutorial" https://www.youtube.com/@CodAffection* <br>
       _Набор проектов по работе с .Net Core, основные концепции_
    *
-   *
 </details>
 
 <details> 
